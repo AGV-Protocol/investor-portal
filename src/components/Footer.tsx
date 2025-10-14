@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -10,9 +11,11 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 flex items-center justify-center">
-                <img 
+                <Image 
                   src="/logo.png" 
                   alt="AGV Protocol Logo" 
+                  width={32}
+                  height={32}
                   className="w-full h-full object-contain"
                 />
               </div>

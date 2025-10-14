@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 
@@ -28,9 +29,11 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               className="w-8 h-8 flex items-center justify-center"
             >
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="AGV Protocol Logo" 
+                width={32}
+                height={32}
                 className="w-full h-full object-contain"
               />
             </motion.div>

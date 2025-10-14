@@ -156,7 +156,9 @@ export default function ContactPage() {
               <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <FiMail className="w-5 h-5 text-primary mt-1 mr-3" />
+                  <div className="text-primary mt-1 mr-3">
+                    <FiMail size={20} />
+                  </div>
                   <div>
                     <div className="font-medium">Email</div>
                     <div className="text-muted-foreground">investors@agvprotocol.com</div>
@@ -164,7 +166,9 @@ export default function ContactPage() {
                 </div>
                 
                 <div className="flex items-start">
-                  <FiPhone className="w-5 h-5 text-primary mt-1 mr-3" />
+                  <div className="text-primary mt-1 mr-3">
+                    <FiPhone size={20} />
+                  </div>
                   <div>
                     <div className="font-medium">Phone</div>
                     <div className="text-muted-foreground">+1 (555) 123-4567</div>
@@ -172,7 +176,9 @@ export default function ContactPage() {
                 </div>
                 
                 <div className="flex items-start">
-                  <FiMapPin className="w-5 h-5 text-primary mt-1 mr-3" />
+                  <div className="text-primary mt-1 mr-3">
+                    <FiMapPin size={20} />
+                  </div>
                   <div>
                     <div className="font-medium">Address</div>
                     <div className="text-muted-foreground">

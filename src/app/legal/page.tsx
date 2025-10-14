@@ -7,7 +7,7 @@ import Card from '@/components/Card';
 import PDFViewer from '@/components/PDFViewer';
 import { getDocumentsByCategory, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
-import { FiFile, FiDownload, FiCheckCircle } from 'react-icons/fi';
+import { FiFile, FiDownload } from 'react-icons/fi';
 
 export default function LegalPage() {
   const [documents, setDocuments] = useState<Document[]>([]);
@@ -107,8 +107,8 @@ export default function LegalPage() {
               >
                 <Card className="p-6 h-full">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <FiFile className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                      <FiFile size={24} />
                     </div>
                     <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
                       {doc.category}
@@ -128,7 +128,7 @@ export default function LegalPage() {
                       View Document
                     </a>
                     <button className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-muted transition-colors flex items-center gap-2">
-                      <FiDownload className="w-4 h-4" />
+                      <FiDownload size={16} />
                       Download
                     </button>
                   </div>

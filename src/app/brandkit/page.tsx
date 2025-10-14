@@ -6,7 +6,8 @@ import SectionHeader from '@/components/SectionHeader';
 import Card from '@/components/Card';
 import { getDocumentsByCategory, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
-import { FiFile, FiDownload, FiEye } from 'react-icons/fi';
+import { FiFile, FiEye } from 'react-icons/fi';
+import Image from 'next/image';
 
 export default function BrandKitPage() {
   const [documents, setDocuments] = useState<Document[]>([]);
@@ -100,9 +101,11 @@ export default function BrandKitPage() {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="w-24 h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm border">
-                    <img 
+                    <Image 
                       src="/logo.png" 
                       alt="AGV Protocol Primary Logo" 
+                      width={64}
+                      height={64}
                       className="w-16 h-16 object-contain"
                     />
                   </div>
@@ -111,9 +114,11 @@ export default function BrandKitPage() {
                 </div>
                 <div className="text-center">
                   <div className="w-24 h-24 bg-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <img 
+                    <Image 
                       src="/logo.png" 
                       alt="AGV Protocol Dark Logo" 
+                      width={64}
+                      height={64}
                       className="w-16 h-16 object-contain"
                     />
                   </div>
@@ -122,9 +127,11 @@ export default function BrandKitPage() {
                 </div>
                 <div className="text-center">
                   <div className="w-24 h-24 border-2 border-primary rounded-xl flex items-center justify-center mx-auto mb-4 bg-white">
-                    <img 
+                    <Image 
                       src="/logo.png" 
                       alt="AGV Protocol Outline Logo" 
+                      width={64}
+                      height={64}
                       className="w-16 h-16 object-contain"
                     />
                   </div>
@@ -146,8 +153,8 @@ export default function BrandKitPage() {
               >
                 <Card className="p-6 h-full">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <FiFile className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                      <FiFile size={24} />
                     </div>
                     <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
                       {doc.category}
@@ -167,7 +174,7 @@ export default function BrandKitPage() {
                       Download
                     </a>
                     <button className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-muted transition-colors flex items-center gap-2">
-                      <FiEye className="w-4 h-4" />
+                      <FiEye size={16} />
                       Preview
                     </button>
                   </div>
@@ -187,7 +194,7 @@ export default function BrandKitPage() {
               <h2 className="text-2xl font-semibold mb-6">Brand Usage Guidelines</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Do's</h3>
+                  <h3 className="text-lg font-semibold mb-4">Do&apos;s</h3>
                   <ul className="space-y-2 text-muted-foreground">
                     <li>• Maintain proper spacing around logos</li>
                     <li>• Use approved color variations only</li>
@@ -196,12 +203,12 @@ export default function BrandKitPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Don'ts</h3>
+                  <h3 className="text-lg font-semibold mb-4">Don&apos;ts</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Don't modify logo proportions</li>
-                    <li>• Don't use unapproved colors</li>
-                    <li>• Don't place on busy backgrounds</li>
-                    <li>• Don't use low-resolution versions</li>
+                    <li>• Don&apos;t modify logo proportions</li>
+                    <li>• Don&apos;t use unapproved colors</li>
+                    <li>• Don&apos;t place on busy backgrounds</li>
+                    <li>• Don&apos;t use low-resolution versions</li>
                   </ul>
                 </div>
               </div>

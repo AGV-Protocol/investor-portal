@@ -7,7 +7,7 @@ import Card from '@/components/Card';
 import Button from '@/components/Button';
 import { getAllDocuments, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
-import { FiSettings, FiBarChart, FiShield, FiHeart } from 'react-icons/fi';
+import { FiSettings, FiBarChart, FiShield, FiHeart, FiImage } from 'react-icons/fi';
 
 export default function InvestorPage() {
   const [allDocuments, setAllDocuments] = useState<Document[]>([]);
@@ -25,36 +25,35 @@ export default function InvestorPage() {
       name: 'Technology',
       href: '/tech',
       description: 'Technical documentation, architecture, and audit reports',
-      icon: <FiSettings className="w-6 h-6" />,
+      icon: <FiSettings size={24} />,
       count: allDocuments.filter(doc => doc.category === 'tech').length,
     },
     {
       name: 'Financials',
       href: '/financials',
       description: 'Financial models, valuations, and projections',
-      icon: <FiBarChart className="w-6 h-6" />,
+      icon: <FiBarChart size={24} />,
       count: allDocuments.filter(doc => doc.category === 'financials').length,
     },
     {
       name: 'Legal',
       href: '/legal',
       description: 'Legal documents, compliance, and registration',
-      icon: <FiShield className="w-6 h-6" />,
+      icon: <FiShield size={24} />,
       count: allDocuments.filter(doc => doc.category === 'legal').length,
     },
     {
       name: 'ESG',
       href: '/esg',
       description: 'Environmental impact and sustainability reports',
-      icon: <FiHeart className="w-6 h-6" />,
+      icon: <FiHeart size={24} />,
       count: allDocuments.filter(doc => doc.category === 'esg').length,
     },
     {
       name: 'Brand Kit',
       href: '/brandkit',
       description: 'Brand assets, logos, and marketing materials',
-      // Changed icon to a defined icon (FiBarChart as placeholder since FiPalette does not exist)
-      icon: <FiBarChart className="w-6 h-6" />,
+      icon: <FiImage size={24} />,
       count: allDocuments.filter(doc => doc.category === 'brandkit').length,
     },
   ];
@@ -140,7 +139,7 @@ export default function InvestorPage() {
             <Card className="p-8">
               <h2 className="text-2xl font-semibold mb-6">Recently Updated Documents</h2>
               <div className="space-y-4">
-                {allDocuments.slice(0, 5).map((doc, index) => (
+                {allDocuments.slice(0, 5).map((doc) => (
                   <div key={doc.title} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
                     <div className="flex items-center">
                       <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4">

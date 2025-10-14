@@ -13,25 +13,25 @@ export default function Home() {
       title: 'Technology & Architecture',
       description: 'Explore our technical whitepaper, system diagrams, and audit reports.',
       href: '/tech',
-      icon: <FiSettings className="w-6 h-6" />,
+      icon: <FiSettings size={24} />,
     },
     {
       title: 'Financial Models',
       description: 'Access detailed financial projections, valuations, and token economics.',
       href: '/financials',
-      icon: <FiBarChart className="w-6 h-6" />,
+      icon: <FiBarChart size={24} />,
     },
     {
       title: 'Legal Documentation',
       description: 'Review incorporation docs, IP transfers, and regulatory compliance.',
       href: '/legal',
-      icon: <FiShield className="w-6 h-6" />,
+      icon: <FiShield size={24} />,
     },
     {
       title: 'ESG & Sustainability',
       description: 'Discover our environmental impact and real-world asset verification.',
       href: '/esg',
-      icon: <FiHeart className="w-6 h-6" />,
+      icon: <FiHeart size={24} />,
     },
   ];
 
