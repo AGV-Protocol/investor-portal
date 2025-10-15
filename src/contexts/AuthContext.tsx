@@ -4,8 +4,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 
 interface AuthContextType {
   isAuthenticated: boolean;
-  user: { email: string } | null;
-  login: (email: string, password: string) => Promise<boolean>;
+  login: (key: string) => Promise<boolean>;
   logout: () => void;
   loading: boolean;
 }
@@ -14,7 +13,6 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<{ email: string } | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -23,9 +21,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (savedAuth) {
       try {
         const authData = JSON.parse(savedAuth);
-        if (authData.isAuthenticated && authData.user) {
+        if (authData.isAuthenticated) {
           setIsAuthenticated(true);
-          setUser(authData.user);
         }
       } catch (error) {
         console.error('Error parsing saved auth data:', error);
@@ -35,17 +32,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setLoading(false);
   }, []);
 
-  const login = async (email: string, password: string): Promise<boolean> => {
-    // Simple authentication - password must be 'agv2025vc'
-    if (password === 'agv2025vc') {
-      const userData = { email };
+  const login = async (key: string): Promise<boolean> => {
+    // Simple key-based authentication - key must be 'agv2025vc'
+    if (key === 'agv2025vc') {
       setIsAuthenticated(true);
-      setUser(userData);
       
       // Save to localStorage
       localStorage.setItem('agv_auth', JSON.stringify({
-        isAuthenticated: true,
-        user: userData
+        isAuthenticated: true
       }));
       
       return true;
@@ -55,14 +49,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = () => {
     setIsAuthenticated(false);
-    setUser(null);
     localStorage.removeItem('agv_auth');
   };
 
   return (
     <AuthContext.Provider value={{
       isAuthenticated,
-      user,
       login,
       logout,
       loading
