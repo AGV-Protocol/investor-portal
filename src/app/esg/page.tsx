@@ -7,7 +7,7 @@ import Card from '@/components/Card';
 import PDFViewer from '@/components/PDFViewer';
 import { getDocumentsByCategory, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
-import { FiDownload, FiHeart } from 'react-icons/fi';
+import { FiHeart } from 'react-icons/fi';
 
 export default function ESGPage() {
   const [documents, setDocuments] = useState<Document[]>([]);
@@ -63,19 +63,19 @@ export default function ESGPage() {
               <h2 className="text-2xl font-semibold mb-6">ESG Performance Metrics</h2>
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">-45%</div>
+                  <div className="text-3xl font-bold text-primary mb-2">-45%</div>
                   <div className="text-sm text-muted-foreground">Carbon Footprint Reduction</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
+                  <div className="text-3xl font-bold text-primary mb-2">100%</div>
                   <div className="text-sm text-muted-foreground">Renewable Energy Usage</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">95%</div>
+                  <div className="text-3xl font-bold text-primary mb-2">95%</div>
                   <div className="text-sm text-muted-foreground">Waste Reduction</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">50+</div>
                   <div className="text-sm text-muted-foreground">Verified RWA Assets</div>
                 </div>
               </div>
@@ -93,10 +93,10 @@ export default function ESGPage() {
               >
                 <Card className="p-6 h-full">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                       <FiHeart size={24} />
                     </div>
-                    <span className="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">
+                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
                       {doc.category}
                     </span>
                   </div>
@@ -109,14 +109,10 @@ export default function ESGPage() {
                       href={doc.fileUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium text-center hover:bg-green-700 transition-colors"
+                      className="flex-1 bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/90 transition-colors"
                     >
                       View Document
                     </a>
-                    <button className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-muted transition-colors flex items-center gap-2">
-                      <FiDownload size={16} />
-                      Download
-                    </button>
                   </div>
                 </Card>
               </motion.div>
@@ -162,20 +158,20 @@ export default function ESGPage() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mt-8"
           >
-            <Card className="p-8 bg-green-50 border-green-200">
-              <h2 className="text-2xl font-semibold mb-4 text-green-800">Carbon Impact Dashboard</h2>
+            <Card className="p-8 bg-primary/5 border-primary/20">
+              <h2 className="text-2xl font-semibold mb-4 text-primary">Carbon Impact Dashboard</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-700 mb-2">2.3M</div>
-                  <div className="text-sm text-green-600">Tons CO2 Saved</div>
+                  <div className="text-2xl font-bold text-primary mb-2">2.3M</div>
+                  <div className="text-sm text-primary/80">Tons CO2 Saved</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-700 mb-2">1,250</div>
-                  <div className="text-sm text-green-600">IoT Devices Deployed</div>
+                  <div className="text-2xl font-bold text-primary mb-2">1,250</div>
+                  <div className="text-sm text-primary/80">IoT Devices Deployed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-700 mb-2">24/7</div>
-                  <div className="text-sm text-green-600">Real-time Monitoring</div>
+                  <div className="text-2xl font-bold text-primary mb-2">24/7</div>
+                  <div className="text-sm text-primary/80">Real-time Monitoring</div>
                 </div>
               </div>
             </Card>

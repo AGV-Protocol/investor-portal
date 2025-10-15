@@ -30,7 +30,7 @@ export async function getDocumentsByCategory(category: string): Promise<Document
       {
         title: "GitHub Repository Access",
         description: "Public repository containing core protocol implementations.",
-        fileUrl: "https://github.com/agv-protocol/core",
+        fileUrl: "https://github.com/agv-protocol",
         category: "tech",
       },
     ],

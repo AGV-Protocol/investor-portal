@@ -4,8 +4,9 @@ import Layout from '@/components/Layout';
 import SectionHeader from '@/components/SectionHeader';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
+import PDFViewer from '@/components/PDFViewer';
 import { motion } from 'framer-motion';
-import { FiSettings, FiBarChart, FiShield, FiHeart } from 'react-icons/fi';
+import { FiSettings, FiBarChart, FiShield, FiHeart, FiFile } from 'react-icons/fi';
 
 export default function Home() {
   const features = [
@@ -59,6 +60,59 @@ export default function Home() {
             <Button href="/contact" variant="outline" size="lg">
               Contact Us
             </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pitch Deck Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            title="Pitch Deck"
+            subtitle="Investment Presentation"
+            description="Review our comprehensive pitch deck covering AGV Protocol's vision, technology, market opportunity, and financial projections."
+            className="mb-12"
+          />
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-5xl mx-auto"
+          >
+            <Card className="p-8">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                    <FiFile size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">AGV Protocol Pitch Deck</h3>
+                    <p className="text-muted-foreground text-sm">Complete investment presentation</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-sm text-muted-foreground">Last updated</div>
+                  <div className="text-sm font-medium">December 2024</div>
+                </div>
+              </div>
+              
+              <div className="h-[600px] rounded-lg overflow-hidden border border-border">
+                <PDFViewer 
+                  fileUrl="https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf" 
+                  title="AGV Protocol Pitch Deck"
+                />
+              </div>
+              
+              <div className="mt-6 text-center">
+                <p className="text-sm text-muted-foreground mb-4">
+                  This presentation contains confidential information. Please review carefully and contact us for any questions.
+                </p>
+                <Button href="/contact" variant="outline" size="sm">
+                  Request Additional Information
+                </Button>
+              </div>
+            </Card>
           </motion.div>
         </div>
       </section>

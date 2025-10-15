@@ -6,7 +6,7 @@ import SectionHeader from '@/components/SectionHeader';
 import Card from '@/components/Card';
 import { getDocumentsByCategory, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
-import { FiFile, FiEye } from 'react-icons/fi';
+import { FiFile } from 'react-icons/fi';
 import Image from 'next/image';
 
 export default function BrandKitPage() {
@@ -164,20 +164,14 @@ export default function BrandKitPage() {
                   <h3 className="text-lg font-semibold mb-2">{doc.title}</h3>
                   <p className="text-muted-foreground text-sm mb-4">{doc.description}</p>
                   
-                  <div className="flex gap-2">
-                    <a
-                      href={doc.fileUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/90 transition-colors"
-                    >
-                      Download
-                    </a>
-                    <button className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-muted transition-colors flex items-center gap-2">
-                      <FiEye size={16} />
-                      Preview
-                    </button>
-                  </div>
+                  <a
+                    href={doc.fileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/90 transition-colors block"
+                  >
+                    View Document
+                  </a>
                 </Card>
               </motion.div>
             ))}
