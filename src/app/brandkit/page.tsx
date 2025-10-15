@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
-import SectionHeader from '@/components/SectionHeader';
 import Card from '@/components/Card';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { getDocumentsByCategory, Document } from '@/lib/firestore';
@@ -36,12 +35,26 @@ export default function BrandKitPage() {
       <Layout>
         <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <SectionHeader
-            title="AGRIVOLT PROTOCOL"
-            subtitle="BRAND GUIDE 2025"
-            description="Powering the Future of Intelligent Energy"
-            className="mb-16"
-          />
+          <div className="text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-[#223256] to-[#4FACFE] bg-clip-text text-transparent">
+                AGRIVOLT
+              </h1>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+                PROTOCOL
+              </h2>
+              <div className="text-xl md:text-2xl text-muted-foreground mb-8">
+                Brand Guide 2025
+              </div>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Powering the Future of Intelligent Energy
+              </p>
+            </motion.div>
+          </div>
 
             {/* Image Slider */}
           <motion.div
@@ -92,42 +105,57 @@ export default function BrandKitPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-16"
+            className="mb-20"
           >
-            <Card className="p-8">
-              <div className="text-center mb-8">
-                <h2 className="text-4xl font-bold mb-4">BRAND OVERVIEW</h2>
-                <div className="text-sm text-muted-foreground mb-6">01</div>
-              </div>
-              <div className="max-w-4xl mx-auto">
-                <div className="mb-8">
-                  <h3 className="text-2xl font-semibold mb-4">VISION</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    In the last century, oil fueled industrial wealth.<br />
-                    In this century, electricity + compute will fuel AI wealth.<br />
-                    AGV is the decentralized, investable, globally accessible gateway.
-                  </p>
+            <div className="bg-gradient-to-br from-[#223256]/5 to-[#4FACFE]/5 rounded-3xl p-12 border border-[#223256]/10">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-full text-white font-bold text-xl mb-6">
+                  01
                 </div>
-                
-                <div className="mb-8">
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    AGV Protocol redefines the Real-World Asset (RWA) category by bridging
-                    clean energy, artificial intelligence, and decentralized finance. More than a
-                    tokenized asset platform, AGV positions itself as the world's first
-                    decentralized AI Power ETF — an ecosystem where real electricity and
-                    compute capacity become liquid, yield-bearing digital assets.
-                  </p>
+                <h2 className="text-5xl font-bold mb-4 text-foreground">Brand Overview</h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-[#223256] to-[#4FACFE] mx-auto rounded-full"></div>
+              </div>
+              
+              <div className="max-w-5xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+                  <div>
+                    <h3 className="text-3xl font-bold mb-6 text-foreground">Our Vision</h3>
+                    <div className="space-y-4 text-lg leading-relaxed">
+                      <p className="text-muted-foreground">
+                        In the last century, <span className="font-semibold text-foreground">oil fueled industrial wealth</span>.
+                      </p>
+                      <p className="text-muted-foreground">
+                        In this century, <span className="font-semibold text-foreground">electricity + compute will fuel AI wealth</span>.
+                      </p>
+                      <p className="text-foreground font-semibold">
+                        AGV is the decentralized, investable, globally accessible gateway.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <h4 className="text-xl font-semibold mb-4 text-foreground">Our Mission</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      AGV Protocol redefines the Real-World Asset (RWA) category by bridging
+                      clean energy, artificial intelligence, and decentralized finance. More than a
+                      tokenized asset platform, AGV positions itself as the world&apos;s first
+                      decentralized AI Power ETF — an ecosystem where real electricity and
+                      compute capacity become liquid, yield-bearing digital assets.
+                    </p>
+                  </div>
                 </div>
                 
                 <div className="text-center">
-                  <h3 className="text-2xl font-semibold mb-2">TAGLINE</h3>
-                  <p className="text-xl font-medium text-primary">
-                    Real Energy. Real Yield.<br />
-                    Real Assets — On-Chain.
-                  </p>
+                  <div className="bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-2xl p-8 text-white">
+                    <h3 className="text-2xl font-semibold mb-4">Our Tagline</h3>
+                    <p className="text-3xl font-bold leading-tight">
+                      Real Energy. Real Yield.<br />
+                      <span className="text-white/90">Real Assets — On-Chain.</span>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </Card>
+            </div>
           </motion.div>
 
           {/* Logo System */}
@@ -135,176 +163,184 @@ export default function BrandKitPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-16"
+            className="mb-20"
           >
-            <Card className="p-8">
-              <div className="text-center mb-8">
-                <h2 className="text-4xl font-bold mb-4">LOGO SYSTEM</h2>
-                <div className="text-sm text-muted-foreground mb-6">02</div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 border border-white/20 shadow-xl">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-full text-white font-bold text-xl mb-6">
+                  02
+                </div>
+                <h2 className="text-5xl font-bold mb-4 text-foreground">Logo System</h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-[#223256] to-[#4FACFE] mx-auto rounded-full mb-8"></div>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  Our logo symbolizes growth, upward momentum, and dual energy flow. The ascending form reflects 
+                  continuous innovation, yield expansion, and sustainable progress within the decentralized energy network.
+                </p>
               </div>
               
-              <div className="max-w-4xl mx-auto">
-                <div className="mb-8">
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    The AGV Protocol logo symbolizes growth, upward momentum, and dual
-                    energy flow. Their ascending form reflects continuous innovation, yield expansion,
-                    and sustainable progress within the decentralized energy network.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    The gradient blue evokes clean technology, trust, and digital
-                    transparency, aligning with AGV's mission to power real-world yield through
-                    renewable and compute-based assets.
-                  </p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm border">
-                      <Image 
-                        src="/logo.png" 
-                        alt="AGV Protocol Logomark" 
-                        width={80}
-                        height={80}
-                        className="w-20 h-20 object-contain"
-                      />
-                    </div>
-                    <h3 className="font-semibold mb-2">LOGOMARK</h3>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-48 h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm border">
-                      <Image 
-                        src="/logo.png" 
-                        alt="AGV Protocol Primary Logo" 
-                        width={120}
-                        height={60}
-                        className="h-12 object-contain"
-                      />
-                    </div>
-                    <h3 className="font-semibold mb-2">PRIMARY LOGO</h3>
-                  </div>
-                </div>
-                
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4">USAGE ON BACKGROUND COLOURS</h3>
-                  <div className="grid md:grid-cols-3 gap-6">
+              <div className="max-w-6xl mx-auto">
+                {/* Primary Logo Variations */}
+                <div className="mb-16">
+                  <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Primary Logo Variations</h3>
+                  <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="text-center">
-                      <div className="w-24 h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm border">
+                      <div className="w-40 h-40 bg-gradient-to-br from-white to-gray-50 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg border border-gray-200">
+                        <Image 
+                          src="/logo.png" 
+                          alt="AGV Protocol Logomark" 
+                          width={100}
+                          height={100}
+                          className="w-24 h-24 object-contain"
+                        />
+                      </div>
+                      <h4 className="text-xl font-semibold mb-2 text-foreground">Logomark</h4>
+                      <p className="text-muted-foreground">Standalone symbol for compact spaces</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-64 h-32 bg-gradient-to-br from-white to-gray-50 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg border border-gray-200">
+                        <Image 
+                          src="/logo.png" 
+                          alt="AGV Protocol Primary Logo" 
+                          width={150}
+                          height={75}
+                          className="h-16 object-contain"
+                        />
+                      </div>
+                      <h4 className="text-xl font-semibold mb-2 text-foreground">Primary Logo</h4>
+                      <p className="text-muted-foreground">Full logo with wordmark for general use</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Background Usage */}
+                <div className="mb-16">
+                  <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Usage on Different Backgrounds</h3>
+                  <div className="grid md:grid-cols-3 gap-8">
+                    <div className="text-center">
+                      <div className="w-32 h-32 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg border border-gray-200">
                         <Image 
                           src="/logo.png" 
                           alt="AGV Protocol on White" 
-                          width={64}
-                          height={64}
-                          className="w-16 h-16 object-contain"
+                          width={80}
+                          height={80}
+                          className="w-20 h-20 object-contain"
                         />
                       </div>
-                      <p className="text-sm text-muted-foreground">White Background</p>
+                      <h4 className="font-semibold mb-2 text-foreground">White Background</h4>
+                      <p className="text-sm text-muted-foreground">Clean, professional appearance</p>
                     </div>
                     <div className="text-center">
-                      <div className="w-24 h-24 bg-[#223256] rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <div className="w-32 h-32 bg-[#223256] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                         <Image 
                           src="/logo.png" 
                           alt="AGV Protocol on Navy" 
-                          width={64}
-                          height={64}
-                          className="w-16 h-16 object-contain"
+                          width={80}
+                          height={80}
+                          className="w-20 h-20 object-contain"
                         />
                       </div>
-                      <p className="text-sm text-muted-foreground">Navy Background</p>
+                      <h4 className="font-semibold mb-2 text-foreground">Navy Background</h4>
+                      <p className="text-sm text-muted-foreground">Bold, authoritative presence</p>
                     </div>
                     <div className="text-center">
-                      <div className="w-24 h-24 bg-[#4FACFE] rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <div className="w-32 h-32 bg-[#4FACFE] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                         <Image 
                           src="/logo.png" 
                           alt="AGV Protocol on Sky Blue" 
-                          width={64}
-                          height={64}
-                          className="w-16 h-16 object-contain"
+                          width={80}
+                          height={80}
+                          className="w-20 h-20 object-contain"
                         />
                       </div>
-                      <p className="text-sm text-muted-foreground">Sky Blue Background</p>
+                      <h4 className="font-semibold mb-2 text-foreground">Sky Blue Background</h4>
+                      <p className="text-sm text-muted-foreground">Modern, tech-forward look</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4">CLEAR SPACING</h3>
-                  <p className="text-muted-foreground mb-4">
-                    The logo's clear space defines the distance between the logo and any graphic element
-                    it may be sitting next to in a composition. Use the cap height from the logomark as a
-                    reference for the appropriate clear space.
-                  </p>
-                  <div className="bg-gray-100 p-8 rounded-lg">
+                {/* Clear Spacing */}
+                <div className="mb-16">
+                  <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Clear Spacing Guidelines</h3>
+                  <div className="bg-gradient-to-r from-[#223256]/5 to-[#4FACFE]/5 rounded-2xl p-8">
+                    <p className="text-center text-muted-foreground mb-6">
+                      Maintain proper spacing around the logo to ensure visual clarity and brand integrity
+                    </p>
                     <div className="flex items-center justify-center">
-                      <div className="w-16 h-16 bg-primary rounded flex items-center justify-center mr-8">
+                      <div className="w-20 h-20 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-xl flex items-center justify-center mr-12">
                         <Image 
                           src="/logo.png" 
                           alt="AGV Protocol" 
+                          width={40}
+                          height={40}
+                          className="w-10 h-10 object-contain"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-semibold text-foreground mb-2">Clear Space</div>
+                        <div className="text-muted-foreground">Minimum distance = cap height of logomark</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Social Media & Favicon */}
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6 text-foreground">Social Media Avatars</h3>
+                    <div className="space-y-6">
+                      <div className="flex items-center bg-white/50 rounded-2xl p-4">
+                        <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mr-4 shadow-sm border">
+                          <Image 
+                            src="/logo.png" 
+                            alt="Square Avatar" 
+                            width={40}
+                            height={40}
+                            className="w-10 h-10 object-contain"
+                          />
+                        </div>
+                        <div>
+                          <div className="font-semibold text-foreground">Square Avatar</div>
+                          <div className="text-sm text-muted-foreground">LinkedIn, Facebook, and other square platforms</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center bg-white/50 rounded-2xl p-4">
+                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm border">
+                          <Image 
+                            src="/logo.png" 
+                            alt="Circle Avatar" 
+                            width={40}
+                            height={40}
+                            className="w-10 h-10 object-contain"
+                          />
+                        </div>
+                        <div>
+                          <div className="font-semibold text-foreground">Circle Avatar</div>
+                          <div className="text-sm text-muted-foreground">X, Instagram, and other circular platforms</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6 text-foreground">Favicon</h3>
+                    <div className="flex items-center bg-white/50 rounded-2xl p-4">
+                      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 shadow-sm border">
+                        <Image 
+                          src="/logo.png" 
+                          alt="Favicon" 
                           width={32}
                           height={32}
                           className="w-8 h-8 object-contain"
                         />
                       </div>
-                      <div className="text-sm text-muted-foreground">
-                        Clear space = cap height of logomark
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">SOCIAL MEDIA AVATARS</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 shadow-sm border">
-                          <Image 
-                            src="/logo.png" 
-                            alt="Square Avatar" 
-                            width={32}
-                            height={32}
-                            className="w-8 h-8 object-contain"
-                          />
-                        </div>
-                        <div>
-                          <div className="font-medium">SQUARE AVATAR</div>
-                          <div className="text-sm text-muted-foreground">Use on LinkedIn and any other platform that uses square avatars.</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center">
-                        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm border">
-                          <Image 
-                            src="/logo.png" 
-                            alt="Circle Avatar" 
-                            width={32}
-                            height={32}
-                            className="w-8 h-8 object-contain"
-                          />
-                        </div>
                       <div>
-                          <div className="font-medium">CIRCLE AVATAR</div>
-                          <div className="text-sm text-muted-foreground">Use on X, Instagram and any other platform that uses circle avatars.</div>
-                        </div>
+                        <div className="font-semibold text-foreground">Web Favicon</div>
+                        <div className="text-sm text-muted-foreground">16x16px for browser tabs and bookmarks</div>
                       </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">FAVICON</h3>
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-white rounded flex items-center justify-center mr-4 shadow-sm border">
-                        <Image 
-                          src="/logo.png" 
-                          alt="Favicon" 
-                          width={24}
-                          height={24}
-                          className="w-6 h-6 object-contain"
-                        />
-                      </div>
-                      <div className="text-sm text-muted-foreground">16x16px favicon for web browsers</div>
                     </div>
                   </div>
                 </div>
               </div>
-            </Card>
+            </div>
           </motion.div>
 
           {/* Color System */}
@@ -312,48 +348,79 @@ export default function BrandKitPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-16"
+            className="mb-20"
           >
-            <Card className="p-8">
-              <div className="text-center mb-8">
-                <h2 className="text-4xl font-bold mb-4">COLOUR SYSTEM</h2>
-                <div className="text-sm text-muted-foreground mb-6">03</div>
+            <div className="bg-gradient-to-br from-[#223256]/5 to-[#4FACFE]/5 rounded-3xl p-12 border border-[#223256]/10">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-full text-white font-bold text-xl mb-6">
+                  03
+                </div>
+                <h2 className="text-5xl font-bold mb-4 text-foreground">Color System</h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-[#223256] to-[#4FACFE] mx-auto rounded-full mb-8"></div>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  Our color palette reflects trust, innovation, and clean technology. Each color has been carefully 
+                  selected to convey our brand values and create a cohesive visual identity.
+                </p>
               </div>
               
-              <div className="max-w-4xl mx-auto">
-                <div className="mb-8">
-                  <h3 className="text-2xl font-semibold mb-6">PRIMARY PALETTE</h3>
+              <div className="max-w-6xl mx-auto">
+                {/* Primary Colors */}
+                <div className="mb-16">
+                  <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Primary Color Palette</h3>
                   <div className="grid md:grid-cols-3 gap-8">
                     <div className="text-center">
-                      <div className="w-24 h-24 bg-[#223256] rounded-xl mx-auto mb-4 shadow-sm"></div>
-                      <h4 className="font-semibold mb-2">NAVY BLUE</h4>
-                      <div className="text-sm text-muted-foreground mb-2">#223256</div>
-                      <div className="text-xs text-muted-foreground">60 / 42 / 0 / 66</div>
+                      <div className="w-32 h-32 bg-[#223256] rounded-3xl mx-auto mb-6 shadow-xl border-4 border-white"></div>
+                      <h4 className="text-xl font-bold mb-2 text-foreground">Navy Blue</h4>
+                      <div className="bg-white/80 rounded-xl p-4 mb-4">
+                        <div className="text-lg font-mono font-semibold text-[#223256] mb-2">#223256</div>
+                        <div className="text-sm text-muted-foreground mb-1">CMYK: 60 / 42 / 0 / 66</div>
+                        <div className="text-sm text-muted-foreground">RGB: 34 / 50 / 86</div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">Authority, trust, and stability</p>
                     </div>
                     <div className="text-center">
-                      <div className="w-24 h-24 bg-[#4FACFE] rounded-xl mx-auto mb-4 shadow-sm"></div>
-                      <h4 className="font-semibold mb-2">SKY BLUE</h4>
-                      <div className="text-sm text-muted-foreground mb-2">#4FACFE</div>
-                      <div className="text-xs text-muted-foreground">69 / 32 / 0 / 0</div>
+                      <div className="w-32 h-32 bg-[#4FACFE] rounded-3xl mx-auto mb-6 shadow-xl border-4 border-white"></div>
+                      <h4 className="text-xl font-bold mb-2 text-foreground">Sky Blue</h4>
+                      <div className="bg-white/80 rounded-xl p-4 mb-4">
+                        <div className="text-lg font-mono font-semibold text-[#4FACFE] mb-2">#4FACFE</div>
+                        <div className="text-sm text-muted-foreground mb-1">CMYK: 69 / 32 / 0 / 0</div>
+                        <div className="text-sm text-muted-foreground">RGB: 79 / 172 / 254</div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">Innovation, clarity, and technology</p>
                     </div>
                     <div className="text-center">
-                      <div className="w-24 h-24 bg-white border-2 border-gray-200 rounded-xl mx-auto mb-4 shadow-sm"></div>
-                      <h4 className="font-semibold mb-2">WHITE</h4>
-                      <div className="text-sm text-muted-foreground mb-2">#FFFFFF</div>
-                      <div className="text-xs text-muted-foreground">00 / 00 / 00 / 00</div>
+                      <div className="w-32 h-32 bg-white border-4 border-gray-200 rounded-3xl mx-auto mb-6 shadow-xl"></div>
+                      <h4 className="text-xl font-bold mb-2 text-foreground">White</h4>
+                      <div className="bg-white/80 rounded-xl p-4 mb-4">
+                        <div className="text-lg font-mono font-semibold text-gray-600 mb-2">#FFFFFF</div>
+                        <div className="text-sm text-muted-foreground mb-1">CMYK: 00 / 00 / 00 / 00</div>
+                        <div className="text-sm text-muted-foreground">RGB: 255 / 255 / 255</div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">Purity, simplicity, and clarity</p>
                     </div>
                   </div>
                 </div>
                 
-                <div>
-                  <h3 className="text-2xl font-semibold mb-6">GRADIENT PALETTE</h3>
-                  <div className="w-full h-24 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-xl shadow-sm mb-4"></div>
-                  <p className="text-sm text-muted-foreground text-center">
-                    Navy Blue to Sky Blue gradient for modern, dynamic applications
-                  </p>
+                {/* Gradient System */}
+                <div className="mb-16">
+                  <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Gradient System</h3>
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <div className="w-full h-32 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-2xl shadow-lg mb-6"></div>
+                    <div className="text-center">
+                      <h4 className="text-xl font-semibold mb-2 text-foreground">Primary Gradient</h4>
+                      <p className="text-muted-foreground mb-4">
+                        Navy Blue to Sky Blue gradient for modern, dynamic applications
+                      </p>
+                      <div className="bg-gray-50 rounded-xl p-4 inline-block">
+                        <div className="text-sm font-mono text-gray-600">
+                          background: linear-gradient(90deg, #223256 0%, #4FACFE 100%)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </Card>
+            </div>
           </motion.div>
 
           {/* Typography */}
@@ -513,24 +580,39 @@ export default function BrandKitPage() {
                   </p>
                 </div>
                 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  <div className="bg-gray-100 rounded-lg p-8 text-center">
-                    <div className="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-gray-500">Image Placeholder 1</span>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="group cursor-pointer">
+                    <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                      <Image
+                        src="/photography/photo1.png"
+                        alt="AGV Protocol Photography Style 1"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                    <p className="text-sm text-muted-foreground">Photography style example</p>
+                    <p className="text-sm text-muted-foreground mt-4 text-center">Clean Technology Focus</p>
                   </div>
-                  <div className="bg-gray-100 rounded-lg p-8 text-center">
-                    <div className="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-gray-500">Image Placeholder 2</span>
+                  <div className="group cursor-pointer">
+                    <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                      <Image
+                        src="/photography/photo2.png"
+                        alt="AGV Protocol Photography Style 2"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                    <p className="text-sm text-muted-foreground">Photography style example</p>
+                    <p className="text-sm text-muted-foreground mt-4 text-center">Energy Innovation</p>
                   </div>
-                  <div className="bg-gray-100 rounded-lg p-8 text-center">
-                    <div className="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-gray-500">Image Placeholder 3</span>
+                  <div className="group cursor-pointer">
+                    <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                      <Image
+                        src="/photography/photo3.png"
+                        alt="AGV Protocol Photography Style 3"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                    <p className="text-sm text-muted-foreground">Photography style example</p>
+                    <p className="text-sm text-muted-foreground mt-4 text-center">Sustainable Future</p>
                   </div>
                 </div>
               </div>
