@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import SectionHeader from '@/components/SectionHeader';
 import Card from '@/components/Card';
 import PDFViewer from '@/components/PDFViewer';
+import ProtectedRoute from '@/components/ProtectedRoute';
 import { getDocumentsByCategory, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
 import { FiFile } from 'react-icons/fi';
@@ -21,8 +22,9 @@ export default function LegalPage() {
   }, []);
 
   return (
-    <Layout>
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <ProtectedRoute>
+      <Layout>
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
             title="Legal & Registration Documents"
@@ -163,7 +165,8 @@ export default function LegalPage() {
             </Card>
           </motion.div>
         </div>
-      </section>
-    </Layout>
+        </section>
+      </Layout>
+    </ProtectedRoute>
   );
 }

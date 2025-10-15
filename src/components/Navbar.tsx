@@ -4,10 +4,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiLogOut, FiUser } from 'react-icons/fi';
 import Button from './Button';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isAuthenticated, user, logout } = useAuth();
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -54,6 +57,24 @@ export default function Navbar() {
             <Button href="/investor" variant="primary" size="sm">
               Data Room
             </Button>
+            
+            {/* User Menu */}
+            {isAuthenticated && (
+              <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-border">
+                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                  <FiUser size={16} />
+                  <span>{user?.email}</span>
+                </div>
+                <button
+                  onClick={logout}
+                  className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors"
+                  title="Logout"
+                >
+                  <FiLogOut size={16} />
+                  <span className="text-sm">Logout</span>
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -98,6 +119,26 @@ export default function Navbar() {
                     Data Room
                   </Button>
                 </div>
+                
+                {/* Mobile User Menu */}
+                {isAuthenticated && (
+                  <div className="px-3 pt-4 border-t border-border">
+                    <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-3">
+                      <FiUser size={16} />
+                      <span>{user?.email}</span>
+                    </div>
+                    <button
+                      onClick={() => {
+                        logout();
+                        setIsMenuOpen(false);
+                      }}
+                      className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors w-full py-2"
+                    >
+                      <FiLogOut size={16} />
+                      <span>Logout</span>
+                    </button>
+                  </div>
+                )}
               </div>
             </motion.div>
           )}
