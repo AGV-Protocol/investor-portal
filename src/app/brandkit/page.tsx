@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
 import Card from '@/components/Card';
-import ProtectedRoute from '@/components/ProtectedRoute';
 import { getDocumentsByCategory, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
 import { FiFile } from 'react-icons/fi';
@@ -25,15 +24,14 @@ export default function BrandKitPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev >= 31 ? 1 : prev + 1));
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <ProtectedRoute>
-      <Layout>
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <Layout>
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <motion.div
@@ -56,7 +54,7 @@ export default function BrandKitPage() {
             </motion.div>
           </div>
 
-            {/* Image Slider */}
+          {/* Image Slider */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,7 +113,7 @@ export default function BrandKitPage() {
                 <h2 className="text-5xl font-bold mb-4 text-foreground">Brand Overview</h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#223256] to-[#4FACFE] mx-auto rounded-full"></div>
               </div>
-              
+
               <div className="max-w-5xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
                   <div>
@@ -132,7 +130,7 @@ export default function BrandKitPage() {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                     <h4 className="text-xl font-semibold mb-4 text-foreground">Our Mission</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -144,7 +142,7 @@ export default function BrandKitPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-2xl p-8 text-white">
                     <h3 className="text-2xl font-semibold mb-4">Our Tagline</h3>
@@ -173,11 +171,11 @@ export default function BrandKitPage() {
                 <h2 className="text-5xl font-bold mb-4 text-foreground">Logo System</h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#223256] to-[#4FACFE] mx-auto rounded-full mb-8"></div>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Our logo symbolizes growth, upward momentum, and dual energy flow. The ascending form reflects 
+                  Our logo symbolizes growth, upward momentum, and dual energy flow. The ascending form reflects
                   continuous innovation, yield expansion, and sustainable progress within the decentralized energy network.
                 </p>
               </div>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Primary Logo Variations */}
                 <div className="mb-16">
@@ -185,9 +183,9 @@ export default function BrandKitPage() {
                   <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="text-center">
                       <div className="w-40 h-40 bg-gradient-to-br from-white to-gray-50 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg border border-gray-200">
-                        <Image 
-                          src="/logo.png" 
-                          alt="AGV Protocol Logomark" 
+                        <Image
+                          src="/logo.png"
+                          alt="AGV Protocol Logomark"
                           width={100}
                           height={100}
                           className="w-24 h-24 object-contain"
@@ -198,9 +196,9 @@ export default function BrandKitPage() {
                     </div>
                     <div className="text-center">
                       <div className="w-64 h-32 bg-gradient-to-br from-white to-gray-50 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg border border-gray-200">
-                        <Image 
-                          src="/logo.png" 
-                          alt="AGV Protocol Primary Logo" 
+                        <Image
+                          src="/logo.png"
+                          alt="AGV Protocol Primary Logo"
                           width={150}
                           height={75}
                           className="h-16 object-contain"
@@ -211,16 +209,16 @@ export default function BrandKitPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Background Usage */}
                 <div className="mb-16">
                   <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Usage on Different Backgrounds</h3>
                   <div className="grid md:grid-cols-3 gap-8">
                     <div className="text-center">
                       <div className="w-32 h-32 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg border border-gray-200">
-                        <Image 
-                          src="/logo.png" 
-                          alt="AGV Protocol on White" 
+                        <Image
+                          src="/logo.png"
+                          alt="AGV Protocol on White"
                           width={80}
                           height={80}
                           className="w-20 h-20 object-contain"
@@ -231,9 +229,9 @@ export default function BrandKitPage() {
                     </div>
                     <div className="text-center">
                       <div className="w-32 h-32 bg-[#223256] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <Image 
-                          src="/logo.png" 
-                          alt="AGV Protocol on Navy" 
+                        <Image
+                          src="/logo.png"
+                          alt="AGV Protocol on Navy"
                           width={80}
                           height={80}
                           className="w-20 h-20 object-contain"
@@ -244,9 +242,9 @@ export default function BrandKitPage() {
                     </div>
                     <div className="text-center">
                       <div className="w-32 h-32 bg-[#4FACFE] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <Image 
-                          src="/logo.png" 
-                          alt="AGV Protocol on Sky Blue" 
+                        <Image
+                          src="/logo.png"
+                          alt="AGV Protocol on Sky Blue"
                           width={80}
                           height={80}
                           className="w-20 h-20 object-contain"
@@ -257,7 +255,7 @@ export default function BrandKitPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Clear Spacing */}
                 <div className="mb-16">
                   <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Clear Spacing Guidelines</h3>
@@ -267,9 +265,9 @@ export default function BrandKitPage() {
                     </p>
                     <div className="flex items-center justify-center">
                       <div className="w-20 h-20 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-xl flex items-center justify-center mr-12">
-                        <Image 
-                          src="/logo.png" 
-                          alt="AGV Protocol" 
+                        <Image
+                          src="/logo.png"
+                          alt="AGV Protocol"
                           width={40}
                           height={40}
                           className="w-10 h-10 object-contain"
@@ -282,7 +280,7 @@ export default function BrandKitPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Social Media & Favicon */}
                 <div className="grid md:grid-cols-2 gap-12">
                   <div>
@@ -290,9 +288,9 @@ export default function BrandKitPage() {
                     <div className="space-y-6">
                       <div className="flex items-center bg-white/50 rounded-2xl p-4">
                         <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mr-4 shadow-sm border">
-                          <Image 
-                            src="/logo.png" 
-                            alt="Square Avatar" 
+                          <Image
+                            src="/logo.png"
+                            alt="Square Avatar"
                             width={40}
                             height={40}
                             className="w-10 h-10 object-contain"
@@ -305,9 +303,9 @@ export default function BrandKitPage() {
                       </div>
                       <div className="flex items-center bg-white/50 rounded-2xl p-4">
                         <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm border">
-                          <Image 
-                            src="/logo.png" 
-                            alt="Circle Avatar" 
+                          <Image
+                            src="/logo.png"
+                            alt="Circle Avatar"
                             width={40}
                             height={40}
                             className="w-10 h-10 object-contain"
@@ -324,9 +322,9 @@ export default function BrandKitPage() {
                     <h3 className="text-2xl font-bold mb-6 text-foreground">Favicon</h3>
                     <div className="flex items-center bg-white/50 rounded-2xl p-4">
                       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 shadow-sm border">
-                        <Image 
-                          src="/logo.png" 
-                          alt="Favicon" 
+                        <Image
+                          src="/logo.png"
+                          alt="Favicon"
                           width={32}
                           height={32}
                           className="w-8 h-8 object-contain"
@@ -358,11 +356,11 @@ export default function BrandKitPage() {
                 <h2 className="text-5xl font-bold mb-4 text-foreground">Color System</h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#223256] to-[#4FACFE] mx-auto rounded-full mb-8"></div>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Our color palette reflects trust, innovation, and clean technology. Each color has been carefully 
+                  Our color palette reflects trust, innovation, and clean technology. Each color has been carefully
                   selected to convey our brand values and create a cohesive visual identity.
                 </p>
               </div>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Primary Colors */}
                 <div className="mb-16">
@@ -400,7 +398,7 @@ export default function BrandKitPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Gradient System */}
                 <div className="mb-16">
                   <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Gradient System</h3>
@@ -435,7 +433,7 @@ export default function BrandKitPage() {
                 <h2 className="text-4xl font-bold mb-4">TYPOGRAPHY</h2>
                 <div className="text-sm text-muted-foreground mb-6">04</div>
               </div>
-              
+
               <div className="max-w-4xl mx-auto">
                 <div className="mb-8">
                   <h3 className="text-2xl font-semibold mb-6">PRIMARY TYPEFACE</h3>
@@ -454,7 +452,7 @@ export default function BrandKitPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="mb-8">
                   <h3 className="text-2xl font-semibold mb-6">SECONDARY TYPEFACE</h3>
                   <div className="bg-gray-50 p-6 rounded-lg mb-4">
@@ -472,7 +470,7 @@ export default function BrandKitPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="mb-8">
                   <h3 className="text-2xl font-semibold mb-6">USAGE</h3>
                   <div className="space-y-6">
@@ -491,7 +489,7 @@ export default function BrandKitPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="mb-8">
                   <h3 className="text-2xl font-semibold mb-6">LINE SPACING / LEADING</h3>
                   <div className="space-y-4">
@@ -517,7 +515,7 @@ export default function BrandKitPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 className="text-2xl font-semibold mb-6">BODY USAGE</h3>
                   <div className="space-y-4">
@@ -571,7 +569,7 @@ export default function BrandKitPage() {
                 <h2 className="text-4xl font-bold mb-4">PHOTOGRAPHY</h2>
                 <div className="text-sm text-muted-foreground mb-6">05</div>
               </div>
-              
+
               <div className="max-w-4xl mx-auto">
                 <div className="mb-8">
                   <p className="text-muted-foreground leading-relaxed mb-6">
@@ -579,7 +577,7 @@ export default function BrandKitPage() {
                     visual aesthetic and style is specific to the brand.
                   </p>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div className="group cursor-pointer">
                     <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
@@ -631,7 +629,7 @@ export default function BrandKitPage() {
                 <h2 className="text-4xl font-bold mb-4">APPLICATIONS</h2>
                 <div className="text-sm text-muted-foreground mb-6">06</div>
               </div>
-              
+
               <div className="max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-100 rounded-lg p-8 text-center">
@@ -643,7 +641,7 @@ export default function BrandKitPage() {
                   <div className="bg-gray-100 rounded-lg p-8 text-center">
                     <div className="w-full h-64 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
                       <span className="text-gray-500">Application Example 2</span>
-                </div>
+                    </div>
                     <p className="text-sm text-muted-foreground">Brand application example</p>
                   </div>
                 </div>
@@ -669,10 +667,10 @@ export default function BrandKitPage() {
                       {doc.category}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-lg font-semibold mb-2">{doc.title}</h3>
                   <p className="text-muted-foreground text-sm mb-4">{doc.description}</p>
-                  
+
                   <a
                     href={doc.fileUrl}
                     target="_blank"
@@ -722,8 +720,7 @@ export default function BrandKitPage() {
             </Card>
           </motion.div>
         </div>
-        </section>
-      </Layout>
-    </ProtectedRoute>
+      </section>
+    </Layout>
   );
 }
