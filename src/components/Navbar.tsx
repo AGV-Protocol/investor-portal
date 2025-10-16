@@ -11,7 +11,7 @@ import { useAuth } from '@/contexts/AuthContext';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
   const userMenuRef = useRef<HTMLDivElement>(null);
 
   // Close user menu when clicking outside
@@ -74,63 +74,6 @@ export default function Navbar() {
               Data Room
             </Button>
             
-            {/* User Menu */}
-            {isAuthenticated && (
-              <div className="relative ml-4 pl-4 border-l border-border" ref={userMenuRef}>
-                <button
-                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-muted transition-colors"
-                  title="User menu"
-                >
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <FiUser size={16} className="text-primary" />
-                  </div>
-                  <FiChevronDown 
-                    size={14} 
-                    className={`text-muted-foreground transition-transform duration-200 ${
-                      isUserMenuOpen ? 'rotate-180' : ''
-                    }`} 
-                  />
-                </button>
-
-                {/* User Dropdown Menu */}
-                <AnimatePresence>
-                  {isUserMenuOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                      transition={{ duration: 0.15 }}
-                      className="absolute right-0 mt-2 w-64 bg-white border border-border rounded-lg shadow-lg z-50"
-                    >
-                      <div className="p-4 border-b border-border">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                            <FiUser size={18} className="text-primary" />
-                          </div>
-                          <div>
-                            <p className="text-sm font-medium text-foreground">Signed in as</p>
-                            <p className="text-sm text-muted-foreground truncate">{user?.email}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="p-2">
-                        <button
-                          onClick={() => {
-                            logout();
-                            setIsUserMenuOpen(false);
-                          }}
-                          className="w-full flex items-center space-x-3 px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
-                        >
-                          <FiLogOut size={16} />
-                          <span>Sign out</span>
-                        </button>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            )}
           </div>
 
           {/* Mobile menu button */}
@@ -176,30 +119,6 @@ export default function Navbar() {
                   </Button>
                 </div>
                 
-                {/* Mobile User Menu */}
-                {isAuthenticated && (
-                  <div className="px-3 pt-4 border-t border-border">
-                    <div className="flex items-center space-x-3 mb-3 p-3 bg-muted/50 rounded-lg">
-                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                        <FiUser size={16} className="text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-medium text-foreground">Signed in as</p>
-                        <p className="text-sm text-muted-foreground truncate">{user?.email}</p>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => {
-                        logout();
-                        setIsMenuOpen(false);
-                      }}
-                      className="flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors w-full py-2 px-3 rounded-lg hover:bg-muted"
-                    >
-                      <FiLogOut size={16} />
-                      <span>Sign out</span>
-                    </button>
-                  </div>
-                )}
               </div>
             </motion.div>
           )}
