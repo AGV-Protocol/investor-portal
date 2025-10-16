@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { extractDriveFileId } from '@/lib/client-utils';
 
 interface PDFViewerProps {
   fileUrl: string;
@@ -10,6 +11,37 @@ interface PDFViewerProps {
 export default function PDFViewer({ fileUrl, title, className = '' }: PDFViewerProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [processedUrl, setProcessedUrl] = useState(fileUrl);
+
+  // Process Google Drive URLs to use service account
+  useEffect(() => {
+    const processUrl = async () => {
+      const driveFileId = extractDriveFileId(fileUrl);
+      
+      if (driveFileId) {
+        // If it's a Google Drive URL, use our API endpoint
+        try {
+          const response = await fetch(`/api/drive/${driveFileId}/preview`);
+          if (response.ok) {
+            const data = await response.json();
+            setProcessedUrl(data.url);
+          } else {
+            console.error('Failed to get Google Drive URL:', response.statusText);
+            setProcessedUrl(fileUrl); // Fallback to original URL
+          }
+        } catch (error) {
+          console.error('Error processing Google Drive URL:', error);
+          setProcessedUrl(fileUrl); // Fallback to original URL
+        }
+      } else {
+        // Not a Google Drive URL, use as-is
+        setProcessedUrl(fileUrl);
+      }
+    };
+
+    processUrl();
+  }, [fileUrl]);
+
 
   const handleLoad = () => {
     setIsLoading(false);
@@ -55,7 +87,7 @@ export default function PDFViewer({ fileUrl, title, className = '' }: PDFViewerP
                 This document cannot be previewed in the browser.
               </p>
               <a
-                href={fileUrl}
+                href={processedUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
@@ -72,7 +104,7 @@ export default function PDFViewer({ fileUrl, title, className = '' }: PDFViewerP
 
       {!hasError && (
         <iframe
-          src={fileUrl}
+          src={processedUrl}
           title={title}
           className="w-full h-full min-h-[400px] rounded-lg border-0"
           onLoad={handleLoad}

@@ -89,6 +89,42 @@ export default function Home() {
           />
           
           <div className="grid lg:grid-cols-2 gap-8">
+            
+            {/* Executive Summary */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Card className="p-8 h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                    <FiFile size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">Executive Summary</h3>
+                    <p className="text-muted-foreground text-sm">Quick overview and key metrics</p>
+                  </div>
+                </div>
+                
+                <div className="h-[500px] rounded-lg overflow-hidden border border-border mb-6">
+                  <PDFViewer
+                    fileUrl="https://drive.google.com/file/d/1iGTCO2jI9302wU6QIGsDmfsY5FI3Q_t7/view"
+                    title="AGV Protocol Pitch Deck"
+                  />
+                </div>
+
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Comprehensive presentation covering vision, technology, and financial projections.
+                  </p>
+                  <Button href="/contact" variant="outline" size="sm" className='border-1 border-primary text-primary'>
+                    Request Additional Information
+                  </Button>
+                </div>
+              </Card>
+            </motion.div>
+
             {/* Pitch Deck */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -111,42 +147,7 @@ export default function Home() {
                     <div className="text-sm font-medium">December 2024</div>
                   </div>
                 </div>
-                
-                <div className="h-[500px] rounded-lg overflow-hidden border border-border mb-6">
-                  <PDFViewer 
-                    fileUrl="https://drive.google.com/file/d/11N8RXY9NnAQd9bi-nyvCBco2l6c0vZVo/view" 
-                    title="AGV Protocol Pitch Deck"
-                  />
-                </div>
-                
-                <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Comprehensive presentation covering vision, technology, and financial projections.
-                  </p>
-                  <Button href="/contact" variant="outline" size="sm">
-                    Request Additional Information
-                  </Button>
-                </div>
-              </Card>
-            </motion.div>
 
-            {/* Executive Summary */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <Card className="p-8 h-full">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                    <FiFile size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold">Executive Summary</h3>
-                    <p className="text-muted-foreground text-sm">Quick overview and key metrics</p>
-                  </div>
-                </div>
-                
                 <div className="h-[500px] rounded-lg overflow-hidden border border-border mb-6">
                   <PDFViewer
                     fileUrl="https://drive.google.com/file/d/11N8RXY9NnAQd9bi-nyvCBco2l6c0vZVo/view"
@@ -156,14 +157,21 @@ export default function Home() {
 
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-4">
-                    Comprehensive presentation covering vision, technology, and financial projections.
+                    This presentation above includes confidential information. Please review carefully and contact us for additional information.
                   </p>
-                  <Button href="/contact" variant="outline" size="sm">
+                  <Button variant="outline" size="sm" className='border-1 border-primary text-primary'>
+                    Download Pitch Deck
+                  </Button>
+                  <Button href="/contact" variant="outline" size="sm" className='border-1 border-primary text-primary mx-2'>
                     Request Additional Information
+                  </Button>
+                  <Button href="/contact" variant="outline" size="sm" className='border-1 border-primary text-primary'>
+                    Contact BD Team
                   </Button>
                 </div>
               </Card>
             </motion.div>
+
           </div>
         </div>
       </section>
