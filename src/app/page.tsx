@@ -7,6 +7,7 @@ import Card from '@/components/Card';
 import PDFViewer from '@/components/PDFViewer';
 import { motion } from 'framer-motion';
 import { FiSettings, FiBarChart, FiShield, FiHeart, FiFile } from 'react-icons/fi';
+import Image from 'next/image';
 
 export default function Home() {
   const features = [
@@ -39,13 +40,26 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/landing-hero.png"
+            alt="AGV Protocol - Sustainable Energy Infrastructure"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto">
           <SectionHeader
             title="AGV Protocol Investor Portal"
             subtitle="Welcome"
             description="Access comprehensive documentation, financial models, and technical resources for AGV Protocol's innovative blockchain infrastructure."
             className="mb-16"
+            variant="white"
           />
           
           <motion.div
@@ -57,127 +71,100 @@ export default function Home() {
             <Button href="/investor" variant="primary" size="lg" className="mr-4">
               Explore Data Room
             </Button>
-            <Button href="/contact" variant="outline" size="lg">
+            <Button href="/contact" variant="outline" size="lg" className="text-white hover:text-primary">
               Contact Us
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Pitch Deck Section */}
+      {/* Pitch Deck and Executive Summary Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            title="Pitch Deck"
-            subtitle="Investment Presentation"
-            description="Review our comprehensive pitch deck covering AGV Protocol's vision, technology, market opportunity, and financial projections."
+            title="Investment Materials"
+            subtitle="Key Documents"
+            description="Review our comprehensive pitch deck and executive summary covering AGV Protocol's vision, technology, and market opportunity."
             className="mb-12"
           />
           
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-5xl mx-auto"
-          >
-            <Card className="p-8">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Pitch Deck */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="p-8 h-full">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                      <FiFile size={24} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold">Pitch Deck</h3>
+                      <p className="text-muted-foreground text-sm">Complete investment presentation</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-muted-foreground">Last updated</div>
+                    <div className="text-sm font-medium">December 2024</div>
+                  </div>
+                </div>
+                
+                <div className="h-[500px] rounded-lg overflow-hidden border border-border mb-6">
+                  <PDFViewer 
+                    fileUrl="https://drive.google.com/file/d/11N8RXY9NnAQd9bi-nyvCBco2l6c0vZVo/view" 
+                    title="AGV Protocol Pitch Deck"
+                  />
+                </div>
+                
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Comprehensive presentation covering vision, technology, and financial projections.
+                  </p>
+                  <Button href="/contact" variant="outline" size="sm">
+                    Request Additional Information
+                  </Button>
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* Executive Summary */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Card className="p-8 h-full">
+                <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                     <FiFile size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold">AGV Protocol Pitch Deck</h3>
-                    <p className="text-muted-foreground text-sm">Complete investment presentation</p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-sm text-muted-foreground">Last updated</div>
-                  <div className="text-sm font-medium">December 2024</div>
-                </div>
-              </div>
-              
-              <div className="h-[600px] rounded-lg overflow-hidden border border-border">
-                <PDFViewer 
-                  fileUrl="https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf" 
-                  title="AGV Protocol Pitch Deck"
-                />
-              </div>
-              
-              <div className="mt-6 text-center">
-                <p className="text-sm text-muted-foreground mb-4">
-                  This presentation contains confidential information. Please review carefully and contact us for any questions.
-                </p>
-                <Button href="/contact" variant="outline" size="sm">
-                  Request Additional Information
-                </Button>
-              </div>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* One-Pager Preview */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary">
-        <div className="max-w-7xl mx-auto">
-          <SectionHeader
-            title="Executive Summary"
-            subtitle="One-Pager"
-            description="Get a quick overview of AGV Protocol's vision, technology, and market opportunity."
-            className="mb-12"
-          />
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-4xl mx-auto"
-          >
-            <Card className="p-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
-                  <p className="text-muted-foreground mb-6">
-                    AGV Protocol bridges the gap between real-world assets and blockchain technology, 
-                    creating a sustainable infrastructure for IoT-enabled asset tokenization.
-                  </p>
-                  
-                  <h3 className="text-xl font-semibold mb-4">Key Metrics</h3>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Market Size:</span>
-                      <span className="font-medium">$2.5T+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Target ROI:</span>
-                      <span className="font-medium">25-40%</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Timeline:</span>
-                      <span className="font-medium">18-24 months</span>
-                    </div>
+                    <h3 className="text-xl font-semibold">Executive Summary</h3>
+                    <p className="text-muted-foreground text-sm">Quick overview and key metrics</p>
                   </div>
                 </div>
                 
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Technology Stack</h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• Blockchain Infrastructure</li>
-                    <li>• IoT Device Integration</li>
-                    <li>• Smart Contract Automation</li>
-                    <li>• Real-time Data Feeds</li>
-                    <li>• Carbon Tracking</li>
-                  </ul>
-                  
-                  <div className="mt-6">
-                    <Button href="/tech" variant="outline" size="sm">
-                      Learn More
-                    </Button>
-                  </div>
+                <div className="h-[500px] rounded-lg overflow-hidden border border-border mb-6">
+                  <PDFViewer
+                    fileUrl="https://drive.google.com/file/d/11N8RXY9NnAQd9bi-nyvCBco2l6c0vZVo/view"
+                    title="AGV Protocol Pitch Deck"
+                  />
                 </div>
-              </div>
-            </Card>
-          </motion.div>
+
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Comprehensive presentation covering vision, technology, and financial projections.
+                  </p>
+                  <Button href="/contact" variant="outline" size="sm">
+                    Request Additional Information
+                  </Button>
+                </div>
+              </Card>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -238,7 +225,7 @@ export default function Home() {
               </Button>
             </div>
           </motion.div>
-    </div>
+        </div>
       </section>
     </Layout>
   );

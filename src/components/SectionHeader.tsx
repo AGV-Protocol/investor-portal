@@ -6,6 +6,7 @@ interface SectionHeaderProps {
   subtitle?: string;
   description?: string;
   className?: string;
+  variant?: 'default' | 'white';
 }
 
 export default function SectionHeader({
@@ -13,6 +14,7 @@ export default function SectionHeader({
   subtitle,
   description,
   className = '',
+  variant = 'default',
 }: SectionHeaderProps) {
   return (
     <motion.div
@@ -26,7 +28,9 @@ export default function SectionHeader({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-primary font-medium text-sm uppercase tracking-wider mb-2"
+          className={`font-medium text-sm uppercase tracking-wider mb-2 ${
+            variant === 'white' ? 'text-white/90' : 'text-primary'
+          }`}
         >
           {subtitle}
         </motion.p>
@@ -35,7 +39,9 @@ export default function SectionHeader({
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-4xl md:text-5xl font-bold text-foreground mb-4"
+        className={`text-4xl md:text-5xl font-bold mb-4 ${
+          variant === 'white' ? 'text-white' : 'text-foreground'
+        }`}
       >
         {title}
       </motion.h1>
@@ -44,7 +50,9 @@ export default function SectionHeader({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-lg text-muted-foreground leading-relaxed"
+          className={`text-lg leading-relaxed ${
+            variant === 'white' ? 'text-white/90' : 'text-muted-foreground'
+          }`}
         >
           {description}
         </motion.p>

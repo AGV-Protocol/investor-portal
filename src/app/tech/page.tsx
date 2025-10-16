@@ -45,8 +45,9 @@ export default function TechPage() {
                 <p className="text-muted-foreground mb-6">
                   Comprehensive overview of AGV Protocol&apos;s blockchain infrastructure and IoT integration layers.
                 </p>
-              <div className="h-96">
+              <div className="">
                 <PDFViewer 
+                className='!h-[50pc]'
                   fileUrl="https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf" 
                   title="AGV Protocol Architecture"
                 />

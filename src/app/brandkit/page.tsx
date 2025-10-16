@@ -438,10 +438,10 @@ export default function BrandKitPage() {
                 <div className="mb-8">
                   <h3 className="text-2xl font-semibold mb-6">PRIMARY TYPEFACE</h3>
                   <div className="bg-gray-50 p-6 rounded-lg mb-4">
-                    <div className="text-2xl font-bold mb-2" style={{ fontFamily: 'Lato, sans-serif' }}>
+                    <div className="text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-lato)' }}>
                       LATO
                     </div>
-                    <div className="text-lg mb-4" style={{ fontFamily: 'Lato, sans-serif' }}>
+                    <div className="text-lg mb-4 tracking-widest" style={{ fontFamily: 'var(--font-lato)' }}>
                       AaABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
                       abcdefghijklmnopqrstuvwxyz<br />
                       1234567890<br />
@@ -456,10 +456,10 @@ export default function BrandKitPage() {
                 <div className="mb-8">
                   <h3 className="text-2xl font-semibold mb-6">SECONDARY TYPEFACE</h3>
                   <div className="bg-gray-50 p-6 rounded-lg mb-4">
-                    <div className="text-2xl font-bold mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <div className="text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-inter)' }}>
                       INTER
                     </div>
-                    <div className="text-lg mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <div className="text-lg mb-4 tracking-widest" style={{ fontFamily: 'var(--font-inter)' }}>
                       AaABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
                       abcdefghijklmnopqrstuvwxyz<br />
                       1234567890<br />
@@ -475,11 +475,11 @@ export default function BrandKitPage() {
                   <h3 className="text-2xl font-semibold mb-6">USAGE</h3>
                   <div className="space-y-6">
                     <div>
-                      <div className="text-6xl font-bold mb-2" style={{ fontFamily: 'Lato, sans-serif' }}>AGV</div>
+                      <div className="text-6xl font-bold mb-2" style={{ fontFamily: 'var(--font-lato)' }}>AGV</div>
                       <div className="text-sm text-muted-foreground">XXL Title - 96PX</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold mb-2" style={{ fontFamily: 'Lato, sans-serif' }}>AGV</div>
+                      <div className="text-4xl font-bold mb-2" style={{ fontFamily: 'var(--font-lato)' }}>AGV</div>
                       <div className="text-sm text-muted-foreground">XL Title - 64PX</div>
                     </div>
                     <p className="text-sm text-muted-foreground">
@@ -494,24 +494,19 @@ export default function BrandKitPage() {
                   <h3 className="text-2xl font-semibold mb-6">LINE SPACING / LEADING</h3>
                   <div className="space-y-4">
                     <div>
-                      <div className="text-2xl font-semibold mb-1" style={{ fontFamily: 'Lato, sans-serif' }}>H1 - 32PX</div>
-                      <div className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur</div>
+                      <div className="text-2xl font-semibold mb-1" style={{ fontFamily: 'var(--font-lato)' }}>H1 - 32PX</div>
                     </div>
                     <div>
-                      <div className="text-xl font-semibold mb-1" style={{ fontFamily: 'Lato, sans-serif' }}>H2 - 24PX</div>
-                      <div className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur</div>
+                      <div className="text-xl font-semibold mb-1" style={{ fontFamily: 'var(--font-lato)' }}>H2 - 24PX</div>
                     </div>
                     <div>
-                      <div className="text-lg font-semibold mb-1" style={{ fontFamily: 'Lato, sans-serif' }}>H3 - 20PX</div>
-                      <div className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur</div>
+                      <div className="text-lg font-semibold mb-1" style={{ fontFamily: 'var(--font-lato)' }}>H3 - 20PX</div>
                     </div>
                     <div>
-                      <div className="text-base font-semibold mb-1" style={{ fontFamily: 'Lato, sans-serif' }}>H4 - 16PX</div>
-                      <div className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur</div>
+                      <div className="text-base font-semibold mb-1" style={{ fontFamily: 'var(--font-lato)' }}>H4 - 16PX</div>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold mb-1" style={{ fontFamily: 'Lato, sans-serif' }}>H5 - 14PX</div>
-                      <div className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur</div>
+                      <div className="text-sm font-semibold mb-1" style={{ fontFamily: 'var(--font-lato)' }}>H5 - 14PX</div>
                     </div>
                   </div>
                 </div>
@@ -520,32 +515,32 @@ export default function BrandKitPage() {
                   <h3 className="text-2xl font-semibold mb-6">BODY USAGE</h3>
                   <div className="space-y-4">
                     <div>
-                      <div className="text-base mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Body Large - 16PX</div>
-                      <div className="text-sm text-muted-foreground" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      <div className="text-base mb-2" style={{ fontFamily: 'var(--font-inter)' }}>Body Large - 16PX</div>
+                      <div className="text-sm text-muted-foreground" style={{ fontFamily: 'var(--font-inter)' }}>
                         Lorem ipsum dolor sit amet consectetur adipiscing elit mus mollis ac, sociis malesuada
                         sollicitudin fringilla vivamus aenean imperdiet nec rhoncus, nunc posuere nostra
                         fermentum maecenas commodo vitae ornare nibh.
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Body Medium - 14PX</div>
-                      <div className="text-sm text-muted-foreground" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      <div className="text-sm mb-2" style={{ fontFamily: 'var(--font-inter)' }}>Body Medium - 14PX</div>
+                      <div className="text-sm text-muted-foreground" style={{ fontFamily: 'var(--font-inter)' }}>
                         Lorem ipsum dolor sit amet consectetur adipiscing elit mus mollis ac, sociis malesuada
                         sollicitudin fringilla vivamus aenean imperdiet nec rhoncus, nunc posuere nostra
                         fermentum maecenas commodo vitae ornare nibh.
                       </div>
                     </div>
                     <div>
-                      <div className="text-xs mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Body Small - 12PX</div>
-                      <div className="text-xs text-muted-foreground" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      <div className="text-xs mb-2" style={{ fontFamily: 'var(--font-inter)' }}>Body Small - 12PX</div>
+                      <div className="text-xs text-muted-foreground" style={{ fontFamily: 'var(--font-inter)' }}>
                         Lorem ipsum dolor sit amet consectetur adipiscing elit mus mollis ac, sociis malesuada
                         sollicitudin fringilla vivamus aenean imperdiet nec rhoncus, nunc posuere nostra
                         fermentum maecenas commodo vitae ornare nibh.
                       </div>
                     </div>
                     <div>
-                      <div className="text-xs mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Caption 1 - 10PX</div>
-                      <div className="text-xs text-muted-foreground" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      <div className="text-xs mb-2" style={{ fontFamily: 'var(--font-inter)' }}>Caption 1 - 10PX</div>
+                      <div className="text-xs text-muted-foreground" style={{ fontFamily: 'var(--font-inter)' }}>
                         Lorem ipsum dolor sit amet consectetur adipiscing elit mus mollis ac, sociis malesuada
                         sollicitudin fringilla vivamus aenean imperdiet nec rhoncus, nunc posuere nostra
                         fermentum maecenas commodo vitae ornare nibh.
@@ -632,17 +627,29 @@ export default function BrandKitPage() {
 
               <div className="max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-gray-100 rounded-lg p-8 text-center">
-                    <div className="w-full h-64 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-gray-500">Application Example 1</span>
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 shadow-lg">
+                    <div className="w-full h-64 rounded-xl overflow-hidden mb-4 shadow-lg">
+                      <Image
+                        src="/assets/brandkit-app-1.png"
+                        alt="AGV Protocol Brand Application - Water Bottle"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    <p className="text-sm text-muted-foreground">Brand application example</p>
+                    <h3 className="text-lg font-semibold mb-2 text-foreground">Water Bottle</h3>
+                    <p className="text-sm text-muted-foreground">Brand application on sustainable merchandise</p>
                   </div>
-                  <div className="bg-gray-100 rounded-lg p-8 text-center">
-                    <div className="w-full h-64 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-gray-500">Application Example 2</span>
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 shadow-lg">
+                    <div className="w-full h-64 rounded-xl overflow-hidden mb-4 shadow-lg">
+                      <Image
+                        src="/assets/brandkit-app-3.png"
+                        alt="AGV Protocol Brand Application - Baseball Cap"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    <p className="text-sm text-muted-foreground">Brand application example</p>
+                    <h3 className="text-lg font-semibold mb-2 text-foreground">Baseball Cap</h3>
+                    <p className="text-sm text-muted-foreground">Brand application on promotional apparel</p>
                   </div>
                 </div>
               </div>
@@ -697,23 +704,23 @@ export default function BrandKitPage() {
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Logo Guidelines</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Do not use alternative lockups of the logo</li>
-                    <li>• Do not use unapproved colours</li>
-                    <li>• Do not outline any part of the logo</li>
-                    <li>• Do not apply any special effects on the logo</li>
-                    <li>• Do not rotate the logo</li>
-                    <li>• Do not stretch the logo to fill space</li>
+                    <li> <span className="text-red-500">•</span> Do not use alternative lockups of the logo</li>
+                    <li> <span className="text-red-500">•</span> Do not use unapproved colours</li>
+                    <li> <span className="text-red-500">•</span> Do not outline any part of the logo</li>
+                    <li> <span className="text-red-500">•</span> Do not apply any special effects on the logo</li>
+                    <li> <span className="text-red-500">•</span> Do not rotate the logo</li>
+                    <li> <span className="text-red-500">•</span> Do not stretch the logo to fill space</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Brand Standards</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Maintain proper spacing around logos</li>
-                    <li>• Use approved color variations only</li>
-                    <li>• Ensure high resolution for print</li>
-                    <li>• Follow typography guidelines</li>
-                    <li>• Use approved fonts (Lato & Inter)</li>
-                    <li>• Maintain brand consistency across all materials</li>
+                    <li> <span className="text-green-500">•</span> Maintain proper spacing around logos</li>
+                    <li> <span className="text-green-500">•</span> Use approved color variations only</li>
+                    <li> <span className="text-green-500">•</span> Ensure high resolution for print</li>
+                    <li> <span className="text-green-500">•</span> Follow typography guidelines</li>
+                    <li> <span className="text-green-500">•</span> Use approved fonts (Lato & Inter)</li>
+                    <li> <span className="text-green-500">•</span> Maintain brand consistency across all materials</li>
                   </ul>
                 </div>
               </div>

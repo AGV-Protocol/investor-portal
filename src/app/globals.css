@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700;900&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -28,6 +28,8 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --font-sans: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-lato: 'Lato', sans-serif;
+  --font-inter: 'Inter', sans-serif;
   --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 }
 
