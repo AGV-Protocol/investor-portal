@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-12 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -58,7 +58,7 @@ export default function Home() {
             title="AGV Protocol Investor Portal"
             subtitle="Welcome"
             description="Access comprehensive documentation, financial models, and technical resources for AGV Protocol's innovative blockchain infrastructure."
-            className="mb-16"
+            className="mb-8 sm:mb-16"
             variant="white"
           />
           
@@ -68,27 +68,29 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center mb-12"
           >
-            <Button href="/investor" variant="primary" size="lg" className="mr-4">
-              Explore Data Room
-            </Button>
-            <Button href="/contact" variant="outline" size="lg" className="text-white hover:text-primary">
-              Contact Us
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button href="/investor" variant="primary" size="lg" className="w-full sm:w-auto">
+                Explore Data Room
+              </Button>
+              <Button href="/contact" variant="outline" size="lg" className="text-white hover:text-primary w-full sm:w-auto">
+                Contact Us
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Pitch Deck and Executive Summary Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
             title="Investment Materials"
             subtitle="Key Documents"
             description="Review our comprehensive pitch deck and executive summary covering AGV Protocol's vision, technology, and market opportunity."
-            className="mb-12"
+            className="mb-8 sm:mb-12"
           />
           
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {/* Executive Summary */}
             <motion.div
@@ -96,7 +98,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Card className="p-8 h-full">
+              <Card className="p-4 sm:p-8 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                     <FiFile size={24} />
@@ -107,7 +109,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="h-[500px] rounded-lg overflow-hidden border border-border mb-6">
+                <div className="h-[400px] sm:h-[500px] rounded-lg overflow-hidden border border-border mb-6">
                   <PDFViewer
                     fileUrl="https://drive.google.com/file/d/1iGTCO2jI9302wU6QIGsDmfsY5FI3Q_t7/view"
                     title="AGV Protocol Pitch Deck"
@@ -131,7 +133,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card className="p-8 h-full">
+              <Card className="p-4 sm:p-8 h-full">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
@@ -148,7 +150,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="h-[500px] rounded-lg overflow-hidden border border-border mb-6">
+                <div className="h-[400px] sm:h-[500px] rounded-lg overflow-hidden border border-border mb-6">
                   <PDFViewer
                     fileUrl="https://drive.google.com/file/d/11N8RXY9NnAQd9bi-nyvCBco2l6c0vZVo/view"
                     title="AGV Protocol Pitch Deck"
@@ -159,15 +161,17 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground mb-4">
                     This presentation above includes confidential information. Please review carefully and contact us for additional information.
                   </p>
-                  <Button variant="outline" size="sm" className='border-1 border-primary text-primary'>
-                    Download Pitch Deck
-                  </Button>
-                  <Button href="/contact" variant="outline" size="sm" className='border-1 border-primary text-primary mx-2'>
-                    Request Additional Information
-                  </Button>
-                  <Button href="/contact" variant="outline" size="sm" className='border-1 border-primary text-primary'>
-                    Contact BD Team
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                    <Button variant="outline" size="sm" className='border-1 border-primary text-primary'>
+                      Download Pitch Deck
+                    </Button>
+                    <Button href="/contact" variant="outline" size="sm" className='border-1 border-primary text-primary'>
+                      Request Additional Information
+                    </Button>
+                    <Button href="/contact" variant="outline" size="sm" className='border-1 border-primary text-primary'>
+                      Contact BD Team
+                    </Button>
+                  </div>
                 </div>
               </Card>
             </motion.div>
@@ -177,16 +181,16 @@ export default function Home() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
             title="Investment Resources"
             subtitle="Data Room"
             description="Comprehensive documentation and resources for potential investors and partners."
-            className="mb-16"
+            className="mb-8 sm:mb-16"
           />
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -194,7 +198,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full">
+                <Card className="p-4 sm:p-6 h-full">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
                     {feature.icon}
                   </div>
@@ -211,24 +215,24 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-primary">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Invest in the Future?
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-lg sm:text-xl text-white/90 mb-8">
               Join AGV Protocol in revolutionizing real-world asset tokenization through sustainable blockchain infrastructure.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/contact" variant="secondary" size="lg">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-auto">
                 Schedule a Call
               </Button>
-              <Button href="/investor" variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+              <Button href="/investor" variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-full sm:w-auto">
                 Access Full Data Room
               </Button>
             </div>
