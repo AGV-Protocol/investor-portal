@@ -145,6 +145,11 @@ export default function LegalPage() {
           url: "https://drive.google.com/file/d/1QZhelus1-4TrhgnANevsBjEJQYPXFCXs/view"
         },
         {
+          title: "Constitution of New Zealand iJet Limited",
+          description: "Official constitution document for New Zealand iJet Limited establishing corporate governance framework and operational guidelines.",
+          url: "https://drive.google.com/file/d/1Zz8BOD14rNn5YzGVkFBLibDFMRhW6a_c/view"
+        },
+        {
           title: "Re-Authorization Agreement BVI Ijet ltd 2025 v2025.10",
           description: "Re-authorization agreement between BVI and New Zealand entities establishing operational authority.",
           url: "https://drive.google.com/file/d/1_QpJFdrRySDYSm1b8DB3LPwY57xbV3gt/view"
@@ -178,79 +183,79 @@ export default function LegalPage() {
     <ProtectedRoute>
       <Layout>
         <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              title="Legal & Registration Documents"
-              subtitle="Legal Documentation"
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            title="Legal & Registration Documents"
+            subtitle="Legal Documentation"
               description="Review AGV Protocol's comprehensive legal structure, compliance status, and regulatory framework through detailed documentation."
-              className="mb-16"
-            />
+            className="mb-16"
+          />
 
             {/* Main Document */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-16"
-            >
-              <Card className="p-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <Card className="p-8">
                 <h2 className="text-2xl font-semibold mb-4">{mainDocument.title}</h2>
-                <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6">
                   {mainDocument.description}
-                </p>
-                <div>
-                  <PDFViewer 
+              </p>
+              <div>
+                <PDFViewer 
                     className='!h-[70vh]'
                     fileUrl={mainDocument.url} 
                     title={mainDocument.title}
-                  />
-                </div>
-              </Card>
-            </motion.div>
+                />
+              </div>
+            </Card>
+          </motion.div>
 
-            {/* Compliance Status */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-16"
-            >
-              <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-6">Compliance Status</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">Regulatory Compliance</h3>
-                    <div className="space-y-3">
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+          {/* Compliance Status */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-16"
+          >
+            <Card className="p-8">
+              <h2 className="text-2xl font-semibold mb-6">Compliance Status</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">Regulatory Compliance</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
                         <span className="text-sm">BVI Corporate Registration</span>
                       </div>
                       <div className="flex items-center">
                         <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
                         <span className="text-sm">New Zealand Incorporation</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                        <span className="text-sm">KYC/AML Compliance</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                      <span className="text-sm">KYC/AML Compliance</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
                         <span className="text-sm">China Onshore Registration</span>
-                      </div>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">Legal Structure</h3>
-                    <div className="space-y-2 text-muted-foreground text-sm">
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">Legal Structure</h3>
+                  <div className="space-y-2 text-muted-foreground text-sm">
                       <div>• BVI Holding Company (JLL Asset Ltd)</div>
                       <div>• New Zealand SPV (3669875)</div>
                       <div>• China Onshore Entities</div>
                       <div>• Multi-jurisdictional Compliance</div>
-                    </div>
                   </div>
                 </div>
-              </Card>
-            </motion.div>
+              </div>
+            </Card>
+          </motion.div>
 
             {/* Document Sections */}
             {documentSections.map((section, sectionIndex) => (
@@ -266,12 +271,12 @@ export default function LegalPage() {
                   <p className="text-muted-foreground">{section.description}</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {section.documents.map((doc, docIndex) => (
-                    <motion.div
-                      key={doc.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
+              <motion.div
+                key={doc.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 + sectionIndex * 0.1 + docIndex * 0.05 }}
                     >
                       <DocumentCard
@@ -280,43 +285,43 @@ export default function LegalPage() {
                         url={doc.url}
                         type="PDF"
                       />
-                    </motion.div>
-                  ))}
-                </div>
+              </motion.div>
+            ))}
+          </div>
               </motion.div>
             ))}
 
-            {/* Legal Framework */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+          {/* Legal Framework */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-16"
-            >
-              <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-6">Legal Framework</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">Corporate Governance</h3>
-                    <ul className="space-y-2 text-muted-foreground">
+            className="mt-16"
+          >
+            <Card className="p-8">
+              <h2 className="text-2xl font-semibold mb-6">Legal Framework</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">Corporate Governance</h3>
+                  <ul className="space-y-2 text-muted-foreground">
                       <li>• Multi-jurisdictional structure</li>
                       <li>• BVI holding company framework</li>
                       <li>• New Zealand DAO governance</li>
                       <li>• China onshore compliance</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">Risk Management</h3>
-                    <ul className="space-y-2 text-muted-foreground">
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">Risk Management</h3>
+                  <ul className="space-y-2 text-muted-foreground">
                       <li>• Comprehensive legal documentation</li>
                       <li>• Certified translation services</li>
                       <li>• Regulatory compliance monitoring</li>
                       <li>• Multi-jurisdictional legal opinions</li>
-                    </ul>
-                  </div>
+                  </ul>
                 </div>
-              </Card>
-            </motion.div>
+              </div>
+            </Card>
+          </motion.div>
 
             {/* Legal Structure Overview */}
             <motion.div
@@ -343,7 +348,7 @@ export default function LegalPage() {
                 </div>
               </Card>
             </motion.div>
-          </div>
+        </div>
         </section>
       </Layout>
     </ProtectedRoute>

@@ -131,65 +131,65 @@ export default function ESGPage() {
     <ProtectedRoute>
       <Layout>
         <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              title="ESG & Real-World Asset Proof"
-              subtitle="Sustainability & Impact"
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            title="ESG & Real-World Asset Proof"
+            subtitle="Sustainability & Impact"
               description="Explore AGV Protocol's environmental impact, sustainability initiatives, and real-world asset verification through comprehensive documentation."
-              className="mb-16"
-            />
+            className="mb-16"
+          />
 
             {/* Main Document */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-16"
-            >
-              <Card className="p-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <Card className="p-8">
                 <h2 className="text-2xl font-semibold mb-4">{mainDocument.title}</h2>
                 <p className="text-muted-foreground mb-6">
                   {mainDocument.description}
                 </p>
-                <div>
-                  <PDFViewer 
+              <div>
+                <PDFViewer 
                     className='!h-[70vh]'
                     fileUrl={mainDocument.url} 
                     title={mainDocument.title}
-                  />
-                </div>
-              </Card>
-            </motion.div>
+                />
+              </div>
+            </Card>
+          </motion.div>
 
-            {/* ESG Metrics */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-16"
-            >
-              <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-6">ESG Performance Metrics</h2>
-                <div className="grid md:grid-cols-4 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">-45%</div>
-                    <div className="text-sm text-muted-foreground">Carbon Footprint Reduction</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                    <div className="text-sm text-muted-foreground">Renewable Energy Usage</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">95%</div>
-                    <div className="text-sm text-muted-foreground">Waste Reduction</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                    <div className="text-sm text-muted-foreground">Verified RWA Assets</div>
-                  </div>
+          {/* ESG Metrics */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-16"
+          >
+            <Card className="p-8">
+              <h2 className="text-2xl font-semibold mb-6">ESG Performance Metrics</h2>
+              <div className="grid md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">-45%</div>
+                  <div className="text-sm text-muted-foreground">Carbon Footprint Reduction</div>
                 </div>
-              </Card>
-            </motion.div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">100%</div>
+                  <div className="text-sm text-muted-foreground">Renewable Energy Usage</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">95%</div>
+                  <div className="text-sm text-muted-foreground">Waste Reduction</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                  <div className="text-sm text-muted-foreground">Verified RWA Assets</div>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
 
             {/* Document Sections */}
             {documentSections.map((section, sectionIndex) => (
@@ -205,12 +205,12 @@ export default function ESGPage() {
                   <p className="text-muted-foreground">{section.description}</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {section.documents.map((doc, docIndex) => (
-                    <motion.div
-                      key={doc.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
+              <motion.div
+                key={doc.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 + sectionIndex * 0.1 + docIndex * 0.05 }}
                     >
                       <DocumentCard
@@ -219,70 +219,70 @@ export default function ESGPage() {
                         url={doc.url}
                         type="PDF"
                       />
-                    </motion.div>
-                  ))}
-                </div>
+              </motion.div>
+            ))}
+          </div>
               </motion.div>
             ))}
 
-            {/* Real-World Asset Verification */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+          {/* Real-World Asset Verification */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-16"
-            >
-              <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-6">Real-World Asset Verification</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">IoT Monitoring</h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• Real-time asset tracking</li>
-                      <li>• Environmental sensors</li>
-                      <li>• Carbon emission monitoring</li>
-                      <li>• Automated compliance reporting</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">Verification Process</h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• Third-party audits</li>
-                      <li>• Blockchain immutability</li>
-                      <li>• Smart contract automation</li>
-                      <li>• Transparent reporting</li>
-                    </ul>
-                  </div>
+            className="mt-16"
+          >
+            <Card className="p-8">
+              <h2 className="text-2xl font-semibold mb-6">Real-World Asset Verification</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">IoT Monitoring</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Real-time asset tracking</li>
+                    <li>• Environmental sensors</li>
+                    <li>• Carbon emission monitoring</li>
+                    <li>• Automated compliance reporting</li>
+                  </ul>
                 </div>
-              </Card>
-            </motion.div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">Verification Process</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Third-party audits</li>
+                    <li>• Blockchain immutability</li>
+                    <li>• Smart contract automation</li>
+                    <li>• Transparent reporting</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
 
-            {/* Carbon Impact */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+          {/* Carbon Impact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
-              className="mt-8"
-            >
-              <Card className="p-8 bg-primary/5 border-primary/20">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">Carbon Impact Dashboard</h2>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">2.3M</div>
-                    <div className="text-sm text-primary/80">Tons CO2 Saved</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">1,250</div>
-                    <div className="text-sm text-primary/80">IoT Devices Deployed</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">24/7</div>
-                    <div className="text-sm text-primary/80">Real-time Monitoring</div>
-                  </div>
+            className="mt-8"
+          >
+            <Card className="p-8 bg-primary/5 border-primary/20">
+              <h2 className="text-2xl font-semibold mb-4 text-primary">Carbon Impact Dashboard</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary mb-2">2.3M</div>
+                  <div className="text-sm text-primary/80">Tons CO2 Saved</div>
                 </div>
-              </Card>
-            </motion.div>
-          </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary mb-2">1,250</div>
+                  <div className="text-sm text-primary/80">IoT Devices Deployed</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary mb-2">24/7</div>
+                  <div className="text-sm text-primary/80">Real-time Monitoring</div>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
         </section>
       </Layout>
     </ProtectedRoute>

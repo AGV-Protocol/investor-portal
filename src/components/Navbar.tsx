@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,22 +8,6 @@ import Button from './Button';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-  const userMenuRef = useRef<HTMLDivElement>(null);
-
-  // Close user menu when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
-        setIsUserMenuOpen(false);
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -31,6 +15,7 @@ export default function Navbar() {
     { name: 'Financials', href: '/financials' },
     { name: 'Legal', href: '/legal' },
     { name: 'ESG', href: '/esg' },
+    { name: 'DePIN', href: '/depin' },
     { name: 'Brand Kit', href: '/brandkit' },
     { name: 'Contact', href: '/contact' },
   ];
