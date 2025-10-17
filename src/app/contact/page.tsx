@@ -5,9 +5,71 @@ import SectionHeader from '@/components/SectionHeader';
 import Card from '@/components/Card';
 import Button from '@/components/Button';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiCheck, FiX } from 'react-icons/fi';
+import { useState } from 'react';
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    investmentType: '',
+    message: '',
+    nda: false
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          investmentType: '',
+          message: '',
+          nda: false
+        });
+      } else {
+        const errorData = await response.json();
+        setSubmitStatus('error');
+        setErrorMessage(errorData.error || 'Failed to send message');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setErrorMessage('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <Layout>
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -28,7 +90,32 @@ export default function ContactPage() {
           >
             <Card className="p-8">
               <h2 className="text-2xl font-semibold mb-6">Investment Inquiry Form</h2>
-              <form className="space-y-6">
+              
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center"
+                >
+                  <FiCheck className="text-green-600 mr-2" size={20} />
+                  <span className="text-green-800">Thank you! Your inquiry has been sent successfully.</span>
+                </motion.div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center"
+                >
+                  <FiX className="text-red-600 mr-2" size={20} />
+                  <span className="text-red-800">{errorMessage}</span>
+                </motion.div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
@@ -38,6 +125,8 @@ export default function ContactPage() {
                       type="text"
                       id="firstName"
                       name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
@@ -50,6 +139,8 @@ export default function ContactPage() {
                       type="text"
                       id="lastName"
                       name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
@@ -65,6 +156,8 @@ export default function ContactPage() {
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
@@ -77,6 +170,8 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
@@ -90,6 +185,8 @@ export default function ContactPage() {
                     type="text"
                     id="company"
                     name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
@@ -101,6 +198,8 @@ export default function ContactPage() {
                   <select
                     id="investmentType"
                     name="investmentType"
+                    value={formData.investmentType}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   >
                     <option value="">Select investment type</option>
@@ -120,6 +219,8 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange}
                     required
                     placeholder="Tell us about your investment interest and any specific questions..."
                     className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -131,6 +232,8 @@ export default function ContactPage() {
                     type="checkbox"
                     id="nda"
                     name="nda"
+                    checked={formData.nda}
+                    onChange={handleInputChange}
                     className="w-4 h-4 text-primary border-border rounded focus:ring-primary"
                   />
                   <label htmlFor="nda" className="ml-2 text-sm text-muted-foreground">
@@ -138,8 +241,14 @@ export default function ContactPage() {
                   </label>
                 </div>
 
-                <Button type="submit" variant="primary" size="lg" className="w-full">
-                  Submit Inquiry
+                <Button 
+                  type="submit" 
+                  variant="primary" 
+                  size="lg" 
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
                 </Button>
               </form>
             </Card>

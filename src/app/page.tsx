@@ -73,7 +73,7 @@ export default function Home() {
                 Explore Data Room
               </Button>
               <Button href="/contact" variant="outline" size="lg" className="text-white hover:text-primary w-full sm:w-auto">
-                Contact Us
+                Request NDA
               </Button>
             </div>
           </motion.div>
