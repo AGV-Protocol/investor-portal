@@ -124,7 +124,7 @@ export default function TechPage() {
                 </p>
                 <div>
                   <PDFViewer 
-                    className='!h-[50vh]'
+                    className='!h-[70vh]'
                     fileUrl={mainDocument.url} 
                     title={mainDocument.title}
                   />

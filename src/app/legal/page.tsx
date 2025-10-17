@@ -200,7 +200,7 @@ export default function LegalPage() {
                 </p>
                 <div>
                   <PDFViewer 
-                    className='!h-[50vh]'
+                    className='!h-[70vh]'
                     fileUrl={mainDocument.url} 
                     title={mainDocument.title}
                   />
