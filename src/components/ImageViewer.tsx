@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { extractDriveFileId } from '@/lib/client-utils';
 
 interface ImageViewerProps {
   fileUrl: string;
@@ -11,6 +12,24 @@ export default function ImageViewer({ fileUrl, title, className = '' }: ImageVie
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [processedUrl, setProcessedUrl] = useState(fileUrl);
+
+  // Process Google Drive URLs to use direct download
+  useEffect(() => {
+    const processUrl = async () => {
+      const driveFileId = extractDriveFileId(fileUrl);
+      
+      if (driveFileId) {
+        // If it's a Google Drive URL, use direct download URL
+        setProcessedUrl(`https://drive.google.com/uc?export=download&id=${driveFileId}`);
+      } else {
+        // Not a Google Drive URL, use as-is
+        setProcessedUrl(fileUrl);
+      }
+    };
+
+    processUrl();
+  }, [fileUrl]);
 
   const handleLoad = () => {
     setIsLoading(false);
@@ -27,7 +46,7 @@ export default function ImageViewer({ fileUrl, title, className = '' }: ImageVie
 
   return (
     <>
-      <div className={`relative w-full h-full min-h-[300px] ${className}`}>
+      <div className={`relative w-full ${className || 'h-48'}`}>
         <AnimatePresence>
           {isLoading && (
             <motion.div
@@ -79,9 +98,9 @@ export default function ImageViewer({ fileUrl, title, className = '' }: ImageVie
         {!hasError && (
           <div className="relative group">
             <img
-              src={fileUrl}
+              src={processedUrl}
               alt={title}
-              className="w-full h-full min-h-[300px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+              className={`w-full ${className || 'h-48'} object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity`}
               onLoad={handleLoad}
               onError={handleError}
               onClick={toggleFullscreen}
@@ -115,7 +134,7 @@ export default function ImageViewer({ fileUrl, title, className = '' }: ImageVie
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={fileUrl}
+                src={processedUrl}
                 alt={title}
                 className="max-w-full max-h-full object-contain rounded-lg"
               />

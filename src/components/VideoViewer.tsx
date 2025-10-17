@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { extractDriveFileId } from '@/lib/client-utils';
 
 interface VideoViewerProps {
   fileUrl: string;
@@ -11,6 +12,24 @@ export default function VideoViewer({ fileUrl, title, className = '' }: VideoVie
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [processedUrl, setProcessedUrl] = useState(fileUrl);
+
+  // Process Google Drive URLs to use direct download
+  useEffect(() => {
+    const processUrl = async () => {
+      const driveFileId = extractDriveFileId(fileUrl);
+      
+      if (driveFileId) {
+        // If it's a Google Drive URL, use direct download URL
+        setProcessedUrl(`https://drive.google.com/uc?export=download&id=${driveFileId}`);
+      } else {
+        // Not a Google Drive URL, use as-is
+        setProcessedUrl(fileUrl);
+      }
+    };
+
+    processUrl();
+  }, [fileUrl]);
 
   const handleLoad = () => {
     setIsLoading(false);
@@ -30,7 +49,7 @@ export default function VideoViewer({ fileUrl, title, className = '' }: VideoVie
   };
 
   return (
-    <div className={`relative w-full h-full min-h-[300px] ${className}`}>
+    <div className={`relative w-full ${className || 'h-48'}`}>
       <AnimatePresence>
         {isLoading && (
           <motion.div
@@ -82,9 +101,9 @@ export default function VideoViewer({ fileUrl, title, className = '' }: VideoVie
         {!hasError && (
           <div className="relative group">
             <video
-              src={fileUrl}
+              src={processedUrl}
               title={title}
-              className="w-full h-full min-h-[300px] object-cover rounded-lg"
+              className={`w-full ${className || 'h-48'} object-cover rounded-lg`}
               onLoadedData={handleLoad}
               onError={handleError}
               onPlay={handlePlay}

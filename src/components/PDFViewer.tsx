@@ -13,26 +13,14 @@ export default function PDFViewer({ fileUrl, title, className = '' }: PDFViewerP
   const [hasError, setHasError] = useState(false);
   const [processedUrl, setProcessedUrl] = useState(fileUrl);
 
-  // Process Google Drive URLs to use service account
+  // Process Google Drive URLs to use direct download
   useEffect(() => {
     const processUrl = async () => {
       const driveFileId = extractDriveFileId(fileUrl);
       
       if (driveFileId) {
-        // If it's a Google Drive URL, use our API endpoint
-        try {
-          const response = await fetch(`/api/drive/${driveFileId}/preview`);
-          if (response.ok) {
-            const data = await response.json();
-            setProcessedUrl(data.url);
-          } else {
-            console.error('Failed to get Google Drive URL:', response.statusText);
-            setProcessedUrl(fileUrl); // Fallback to original URL
-          }
-        } catch (error) {
-          console.error('Error processing Google Drive URL:', error);
-          setProcessedUrl(fileUrl); // Fallback to original URL
-        }
+        // If it's a Google Drive URL, use direct download URL
+        setProcessedUrl(`https://drive.google.com/uc?export=download&id=${driveFileId}`);
       } else {
         // Not a Google Drive URL, use as-is
         setProcessedUrl(fileUrl);
