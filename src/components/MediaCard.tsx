@@ -48,14 +48,6 @@ export default function MediaCard({
           <FiExternalLink size={14} />
           View
         </a>
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-3 py-2 border border-border rounded-lg text-sm font-medium text-center hover:bg-muted transition-colors flex items-center justify-center"
-        >
-          <FiDownload size={14} />
-        </a>
       </div>
     </Card>
   );
