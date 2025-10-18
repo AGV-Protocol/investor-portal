@@ -14,14 +14,14 @@ export default function ImageViewer({ fileUrl, title, className = '' }: ImageVie
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [processedUrl, setProcessedUrl] = useState(fileUrl);
 
-  // Process Google Drive URLs to use direct download
+  // Process Google Drive URLs to use our proxy endpoint
   useEffect(() => {
     const processUrl = async () => {
       const driveFileId = extractDriveFileId(fileUrl);
       
       if (driveFileId) {
-        // If it's a Google Drive URL, use direct download URL
-        setProcessedUrl(`https://drive.google.com/uc?export=download&id=${driveFileId}`);
+        // If it's a Google Drive URL, use our proxy endpoint
+        setProcessedUrl(`/api/drive-file?id=${driveFileId}`);
       } else {
         // Not a Google Drive URL, use as-is
         setProcessedUrl(fileUrl);
