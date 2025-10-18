@@ -180,5 +180,3 @@ For technical support or questions:
 - Issues: [GitHub Issues]
 
 ---
-
-Built with ❤️ by the AGV Protocol team
