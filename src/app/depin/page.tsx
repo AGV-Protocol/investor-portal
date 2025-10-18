@@ -125,129 +125,127 @@ export default function DePINPage() {
   ];
 
   return (
-    <ProtectedRoute>
-      <Layout>
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              title="DePIN Verification"
-              subtitle="Decentralized Physical Infrastructure Network"
-              description="Comprehensive verification documentation of AGV Protocol's physical infrastructure development, agricultural implementation, and renewable energy integration through detailed visual and video evidence."
-              className="mb-16"
-            />
+    <Layout>
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            title="DePIN Verification"
+            subtitle="Decentralized Physical Infrastructure Network"
+            description="Comprehensive verification documentation of AGV Protocol's physical infrastructure development, agricultural implementation, and renewable energy integration through detailed visual and video evidence."
+            className="mb-16"
+          />
 
-            {/* Main Document */}
+          {/* Main Document */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <Card className="p-8">
+              <h2 className="text-2xl font-semibold mb-4">{mainDocument.title}</h2>
+              <p className="text-muted-foreground mb-6">
+                {mainDocument.description}
+              </p>
+              <div>
+                <PDFViewer
+                  className='!h-[70vh]'
+                  fileUrl={mainDocument.url}
+                  title={mainDocument.title}
+                />
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* DePIN Metrics */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-16"
+          >
+            <Card className="p-8">
+              <h2 className="text-2xl font-semibold mb-6">DePIN Infrastructure Metrics</h2>
+              <div className="grid md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">6.42 MW</div>
+                  <div className="text-sm text-muted-foreground">Solar Capacity</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">100+</div>
+                  <div className="text-sm text-muted-foreground">IoT Sensors</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+                  <div className="text-sm text-muted-foreground">Real-time Monitoring</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">100%</div>
+                  <div className="text-sm text-muted-foreground">Verification Coverage</div>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Media Sections */}
+          {mediaSections.map((section, sectionIndex) => (
             <motion.div
+              key={section.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.3 + sectionIndex * 0.1 }}
               className="mb-16"
             >
-              <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-4">{mainDocument.title}</h2>
-                <p className="text-muted-foreground mb-6">
-                  {mainDocument.description}
-                </p>
-                <div>
-                  <PDFViewer 
-                    className='!h-[70vh]'
-                    fileUrl={mainDocument.url} 
-                    title={mainDocument.title}
-                  />
-                </div>
-              </Card>
+              <div className="mb-8">
+                <h2 className="text-2xl font-semibold mb-2">{section.title}</h2>
+                <p className="text-muted-foreground">{section.description}</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {section.media.map((media, mediaIndex) => (
+                  <motion.div
+                    key={media.url}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 + sectionIndex * 0.1 + mediaIndex * 0.05 }}
+                  >
+                    <MediaCard
+                      url={media.url}
+                      type={media.type}
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
+          ))}
 
-            {/* DePIN Metrics */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-16"
-            >
-              <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-6">DePIN Infrastructure Metrics</h2>
-                <div className="grid md:grid-cols-4 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">6.42 MW</div>
-                    <div className="text-sm text-muted-foreground">Solar Capacity</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">100+</div>
-                    <div className="text-sm text-muted-foreground">IoT Sensors</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                    <div className="text-sm text-muted-foreground">Real-time Monitoring</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                    <div className="text-sm text-muted-foreground">Verification Coverage</div>
-                  </div>
+          {/* DePIN Infrastructure Overview */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="mt-16"
+          >
+            <Card className="p-8 bg-primary/5 border-primary/20">
+              <h2 className="text-2xl font-semibold mb-4 text-primary">DePIN Infrastructure Overview</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary mb-2">Agricultural</div>
+                  <div className="text-sm text-primary/80">Smart Farming & Irrigation</div>
                 </div>
-              </Card>
-            </motion.div>
-
-            {/* Media Sections */}
-            {mediaSections.map((section, sectionIndex) => (
-              <motion.div
-                key={section.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 + sectionIndex * 0.1 }}
-                className="mb-16"
-              >
-                <div className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-2">{section.title}</h2>
-                  <p className="text-muted-foreground">{section.description}</p>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary mb-2">Photovoltaic</div>
+                  <div className="text-sm text-primary/80">Solar Energy Generation</div>
                 </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {section.media.map((media, mediaIndex) => (
-                    <motion.div
-                      key={media.url}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.4 + sectionIndex * 0.1 + mediaIndex * 0.05 }}
-                    >
-                      <MediaCard
-                        url={media.url}
-                        type={media.type}
-                      />
-                    </motion.div>
-                  ))}
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary mb-2">IoT Network</div>
+                  <div className="text-sm text-primary/80">Real-time Monitoring</div>
                 </div>
-              </motion.div>
-            ))}
-
-            {/* DePIN Infrastructure Overview */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              className="mt-16"
-            >
-              <Card className="p-8 bg-primary/5 border-primary/20">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">DePIN Infrastructure Overview</h2>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">Agricultural</div>
-                    <div className="text-sm text-primary/80">Smart Farming & Irrigation</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">Photovoltaic</div>
-                    <div className="text-sm text-primary/80">Solar Energy Generation</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">IoT Network</div>
-                    <div className="text-sm text-primary/80">Real-time Monitoring</div>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-          </div>
-        </section>
-      </Layout>
-    </ProtectedRoute>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
   );
 }
