@@ -71,13 +71,19 @@ export async function POST(request: NextRequest) {
     sendSmtpEmail.htmlContent = emailContent;
     sendSmtpEmail.textContent = textContent;
     sendSmtpEmail.sender = { 
-      name: "AGV Protocol Contact Form", 
-      email: process.env.BREVO_SENDER_EMAIL! 
+      name: `${firstName} ${lastName}`, 
+      email: email 
     };
-    sendSmtpEmail.to = [{ 
-      email: "ajibikeabdulqayyum04@gmail.com", 
-      name: "AGV Protocol Team" 
-    }];
+    sendSmtpEmail.to = [
+      { 
+        email: "contact@agvprotocol.org", 
+        name: "AGV Protocol Contact" 
+      },
+      { 
+        email: "IR@agvprotocol.org", 
+        name: "AGV Protocol IR" 
+      }
+    ];
     sendSmtpEmail.replyTo = { 
       email: email, 
       name: `${firstName} ${lastName}` 
