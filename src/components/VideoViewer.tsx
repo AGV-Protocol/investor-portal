@@ -20,8 +20,8 @@ export default function VideoViewer({ fileUrl, title, className = '' }: VideoVie
       const driveFileId = extractDriveFileId(fileUrl);
       
       if (driveFileId) {
-        // If it's a Google Drive URL, use direct download URL
-        setProcessedUrl(`https://drive.google.com/uc?export=download&id=${driveFileId}`);
+        // If it's a Google Drive URL, use our proxy endpoint
+        setProcessedUrl(`/api/drive-file?id=${driveFileId}`);
       } else {
         // Not a Google Drive URL, use as-is
         setProcessedUrl(fileUrl);
@@ -110,6 +110,8 @@ export default function VideoViewer({ fileUrl, title, className = '' }: VideoVie
               onPause={handlePause}
               controls
               preload="metadata"
+              crossOrigin="anonymous"
+              playsInline
             />
             {!isPlaying && (
               <div className="absolute inset-0 bg-black/20 rounded-lg flex items-center justify-center">

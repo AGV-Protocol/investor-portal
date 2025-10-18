@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 import ImageViewer from './ImageViewer';
 import VideoViewer from './VideoViewer';
-import { FiImage, FiVideo, FiDownload, FiExternalLink } from 'react-icons/fi';
+import { FiImage, FiVideo, FiExternalLink } from 'react-icons/fi';
 
 interface MediaCardProps {
   url: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card';
-import { FiFileText, FiDownload, FiExternalLink } from 'react-icons/fi';
+import { FiFileText, FiExternalLink } from 'react-icons/fi';
 
 interface DocumentCardProps {
   title: string;

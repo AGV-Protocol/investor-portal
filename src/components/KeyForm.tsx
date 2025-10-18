@@ -27,7 +27,7 @@ export default function KeyForm({ onLogin, loading = false }: KeyFormProps) {
       if (!success) {
         setError('Invalid access key. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
