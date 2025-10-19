@@ -146,7 +146,7 @@ export default function Home() {
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-muted-foreground">Last updated</div>
-                    <div className="text-sm font-medium">December 2024</div>
+                    <div className="text-sm font-medium">September 20245</div>
                   </div>
                 </div>
 
