@@ -184,7 +184,7 @@ export default function BrandKitPage() {
                     <div className="text-center">
                       <div className="w-40 h-40 bg-gradient-to-br from-white to-gray-50 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg border border-gray-200">
                         <Image
-                          src="/logo.png"
+                          src="/assets/Agv-logo.png"
                           alt="AGV Protocol Logomark"
                           width={100}
                           height={100}
@@ -197,7 +197,7 @@ export default function BrandKitPage() {
                     <div className="text-center">
                       <div className="w-64 h-32 bg-gradient-to-br from-white to-gray-50 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg border border-gray-200">
                         <Image
-                          src="/logo.png"
+                          src="/assets/Agv-logo.png"
                           alt="AGV Protocol Primary Logo"
                           width={150}
                           height={75}
@@ -217,7 +217,7 @@ export default function BrandKitPage() {
                     <div className="text-center">
                       <div className="w-32 h-32 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg border border-gray-200">
                         <Image
-                          src="/logo.png"
+                          src="/assets/Agv-logo.png"
                           alt="AGV Protocol on White"
                           width={80}
                           height={80}
@@ -230,7 +230,7 @@ export default function BrandKitPage() {
                     <div className="text-center">
                       <div className="w-32 h-32 bg-[#223256] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                         <Image
-                          src="/logo.png"
+                          src="/assets/Agv-logo.png"
                           alt="AGV Protocol on Navy"
                           width={80}
                           height={80}
@@ -243,7 +243,7 @@ export default function BrandKitPage() {
                     <div className="text-center">
                       <div className="w-32 h-32 bg-[#4FACFE] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                         <Image
-                          src="/logo.png"
+                          src="/assets/Agv-logo.png"
                           alt="AGV Protocol on Sky Blue"
                           width={80}
                           height={80}
@@ -266,7 +266,7 @@ export default function BrandKitPage() {
                     <div className="flex items-center justify-center">
                       <div className="w-20 h-20 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-xl flex items-center justify-center mr-12">
                         <Image
-                          src="/logo.png"
+                          src="/assets/Agv-logo.png"
                           alt="AGV Protocol"
                           width={40}
                           height={40}
@@ -289,7 +289,7 @@ export default function BrandKitPage() {
                       <div className="flex items-center bg-white/50 rounded-2xl p-4">
                         <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mr-4 shadow-sm border">
                           <Image
-                            src="/logo.png"
+                            src="/assets/Agv-logo.png"
                             alt="Square Avatar"
                             width={40}
                             height={40}
@@ -304,7 +304,7 @@ export default function BrandKitPage() {
                       <div className="flex items-center bg-white/50 rounded-2xl p-4">
                         <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm border">
                           <Image
-                            src="/logo.png"
+                            src="/assets/Agv-logo.png"
                             alt="Circle Avatar"
                             width={40}
                             height={40}
@@ -323,7 +323,7 @@ export default function BrandKitPage() {
                     <div className="flex items-center bg-white/50 rounded-2xl p-4">
                       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 shadow-sm border">
                         <Image
-                          src="/logo.png"
+                          src="/assets/Agv-logo.png"
                           alt="Favicon"
                           width={32}
                           height={32}
