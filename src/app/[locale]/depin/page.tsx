@@ -5,7 +5,6 @@ import SectionHeader from '@/components/SectionHeader';
 import Card from '@/components/Card';
 import PDFViewer from '@/components/PDFViewer';
 import MediaCard from '@/components/MediaCard';
-import ProtectedRoute from '@/components/ProtectedRoute';
 import { motion } from 'framer-motion';
 import { useTranslations } from '@/hooks/useTranslations';
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { extractDriveFileId } from '@/lib/client-utils';
 
 interface ImageViewerProps {
@@ -97,9 +98,11 @@ export default function ImageViewer({ fileUrl, title, className = '' }: ImageVie
 
         {!hasError && (
           <div className="relative group">
-            <img
+            <Image
               src={processedUrl}
               alt={title}
+              width={800}
+              height={600}
               className={`w-full ${className || 'h-48'} object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity`}
               onLoad={handleLoad}
               onError={handleError}
@@ -133,9 +136,11 @@ export default function ImageViewer({ fileUrl, title, className = '' }: ImageVie
               className="relative max-w-7xl max-h-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <Image
                 src={processedUrl}
                 alt={title}
+                width={1200}
+                height={800}
                 className="max-w-full max-h-full object-contain rounded-lg"
               />
               <button
