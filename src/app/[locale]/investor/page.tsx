@@ -8,9 +8,11 @@ import Button from '@/components/Button';
 import { getAllDocuments, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
 import { FiSettings, FiBarChart, FiShield, FiHeart, FiImage } from 'react-icons/fi';
+import { useTranslations } from '@/hooks/useTranslations';
 
 export default function InvestorPage() {
   const [allDocuments, setAllDocuments] = useState<Document[]>([]);
+  const { t, locale } = useTranslations();
 
   useEffect(() => {
     const fetchDocuments = async () => {
@@ -22,37 +24,37 @@ export default function InvestorPage() {
 
   const categories = [
     {
-      name: 'Technology',
-      href: '/tech',
-      description: 'Technical documentation, architecture, and audit reports',
+      name: t('nav.tech'),
+      href: `/${locale}/tech`,
+      description: t('investor.categories.tech'),
       icon: <FiSettings size={24} />,
       count: allDocuments.filter(doc => doc.category === 'tech').length,
     },
     {
-      name: 'Financials',
-      href: '/financials',
-      description: 'Financial models, valuations, and projections',
+      name: t('nav.financials'),
+      href: `/${locale}/financials`,
+      description: t('investor.categories.financials'),
       icon: <FiBarChart size={24} />,
       count: allDocuments.filter(doc => doc.category === 'financials').length,
     },
     {
-      name: 'Legal',
-      href: '/legal',
-      description: 'Legal documents, compliance, and registration',
+      name: t('nav.legal'),
+      href: `/${locale}/legal`,
+      description: t('investor.categories.legal'),
       icon: <FiShield size={24} />,
       count: allDocuments.filter(doc => doc.category === 'legal').length,
     },
     {
-      name: 'ESG',
-      href: '/esg',
-      description: 'Environmental impact and sustainability reports',
+      name: t('nav.esg'),
+      href: `/${locale}/esg`,
+      description: t('investor.categories.esg'),
       icon: <FiHeart size={24} />,
       count: allDocuments.filter(doc => doc.category === 'esg').length,
     },
     {
-      name: 'Brand Kit',
-      href: '/brandkit',
-      description: 'Brand assets, logos, and marketing materials',
+      name: t('nav.brandkit'),
+      href: `/${locale}/brandkit`,
+      description: t('investor.categories.brandkit'),
       icon: <FiImage size={24} />,
       count: allDocuments.filter(doc => doc.category === 'brandkit').length,
     },
@@ -63,9 +65,9 @@ export default function InvestorPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            title="AGV Protocol Data Room"
-            subtitle="Investor Portal"
-            description="Comprehensive access to all AGV Protocol documentation, financial models, and investment materials."
+            title={t('investor.header.title')}
+            subtitle={t('investor.header.subtitle')}
+            description={t('investor.header.description')}
             className="mb-16"
           />
 
@@ -77,23 +79,23 @@ export default function InvestorPage() {
             className="mb-16"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">Data Room Overview</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('investor.overview.title')}</h2>
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">{allDocuments.length}</div>
-                  <div className="text-sm text-muted-foreground">Total Documents</div>
+                  <div className="text-sm text-muted-foreground">{t('investor.overview.totalDocs')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">5</div>
-                  <div className="text-sm text-muted-foreground">Categories</div>
+                  <div className="text-sm text-muted-foreground">{t('investor.overview.categories')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                  <div className="text-sm text-muted-foreground">Access Available</div>
+                  <div className="text-sm text-muted-foreground">{t('investor.overview.access')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-muted-foreground">Transparency</div>
+                  <div className="text-sm text-muted-foreground">{t('investor.overview.transparency')}</div>
                 </div>
               </div>
             </Card>
@@ -114,7 +116,7 @@ export default function InvestorPage() {
                       {category.icon}
                     </div>
                     <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
-                      {category.count} docs
+                      {category.count} {t('common.docs')}
                     </span>
                   </div>
                   
@@ -122,7 +124,7 @@ export default function InvestorPage() {
                   <p className="text-muted-foreground text-sm mb-4">{category.description}</p>
                   
                   <Button href={category.href} variant="outline" size="sm" className="w-full">
-                    Explore {category.name}
+                    {t('actions.explore')} {category.name}
                   </Button>
                 </Card>
               </motion.div>
@@ -137,7 +139,7 @@ export default function InvestorPage() {
             className="mb-16"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">Recently Updated Documents</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('investor.recent.title')}</h2>
               <div className="space-y-4">
                 {allDocuments.slice(0, 5).map((doc) => (
                   <div key={doc.title} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
@@ -148,8 +150,8 @@ export default function InvestorPage() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="font-medium">{doc.title}</h3>
-                        <p className="text-sm text-muted-foreground">{doc.description}</p>
+                        <h3 className="font-medium">{doc.titleKey ? t(doc.titleKey) : doc.title}</h3>
+                        <p className="text-sm text-muted-foreground">{doc.descriptionKey ? t(doc.descriptionKey) : doc.description}</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -181,35 +183,35 @@ export default function InvestorPage() {
             className="mb-16"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">Investment Process</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('investor.process.title')}</h2>
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-primary font-bold">1</span>
                   </div>
-                  <h3 className="font-semibold mb-2">Review Materials</h3>
-                  <p className="text-sm text-muted-foreground">Explore our comprehensive documentation</p>
+                  <h3 className="font-semibold mb-2">{t('investor.process.steps.review.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('investor.process.steps.review.desc')}</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-primary font-bold">2</span>
                   </div>
-                  <h3 className="font-semibold mb-2">Schedule Call</h3>
-                  <p className="text-sm text-muted-foreground">Connect with our team for detailed discussions</p>
+                  <h3 className="font-semibold mb-2">{t('investor.process.steps.schedule.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('investor.process.steps.schedule.desc')}</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-primary font-bold">3</span>
                   </div>
-                  <h3 className="font-semibold mb-2">Due Diligence</h3>
-                  <p className="text-sm text-muted-foreground">Access confidential information with NDA</p>
+                  <h3 className="font-semibold mb-2">{t('investor.process.steps.dd.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('investor.process.steps.dd.desc')}</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-primary font-bold">4</span>
                   </div>
-                  <h3 className="font-semibold mb-2">Investment Decision</h3>
-                  <p className="text-sm text-muted-foreground">Finalize terms and join AGV Protocol</p>
+                  <h3 className="font-semibold mb-2">{t('investor.process.steps.decision.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('investor.process.steps.decision.desc')}</p>
                 </div>
               </div>
             </Card>
@@ -224,17 +226,17 @@ export default function InvestorPage() {
           >
             <Card className="p-8 bg-primary">
               <h2 className="text-2xl font-semibold text-white mb-4">
-                Ready to Invest in AGV Protocol?
+                {t('investor.cta.title')}
               </h2>
               <p className="text-white/90 mb-6">
-                Join us in revolutionizing real-world asset tokenization through sustainable blockchain infrastructure.
+                {t('investor.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button href="/contact" variant="secondary" size="lg">
-                  Contact Our Team
+                <Button href={`/${locale}/contact`} variant="secondary" size="lg">
+                  {t('investor.cta.contact')}
                 </Button>
-                <Button href="/financials" variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
-                  View Financial Models
+                <Button href={`/${locale}/financials`} variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+                  {t('investor.cta.viewFinancials')}
                 </Button>
               </div>
             </Card>

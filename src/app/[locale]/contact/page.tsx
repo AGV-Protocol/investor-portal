@@ -7,8 +7,10 @@ import Button from '@/components/Button';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiCheck, FiX } from 'react-icons/fi';
 import { useState } from 'react';
+import { useTranslations } from '@/hooks/useTranslations';
 
 export default function ContactPage() {
+  const { t } = useTranslations();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -61,11 +63,11 @@ export default function ContactPage() {
       } else {
         const errorData = await response.json();
         setSubmitStatus('error');
-        setErrorMessage(errorData.error || 'Failed to send message');
+        setErrorMessage(errorData.error || t('contact.form.error'));
       }
     } catch {
       setSubmitStatus('error');
-      setErrorMessage('Network error. Please try again.');
+      setErrorMessage(t('contact.form.networkError'));
     } finally {
       setIsSubmitting(false);
     }
@@ -75,9 +77,9 @@ export default function ContactPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            title="Contact & Investment Inquiries"
-            subtitle="Get in Touch"
-            description="Ready to invest in AGV Protocol? Contact our team for detailed discussions and partnership opportunities."
+            title={t('contact.title')}
+            subtitle={t('contact.subtitle')}
+            description={t('contact.description')}
             className="mb-16"
           />
 
@@ -89,7 +91,7 @@ export default function ContactPage() {
             className="mb-16"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">Investment Inquiry Form</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('contact.form.title')}</h2>
               
               {/* Success Message */}
               {submitStatus === 'success' && (
@@ -99,7 +101,7 @@ export default function ContactPage() {
                   className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center"
                 >
                   <FiCheck className="text-green-600 mr-2" size={20} />
-                  <span className="text-green-800">Thank you! Your inquiry has been sent successfully.</span>
+                  <span className="text-green-800">{t('contact.form.success')}</span>
                 </motion.div>
               )}
 
@@ -119,7 +121,7 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
-                      First Name *
+                      {t('contact.form.firstName')} *
                     </label>
                     <input
                       type="text"
@@ -133,7 +135,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
-                      Last Name *
+                      {t('contact.form.lastName')} *
                     </label>
                     <input
                       type="text"
@@ -150,7 +152,7 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email Address *
+                      {t('contact.form.email')} *
                     </label>
                     <input
                       type="email"
@@ -164,7 +166,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Phone Number
+                      {t('contact.form.phone')}
                     </label>
                     <input
                       type="tel"
@@ -179,7 +181,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                    Company/Organization
+                    {t('contact.form.company')}
                   </label>
                   <input
                     type="text"
@@ -193,7 +195,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="investmentType" className="block text-sm font-medium text-foreground mb-2">
-                    Investment Type
+                    {t('contact.form.investmentType')}
                   </label>
                   <select
                     id="investmentType"
@@ -202,18 +204,18 @@ export default function ContactPage() {
                     onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   >
-                    <option value="">Select investment type</option>
-                    <option value="series-a">Series A</option>
-                    <option value="strategic">Strategic Investment</option>
-                    <option value="partnership">Partnership</option>
-                    <option value="advisory">Advisory Role</option>
-                    <option value="other">Other</option>
+                    <option value="">{t('contact.form.selectType')}</option>
+                    <option value="series-a">{t('contact.form.investmentTypes.series-a')}</option>
+                    <option value="strategic">{t('contact.form.investmentTypes.strategic')}</option>
+                    <option value="partnership">{t('contact.form.investmentTypes.partnership')}</option>
+                    <option value="advisory">{t('contact.form.investmentTypes.advisory')}</option>
+                    <option value="other">{t('contact.form.investmentTypes.other')}</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message *
+                    {t('contact.form.message')} *
                   </label>
                   <textarea
                     id="message"
@@ -222,7 +224,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    placeholder="Tell us about your investment interest and any specific questions..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                     className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   ></textarea>
                 </div>
@@ -237,7 +239,7 @@ export default function ContactPage() {
                     className="w-4 h-4 text-primary border-border rounded focus:ring-primary"
                   />
                   <label htmlFor="nda" className="ml-2 text-sm text-muted-foreground">
-                    I agree to sign an NDA for confidential discussions
+                    {t('contact.form.nda')}
                   </label>
                 </div>
 
@@ -248,7 +250,7 @@ export default function ContactPage() {
                   className="w-full"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
+                  {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                 </Button>
               </form>
             </Card>
@@ -262,14 +264,14 @@ export default function ContactPage() {
             className="grid md:grid-cols-2 gap-8"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('contact.info.title')}</h2>
               <div className="space-y-4">
                 <div className="flex items-start">
                   <div className="text-primary mt-1 mr-3">
                     <FiMail size={20} />
                   </div>
                   <div>
-                    <div className="font-medium">Email</div>
+                    <div className='font-medium'>{t('contact.info.email')}</div>
                     <div className="text-muted-foreground">contact@agvprotocol.org</div>
                     <div className="text-muted-foreground">IR@agvprotocol.org</div>
                   </div>
@@ -280,7 +282,7 @@ export default function ContactPage() {
                     <FiPhone size={20} />
                   </div>
                   <div>
-                    <div className="font-medium">Phone</div>
+                    <div className='font-medium'>{t('contact.info.phone')}</div>
                     <div className="text-muted-foreground">+1 (555) 123-4567</div>
                   </div>
                 </div>
@@ -290,7 +292,7 @@ export default function ContactPage() {
                     <FiMapPin size={20} />
                   </div>
                   <div>
-                    <div className="font-medium">Address</div>
+                    <div className='font-medium'>{t('contact.info.address')}</div>
                     <div className="text-muted-foreground">
                       123 Innovation Drive<br />
                       San Francisco, CA 94105
@@ -301,19 +303,19 @@ export default function ContactPage() {
             </Card>
 
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">Quick Actions</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('contact.actions.title')}</h2>
               <div className="space-y-4">
                 <Button href="/investor" variant="primary" size="lg" className="w-full">
-                  Access Full Data Room
+                  {t('contact.actions.dataRoom')}
                 </Button>
                 <Button href="/financials" variant="outline" size="lg" className="w-full">
-                  View Financial Models
+                  {t('contact.actions.financials')}
                 </Button>
                 <Button href="/esg" variant="outline" size="lg" className="w-full">
-                  ESG & Sustainability Report
+                  {t('contact.actions.esg')}
                 </Button>
                 <Button href="/brandkit" variant="outline" size="lg" className="w-full">
-                  Download Brand Kit
+                  {t('contact.actions.brandkit')}
                 </Button>
               </div>
             </Card>
@@ -327,13 +329,12 @@ export default function ContactPage() {
             className="mt-16"
           >
             <Card className="p-8 bg-primary/5 border-primary/20">
-              <h2 className="text-2xl font-semibold mb-4">Confidential Information Access</h2>
+              <h2 className="text-2xl font-semibold mb-4">{t('contact.nda.title')}</h2>
               <p className="text-muted-foreground mb-6">
-                For access to confidential financial projections, technical specifications, and strategic plans, 
-                please request an NDA to be sent to your email.
+                {t('contact.nda.description')}
               </p>
               <Button href="mailto:legal@agvprotocol.com?subject=NDA Request" variant="primary" size="lg">
-                Request NDA
+                {t('contact.nda.request')}
               </Button>
             </Card>
           </motion.div>

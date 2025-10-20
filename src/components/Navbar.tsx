@@ -5,19 +5,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
+import { useTranslations } from '@/hooks/useTranslations';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, locale } = useTranslations();
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Technology', href: '/tech' },
-    { name: 'Financials', href: '/financials' },
-    { name: 'Legal', href: '/legal' },
-    { name: 'ESG', href: '/esg' },
-    { name: 'DePIN', href: '/depin' },
-    { name: 'Brand Kit', href: '/brandkit' },
-    { name: 'Contact', href: '/contact' },
+    { name: t('nav.home'), href: `/${locale}` },
+    { name: t('nav.tech'), href: `/${locale}/tech` },
+    { name: t('nav.financials'), href: `/${locale}/financials` },
+    { name: t('nav.legal'), href: `/${locale}/legal` },
+    { name: t('nav.esg'), href: `/${locale}/esg` },
+    { name: t('nav.depin'), href: `/${locale}/depin` },
+    { name: t('nav.brandkit'), href: `/${locale}/brandkit` },
+    { name: t('nav.contact'), href: `/${locale}/contact` },
   ];
 
   return (
@@ -25,7 +28,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href={`/${locale}`} className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="w-8 h-8 flex items-center justify-center"
@@ -42,7 +45,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -52,10 +55,10 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <Button href="/investor" variant="primary" size="sm">
-              Data Room
+            <Button href={`/${locale}/investor`} variant="primary" size="sm">
+              {t('investor.dashboard')}
             </Button>
-            
+            <LanguageSwitcher currentLocale={locale} />
           </div>
 
           {/* Mobile menu button */}
@@ -95,10 +98,11 @@ export default function Navbar() {
                     {item.name}
                   </Link>
                 ))}
-                <div className="px-3 pt-2">
-                  <Button href="/investor" variant="primary" size="sm" className="w-full">
-                    Data Room
+                <div className="px-3 pt-2 space-y-2">
+                  <Button href={`/${locale}/investor`} variant="primary" size="sm" className="w-full">
+                    {t('investor.dashboard')}
                   </Button>
+                  <LanguageSwitcher currentLocale={locale} className="w-full" />
                 </div>
                 
               </div>

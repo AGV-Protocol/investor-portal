@@ -7,8 +7,10 @@ import { getDocumentsByCategory, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
 import { FiFile } from 'react-icons/fi';
 import Image from 'next/image';
+import { useTranslations } from '@/hooks/useTranslations';
 
 export default function BrandKitPage() {
+  const { t } = useTranslations();
   const [documents, setDocuments] = useState<Document[]>([]);
   const [currentSlide, setCurrentSlide] = useState(1);
 
@@ -40,16 +42,16 @@ export default function BrandKitPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 sm:mb-4 bg-gradient-to-r from-[#223256] to-[#4FACFE] bg-clip-text text-transparent">
-                AGRIVOLT
+                {t('brandkit.hero.title')}
               </h1>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
-                PROTOCOL
+                {t('brandkit.hero.protocol')}
               </h2>
               <div className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 sm:mb-6 md:mb-8">
-                Brand Guide 2025
+                {t('brandkit.hero.subtitle')}
               </div>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
-                Powering the Future of Intelligent Energy
+                {t('brandkit.hero.tagline')}
               </p>
             </motion.div>
           </div>
@@ -110,14 +112,14 @@ export default function BrandKitPage() {
                 <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-full text-white font-bold text-lg sm:text-xl mb-4 sm:mb-6">
                   01
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Brand Overview</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">{t('brandkit.overview.title')}</h2>
                 <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-[#223256] to-[#4FACFE] mx-auto rounded-full"></div>
               </div>
 
               <div className="max-w-5xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-8 sm:mb-12">
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-foreground">Our Vision</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-foreground">{t('brandkit.overview.visionTitle')}</h3>
                     <div className="space-y-3 sm:space-y-4 text-base sm:text-lg leading-relaxed">
                       <p className="text-muted-foreground">
                         In the last century, <span className="font-semibold text-foreground">oil fueled industrial wealth</span>.
@@ -126,13 +128,13 @@ export default function BrandKitPage() {
                         In this century, <span className="font-semibold text-foreground">electricity + compute will fuel AI wealth</span>.
                       </p>
                       <p className="text-foreground font-semibold">
-                        AGV is the decentralized, investable, globally accessible gateway.
+                      {t('brandkit.overview.visionLine3')}
                       </p>
                     </div>
                   </div>
 
                   <div className="bg-white/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-white/20">
-                    <h4 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-foreground">Our Mission</h4>
+                    <h4 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-foreground">{t('brandkit.overview.missionTitle')}</h4>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                       AGV Protocol redefines the Real-World Asset (RWA) category by bridging
                       clean energy, artificial intelligence, and decentralized finance. More than a
@@ -145,10 +147,10 @@ export default function BrandKitPage() {
 
                 <div className="text-center">
                   <div className="bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white">
-                    <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Our Tagline</h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">{t('brandkit.overview.taglineTitle')}</h3>
                     <p className="text-2xl sm:text-3xl font-bold leading-tight">
-                      Real Energy. Real Yield.<br />
-                      <span className="text-white/90">Real Assets — On-Chain.</span>
+                      {t('brandkit.overview.taglineLine1')}<br />
+                      <span className="text-white/90">{t('brandkit.overview.taglineLine2')}</span>
                     </p>
                   </div>
                 </div>
@@ -168,18 +170,17 @@ export default function BrandKitPage() {
                 <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-full text-white font-bold text-lg sm:text-xl mb-4 sm:mb-6">
                   02
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Logo System</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">{t('brandkit.logo.title')}</h2>
                 <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-[#223256] to-[#4FACFE] mx-auto rounded-full mb-6 sm:mb-8"></div>
                 <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-                  Our logo symbolizes growth, upward momentum, and dual energy flow. The ascending form reflects
-                  continuous innovation, yield expansion, and sustainable progress within the decentralized energy network.
+                  {t('brandkit.logo.description')}
                 </p>
               </div>
 
               <div className="max-w-6xl mx-auto">
                 {/* Primary Logo Variations */}
                 <div className="mb-12 sm:mb-16">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">Primary Logo Variations</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">{t('brandkit.logo.primaryTitle')}</h3>
                   <div className="grid sm:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
                     <div className="text-center">
                       <div className="w-32 h-32 sm:w-40 sm:h-40 bg-gradient-to-br from-white to-gray-50 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg border border-gray-200">
@@ -191,8 +192,8 @@ export default function BrandKitPage() {
                           className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
                         />
                       </div>
-                      <h4 className="text-lg sm:text-xl font-semibold mb-2 text-foreground">Logomark</h4>
-                      <p className="text-sm sm:text-base text-muted-foreground">Standalone symbol for compact spaces</p>
+                      <h4 className="text-lg sm:text-xl font-semibold mb-2 text-foreground">{t('brandkit.logo.logomark')}</h4>
+                      <p className="text-sm sm:text-base text-muted-foreground">{t('brandkit.logo.logomarkDesc')}</p>
                     </div>
                     <div className="text-center">
                       <div className="w-48 h-24 sm:w-64 sm:h-32 bg-gradient-to-br from-white to-gray-50 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg border border-gray-200">
@@ -204,15 +205,15 @@ export default function BrandKitPage() {
                           className="h-12 sm:h-16 object-contain"
                         />
                       </div>
-                      <h4 className="text-lg sm:text-xl font-semibold mb-2 text-foreground">Primary Logo</h4>
-                      <p className="text-sm sm:text-base text-muted-foreground">Full logo with wordmark for general use</p>
+                      <h4 className="text-lg sm:text-xl font-semibold mb-2 text-foreground">{t('brandkit.logo.primary')}</h4>
+                      <p className="text-sm sm:text-base text-muted-foreground">{t('brandkit.logo.primaryDesc')}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Background Usage */}
                 <div className="mb-12 sm:mb-16">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">Usage on Different Backgrounds</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">{t('brandkit.logo.backgroundsTitle')}</h3>
                   <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
                     <div className="text-center">
                       <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg border border-gray-200">
@@ -224,8 +225,8 @@ export default function BrandKitPage() {
                           className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                         />
                       </div>
-                      <h4 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-foreground">White Background</h4>
-                      <p className="text-xs sm:text-sm text-muted-foreground">Clean, professional appearance</p>
+                      <h4 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-foreground">{t('brandkit.logo.whiteBg')}</h4>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.logo.whiteBgDesc')}</p>
                     </div>
                     <div className="text-center">
                       <div className="w-24 h-24 sm:w-32 sm:h-32 bg-[#223256] rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
@@ -237,8 +238,8 @@ export default function BrandKitPage() {
                           className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                         />
                       </div>
-                      <h4 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-foreground">Navy Background</h4>
-                      <p className="text-xs sm:text-sm text-muted-foreground">Bold, authoritative presence</p>
+                      <h4 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-foreground">{t('brandkit.logo.navyBg')}</h4>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.logo.navyBgDesc')}</p>
                     </div>
                     <div className="text-center sm:col-span-2 md:col-span-1">
                       <div className="w-24 h-24 sm:w-32 sm:h-32 bg-[#4FACFE] rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
@@ -250,18 +251,18 @@ export default function BrandKitPage() {
                           className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                         />
                       </div>
-                      <h4 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-foreground">Sky Blue Background</h4>
-                      <p className="text-xs sm:text-sm text-muted-foreground">Modern, tech-forward look</p>
+                      <h4 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-foreground">{t('brandkit.logo.skyBg')}</h4>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.logo.skyBgDesc')}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Clear Spacing */}
                 <div className="mb-12 sm:mb-16">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">Clear Spacing Guidelines</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">{t('brandkit.spacing.title')}</h3>
                   <div className="bg-gradient-to-r from-[#223256]/5 to-[#4FACFE]/5 rounded-xl sm:rounded-2xl p-6 sm:p-8">
                     <p className="text-center text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
-                      Maintain proper spacing around the logo to ensure visual clarity and brand integrity
+                      {t('brandkit.spacing.lead')}
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-lg sm:rounded-xl flex items-center justify-center">
@@ -274,8 +275,8 @@ export default function BrandKitPage() {
                         />
                       </div>
                       <div className="text-center">
-                        <div className="text-base sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">Clear Space</div>
-                        <div className="text-xs sm:text-sm text-muted-foreground">Minimum distance = cap height of logomark</div>
+                        <div className="text-base sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">{t('brandkit.spacing.clearSpace')}</div>
+                        <div className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.spacing.minDistance')}</div>
                       </div>
                     </div>
                   </div>
@@ -284,7 +285,7 @@ export default function BrandKitPage() {
                 {/* Social Media & Favicon */}
                 <div className="grid sm:grid-cols-2 gap-8 sm:gap-12">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">Social Media Avatars</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">{t('brandkit.social.title')}</h3>
                     <div className="space-y-4 sm:space-y-6">
                       <div className="flex items-center bg-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4">
                         <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-sm border">
@@ -297,8 +298,8 @@ export default function BrandKitPage() {
                           />
                         </div>
                         <div>
-                          <div className="text-sm sm:text-base font-semibold text-foreground">Square Avatar</div>
-                          <div className="text-xs sm:text-sm text-muted-foreground">LinkedIn, Facebook, and other square platforms</div>
+                          <div className="text-sm sm:text-base font-semibold text-foreground">{t('brandkit.social.square')}</div>
+                          <div className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.social.squareDesc')}</div>
                         </div>
                       </div>
                       <div className="flex items-center bg-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4">
@@ -312,14 +313,14 @@ export default function BrandKitPage() {
                           />
                         </div>
                         <div>
-                          <div className="text-sm sm:text-base font-semibold text-foreground">Circle Avatar</div>
-                          <div className="text-xs sm:text-sm text-muted-foreground">X, Instagram, and other circular platforms</div>
+                          <div className="text-sm sm:text-base font-semibold text-foreground">{t('brandkit.social.circle')}</div>
+                          <div className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.social.circleDesc')}</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">Favicon</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">{t('brandkit.favicon.title')}</h3>
                     <div className="flex items-center bg-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-md sm:rounded-lg flex items-center justify-center mr-3 sm:mr-4 shadow-sm border">
                         <Image
@@ -331,8 +332,8 @@ export default function BrandKitPage() {
                         />
                       </div>
                       <div>
-                        <div className="text-sm sm:text-base font-semibold text-foreground">Web Favicon</div>
-                        <div className="text-xs sm:text-sm text-muted-foreground">16x16px for browser tabs and bookmarks</div>
+                        <div className="text-sm sm:text-base font-semibold text-foreground">{t('brandkit.favicon.web')}</div>
+                        <div className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.favicon.webDesc')}</div>
                       </div>
                     </div>
                   </div>
@@ -353,61 +354,60 @@ export default function BrandKitPage() {
                 <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-full text-white font-bold text-lg sm:text-xl mb-4 sm:mb-6">
                   03
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">Color System</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">{t('brandkit.colors.title')}</h2>
                 <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-[#223256] to-[#4FACFE] mx-auto rounded-full mb-6 sm:mb-8"></div>
                 <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-                  Our color palette reflects trust, innovation, and clean technology. Each color has been carefully
-                  selected to convey our brand values and create a cohesive visual identity.
+                  {t('brandkit.colors.description')}
                 </p>
               </div>
 
               <div className="max-w-6xl mx-auto">
                 {/* Primary Colors */}
                 <div className="mb-12 sm:mb-16">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">Primary Color Palette</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">{t('brandkit.colors.primaryTitle')}</h3>
                   <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
                     <div className="text-center">
                       <div className="w-24 h-24 sm:w-32 sm:h-32 bg-[#223256] rounded-2xl sm:rounded-3xl mx-auto mb-4 sm:mb-6 shadow-xl border-2 sm:border-4 border-white"></div>
-                      <h4 className="text-lg sm:text-xl font-bold mb-2 text-foreground">Navy Blue</h4>
+                      <h4 className="text-lg sm:text-xl font-bold mb-2 text-foreground">{t('brandkit.colors.navy')}</h4>
                       <div className="bg-white/80 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                         <div className="text-base sm:text-lg font-mono font-semibold text-[#223256] mb-1 sm:mb-2">#223256</div>
                         <div className="text-xs sm:text-sm text-muted-foreground mb-1">CMYK: 60 / 42 / 0 / 66</div>
                         <div className="text-xs sm:text-sm text-muted-foreground">RGB: 34 / 50 / 86</div>
                       </div>
-                      <p className="text-xs sm:text-sm text-muted-foreground">Authority, trust, and stability</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.colors.navyDesc')}</p>
                     </div>
                     <div className="text-center">
                       <div className="w-24 h-24 sm:w-32 sm:h-32 bg-[#4FACFE] rounded-2xl sm:rounded-3xl mx-auto mb-4 sm:mb-6 shadow-xl border-2 sm:border-4 border-white"></div>
-                      <h4 className="text-lg sm:text-xl font-bold mb-2 text-foreground">Sky Blue</h4>
+                      <h4 className="text-lg sm:text-xl font-bold mb-2 text-foreground">{t('brandkit.colors.sky')}</h4>
                       <div className="bg-white/80 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                         <div className="text-base sm:text-lg font-mono font-semibold text-[#4FACFE] mb-1 sm:mb-2">#4FACFE</div>
                         <div className="text-xs sm:text-sm text-muted-foreground mb-1">CMYK: 69 / 32 / 0 / 0</div>
                         <div className="text-xs sm:text-sm text-muted-foreground">RGB: 79 / 172 / 254</div>
                       </div>
-                      <p className="text-xs sm:text-sm text-muted-foreground">Innovation, clarity, and technology</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.colors.skyDesc')}</p>
                     </div>
                     <div className="text-center sm:col-span-2 md:col-span-1">
                       <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white border-2 sm:border-4 border-gray-200 rounded-2xl sm:rounded-3xl mx-auto mb-4 sm:mb-6 shadow-xl"></div>
-                      <h4 className="text-lg sm:text-xl font-bold mb-2 text-foreground">White</h4>
+                      <h4 className="text-lg sm:text-xl font-bold mb-2 text-foreground">{t('brandkit.colors.white')}</h4>
                       <div className="bg-white/80 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4">
                         <div className="text-base sm:text-lg font-mono font-semibold text-gray-600 mb-1 sm:mb-2">#FFFFFF</div>
                         <div className="text-xs sm:text-sm text-muted-foreground mb-1">CMYK: 00 / 00 / 00 / 00</div>
                         <div className="text-xs sm:text-sm text-muted-foreground">RGB: 255 / 255 / 255</div>
                       </div>
-                      <p className="text-xs sm:text-sm text-muted-foreground">Purity, simplicity, and clarity</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.colors.whiteDesc')}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Gradient System */}
                 <div className="mb-12 sm:mb-16">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">Gradient System</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-foreground">{t('brandkit.gradient.title')}</h3>
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-white/20">
                     <div className="w-full h-24 sm:h-32 bg-gradient-to-r from-[#223256] to-[#4FACFE] rounded-xl sm:rounded-2xl shadow-lg mb-4 sm:mb-6"></div>
                     <div className="text-center">
-                      <h4 className="text-lg sm:text-xl font-semibold mb-2 text-foreground">Primary Gradient</h4>
+                      <h4 className="text-lg sm:text-xl font-semibold mb-2 text-foreground">{t('brandkit.gradient.primary')}</h4>
                       <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
-                        Navy Blue to Sky Blue gradient for modern, dynamic applications
+                        {t('brandkit.gradient.primaryDesc')}
                       </p>
                       <div className="bg-gray-50 rounded-lg sm:rounded-xl p-3 sm:p-4 inline-block">
                         <div className="text-xs sm:text-sm font-mono text-gray-600">
@@ -430,13 +430,13 @@ export default function BrandKitPage() {
           >
             <Card className="p-6 sm:p-8">
               <div className="text-center mb-6 sm:mb-8">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">TYPOGRAPHY</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">{t('brandkit.typography.title')}</h2>
                 <div className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">04</div>
               </div>
 
               <div className="max-w-4xl mx-auto">
                 <div className="mb-6 sm:mb-8">
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">PRIMARY TYPEFACE</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">{t('brandkit.typography.primaryTitle')}</h3>
                   <div className="bg-gray-50 p-4 sm:p-6 rounded-lg mb-3 sm:mb-4">
                     <div className="text-xl sm:text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-lato)' }}>
                       LATO
@@ -448,13 +448,13 @@ export default function BrandKitPage() {
                       !@#$%^&*()
                     </div>
                     <p className="text-xs sm:text-sm text-muted-foreground">
-                      This primary typeface helps define your company to anyone interacting with your brand.
+                      {t('brandkit.typography.primaryDesc')}
                     </p>
                   </div>
                 </div>
 
                 <div className="mb-6 sm:mb-8">
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">SECONDARY TYPEFACE</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">{t('brandkit.typography.secondaryTitle')}</h3>
                   <div className="bg-gray-50 p-4 sm:p-6 rounded-lg mb-3 sm:mb-4">
                     <div className="text-xl sm:text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-inter)' }}>
                       INTER
@@ -466,13 +466,13 @@ export default function BrandKitPage() {
                       !@#$%^&*()
                     </div>
                     <p className="text-xs sm:text-sm text-muted-foreground">
-                      This secondary font helps support the primary in defining your company to anyone interacting with your brand.
+                      {t('brandkit.typography.secondaryDesc')}
                     </p>
                   </div>
                 </div>
 
                 <div className="mb-6 sm:mb-8">
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">USAGE</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">{t('brandkit.typography.usageTitle')}</h3>
                   <div className="space-y-4 sm:space-y-6">
                     <div>
                       <div className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2" style={{ fontFamily: 'var(--font-lato)' }}>AGV</div>
@@ -561,15 +561,14 @@ export default function BrandKitPage() {
           >
             <Card className="p-6 sm:p-8">
               <div className="text-center mb-6 sm:mb-8">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">PHOTOGRAPHY</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">{t('brandkit.photography.title')}</h2>
                 <div className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">05</div>
               </div>
 
               <div className="max-w-4xl mx-auto">
                 <div className="mb-6 sm:mb-8">
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
-                    A style used as framework or guide when creating imagery for the brand, ensuring a similar
-                    visual aesthetic and style is specific to the brand.
+                    {t('brandkit.photography.lead')}
                   </p>
                 </div>
 
@@ -583,7 +582,7 @@ export default function BrandKitPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 text-center">Clean Technology Focus</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 text-center">{t('brandkit.photography.captions.cleanTech')}</p>
                   </div>
                   <div className="group cursor-pointer">
                     <div className="relative w-full h-48 sm:h-64 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
@@ -594,7 +593,7 @@ export default function BrandKitPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 text-center">Energy Innovation</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 text-center">{t('brandkit.photography.captions.energyInnovation')}</p>
                   </div>
                   <div className="group cursor-pointer sm:col-span-2 lg:col-span-1">
                     <div className="relative w-full h-48 sm:h-64 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
@@ -605,7 +604,7 @@ export default function BrandKitPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 text-center">Sustainable Future</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 text-center">{t('brandkit.photography.captions.sustainableFuture')}</p>
                   </div>
                 </div>
               </div>
@@ -621,7 +620,7 @@ export default function BrandKitPage() {
           >
             <Card className="p-6 sm:p-8">
               <div className="text-center mb-6 sm:mb-8">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">APPLICATIONS</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">{t('brandkit.applications.title')}</h2>
                 <div className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">06</div>
               </div>
 
@@ -636,8 +635,8 @@ export default function BrandKitPage() {
                         className="object-cover"
                       />
                     </div>
-                    <h3 className="text-base sm:text-lg font-semibold mb-2 text-foreground">Water Bottle</h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground">Brand application on sustainable merchandise</p>
+                    <h3 className="text-base sm:text-lg font-semibold mb-2 text-foreground">{t('brandkit.applications.waterBottle')}</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.applications.waterBottleDesc')}</p>
                   </div>
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center border border-white/20 shadow-lg">
                     <div className="w-full h-48 sm:h-64 rounded-lg sm:rounded-xl overflow-hidden mb-3 sm:mb-4 shadow-lg">
@@ -648,8 +647,8 @@ export default function BrandKitPage() {
                         className="object-cover"
                       />
                     </div>
-                    <h3 className="text-base sm:text-lg font-semibold mb-2 text-foreground">Baseball Cap</h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground">Brand application on promotional apparel</p>
+                    <h3 className="text-base sm:text-lg font-semibold mb-2 text-foreground">{t('brandkit.applications.baseballCap')}</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{t('brandkit.applications.baseballCapDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -675,8 +674,8 @@ export default function BrandKitPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-semibold mb-2">{doc.title}</h3>
-                  <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">{doc.description}</p>
+                  <h3 className="text-base sm:text-lg font-semibold mb-2">{doc.titleKey ? t(doc.titleKey) : doc.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">{doc.descriptionKey ? t(doc.descriptionKey) : doc.description}</p>
 
                   <a
                     href={doc.fileUrl}
@@ -684,7 +683,7 @@ export default function BrandKitPage() {
                     rel="noopener noreferrer"
                     className="w-full bg-primary text-primary-foreground px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-center hover:bg-primary/90 transition-colors block"
                   >
-                    View Document
+                    {t('brandkit.documents.view')}
                   </a>
                 </Card>
               </motion.div>
@@ -699,10 +698,10 @@ export default function BrandKitPage() {
             className="mt-12 sm:mt-16"
           >
             <Card className="p-6 sm:p-8">
-              <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">INCORRECT USAGE</h2>
+              <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">{t('brandkit.usage.badTitle')}</h2>
               <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
                 <div>
-                  <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Logo Guidelines</h3>
+                  <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t('brandkit.usage.logoTitle')}</h3>
                   <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
                     <li> <span className="text-red-500">•</span> Do not use alternative lockups of the logo</li>
                     <li> <span className="text-red-500">•</span> Do not use unapproved colours</li>
@@ -713,7 +712,7 @@ export default function BrandKitPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Brand Standards</h3>
+                  <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t('brandkit.usage.standardsTitle')}</h3>
                   <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
                     <li> <span className="text-green-500">•</span> Maintain proper spacing around logos</li>
                     <li> <span className="text-green-500">•</span> Use approved color variations only</li>

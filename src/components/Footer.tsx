@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MessageCircle, Github, Send } from 'lucide-react';
+import { useTranslations } from '@/hooks/useTranslations';
 
 // Custom X (Twitter) Icon Component
 const XIcon = ({ className }: { className?: string }) => (
@@ -16,6 +17,8 @@ const XIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Footer() {
+  const { t } = useTranslations();
+  
   return (
     <footer className="bg-secondary border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -32,10 +35,10 @@ export default function Footer() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-xl font-semibold text-foreground">AGV Protocol</span>
+              <span className="text-xl font-semibold text-foreground">{t('footer.company')}</span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
-              Bridging the gap between real-world assets and blockchain technology through innovative IoT integration and sustainable practices.
+              {t('footer.description')}
             </p>
             <div className="flex items-center space-x-2 sm:space-x-3">
               <a href="https://discord.gg/JP9RtzM2SC" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 border border-muted-foreground rounded-lg flex items-center justify-center hover:bg-muted-foreground/10 transition-colors">
@@ -56,27 +59,27 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              Quick Links
+              {t('footer.quickLinks')}
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/tech" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Technology
+                  {t('nav.tech')}
                 </Link>
               </li>
               <li>
                 <Link href="/financials" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Financials
+                  {t('nav.financials')}
                 </Link>
               </li>
               <li>
                 <Link href="/legal" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Legal
+                  {t('nav.legal')}
                 </Link>
               </li>
               <li>
                 <Link href="/esg" className="text-muted-foreground hover:text-foreground transition-colors">
-                  ESG
+                  {t('nav.esg')}
                 </Link>
               </li>
             </ul>
@@ -85,27 +88,27 @@ export default function Footer() {
           {/* Resources */}
           <div>
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              Resources
+              {t('footer.resources')}
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/brandkit" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Brand Kit
+                  {t('nav.brandkit')}
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
+                  {t('nav.contact')}
                 </Link>
               </li>
               <li>
                 <Link href="/investor" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Data Room
+                  {t('footer.dataRoom')}
                 </Link>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Privacy Policy
+                  {t('footer.privacyPolicy')}
                 </a>
               </li>
             </ul>
@@ -115,7 +118,7 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm">
-              © 2025 AGV Protocol. All rights reserved.
+              {t('footer.copyright')}
             </p>
           </div>
         </div>

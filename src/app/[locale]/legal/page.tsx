@@ -7,6 +7,7 @@ import PDFViewer from '@/components/PDFViewer';
 import DocumentCard from '@/components/DocumentCard';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { motion } from 'framer-motion';
+import { useTranslations } from '@/hooks/useTranslations';
 
 // Document data structure
 interface Document {
@@ -23,156 +24,157 @@ interface DocumentSection {
 }
 
 export default function LegalPage() {
+  const { t } = useTranslations();
   // Main document
   const mainDocument = {
-    title: "Legal Packet Index",
-    description: "Comprehensive legal documentation index for institutional due diligence and compliance review, covering all legal structures and regulatory requirements.",
+    title: t('legal.mainDoc.title'),
+    description: t('legal.mainDoc.description'),
     url: "https://drive.google.com/file/d/1YBs9KNhi0pht2mQkglykG4_8iNQmnhRd/view"
   };
 
   // Document sections
   const documentSections: DocumentSection[] = [
     {
-      title: "Articles of Association",
-      description: "Official articles of association and corporate governance documents for BVI entities.",
+      title: t('legal.sections.articles.title'),
+      description: t('legal.sections.articles.description'),
       documents: [
         {
-          title: "BVI JLL Asset Ltd Articles of Association v2025.10",
-          description: "Official articles of association for BVI JLL Asset Ltd, establishing corporate governance framework and operational guidelines.",
+          title: t('legal.sections.articles.docs.bviArticles.title'),
+          description: t('legal.sections.articles.docs.bviArticles.description'),
           url: "https://drive.google.com/file/d/1VO6wmr2tRIu6oe5GyCDxSiJ1LJXUiKjW/view"
         }
       ]
     },
     {
-      title: "China Onshore Asset Entities",
-      description: "Legal documentation for China onshore asset entities including authorization agreements, board resolutions, and compliance statements.",
+      title: t('legal.sections.china.title'),
+      description: t('legal.sections.china.description'),
       documents: [
         {
-          title: "Authorization Agreement CHN CO_BVI 2025 v2025.10",
-          description: "Authorization agreement between China onshore entities and BVI holding company for asset management and operations.",
+          title: t('legal.sections.china.docs.authorization.title'),
+          description: t('legal.sections.china.docs.authorization.description'),
           url: "https://drive.google.com/file/d/1AR0hlm23iudg9vhu76Tt_RN068N-CQp8/view"
         },
         {
-          title: "Board Resolution CHN CO_BVI 2025 v2025.10",
-          description: "Official board resolution from China onshore entities authorizing BVI operations and asset management activities.",
+          title: t('legal.sections.china.docs.boardResolution.title'),
+          description: t('legal.sections.china.docs.boardResolution.description'),
           url: "https://drive.google.com/file/d/1wJgiNtARV2disKQOblUb2eT6zjNp9_LE/view"
         },
         {
-          title: "Compliance Statement CHN CO_BVI 2025 v2025.10",
-          description: "Comprehensive compliance statement from China onshore entities regarding regulatory adherence and operational standards.",
+          title: t('legal.sections.china.docs.compliance.title'),
+          description: t('legal.sections.china.docs.compliance.description'),
           url: "https://drive.google.com/file/d/1Ac94emrXNET5E_N_kznhbnvcraXfXr9f/view"
         },
         {
-          title: "Irrevocable Authorization Statement CHN CO_BVI 2025 v2025.10",
-          description: "Irrevocable authorization statement granting BVI entities full authority over China onshore asset operations.",
+          title: t('legal.sections.china.docs.irrevocable.title'),
+          description: t('legal.sections.china.docs.irrevocable.description'),
           url: "https://drive.google.com/file/d/1zRKNFVwFdKfEPJlltW1LWnBskmB4sn5I/view"
         },
         {
-          title: "No Litigation/Arbitration Certificate CHN CO_BVI 2025 v2025.10",
-          description: "Official certificate confirming no pending litigation or arbitration proceedings for China onshore entities.",
+          title: t('legal.sections.china.docs.noLitigation.title'),
+          description: t('legal.sections.china.docs.noLitigation.description'),
           url: "https://drive.google.com/file/d/1tgKsYSQhYpjRL0jyiSrUtYse4mWSauFg/view"
         },
         {
-          title: "Tax Registration Certificate & Tax Clearance Certificate CHN CO_BVI 2025 v2025.10",
-          description: "Official tax registration and clearance certificates from Chinese tax authorities for onshore entities.",
+          title: t('legal.sections.china.docs.tax.title'),
+          description: t('legal.sections.china.docs.tax.description'),
           url: "https://drive.google.com/file/d/1vcG1nkJhsdtsb1BnBtz3m0PyprtOuxtN/view"
         }
       ]
     },
     {
-      title: "Offshore Holding SPV - British Virgin Islands",
-      description: "Complete legal documentation for BVI offshore holding special purpose vehicle including board resolutions, authorization chains, and compliance statements.",
+      title: t('legal.sections.bvi.title'),
+      description: t('legal.sections.bvi.description'),
       documents: [
         {
-          title: "Board Resolution (Re-Authorization) BVI_ijet 2025 v2025.10",
-          description: "Board resolution for re-authorization of BVI ijet operations and asset management activities.",
+          title: t('legal.sections.bvi.docs.boardReauth.title'),
+          description: t('legal.sections.bvi.docs.boardReauth.description'),
           url: "https://drive.google.com/file/d/16s2tb3ZCrfw3-BUDr7fcZeByyegFTMwZ/view"
         },
         {
-          title: "Chain of Authorization BVI_ijet 2025 v2025.10",
-          description: "Complete chain of authorization documentation establishing legal authority flow from BVI entities.",
+          title: t('legal.sections.bvi.docs.chain.title'),
+          description: t('legal.sections.bvi.docs.chain.description'),
           url: "https://drive.google.com/file/d/1bcVcuPVfooW1OPRm-Q4IVLvD0QyhnM9h/view?usp=drive_link"
         },
         {
-          title: "Compliance Statement BVI_ijet ltd 2025 v2025.10",
-          description: "Comprehensive compliance statement from BVI ijet ltd regarding regulatory adherence and operational standards.",
+          title: t('legal.sections.bvi.docs.compliance.title'),
+          description: t('legal.sections.bvi.docs.compliance.description'),
           url: "https://drive.google.com/file/d/1KmTQ5qbF3B22IAqzRnYj_-6ZPv00RgBM/view"
         },
         {
-          title: "Irrevocable Authorization Statement BVI_ijet ltd 2025 v2025.10",
-          description: "Irrevocable authorization statement from BVI ijet ltd establishing permanent operational authority.",
+          title: t('legal.sections.bvi.docs.irrevocable.title'),
+          description: t('legal.sections.bvi.docs.irrevocable.description'),
           url: "https://drive.google.com/file/d/1h8bFYZc6bA2ExmeTPXwXdflfEFV-VdsA/view"
         },
         {
-          title: "KYC & AML Documentation BVI_ijet Ltd 2025 v2025.10",
-          description: "Complete Know Your Customer and Anti-Money Laundering documentation for BVI ijet Ltd.",
+          title: t('legal.sections.bvi.docs.kyc.title'),
+          description: t('legal.sections.bvi.docs.kyc.description'),
           url: "https://drive.google.com/file/d/1ODXb4uxKYtoJUjJrqXFIDGtakfc-5EL_/view"
         },
         {
-          title: "No Litigation/Arbitration Certificate BVI_ijet ltd 2025 v2025.10",
-          description: "Official certificate confirming no pending litigation or arbitration proceedings for BVI ijet ltd.",
+          title: t('legal.sections.bvi.docs.noLitigation.title'),
+          description: t('legal.sections.bvi.docs.noLitigation.description'),
           url: "https://drive.google.com/file/d/1LDHkr2xd-PyS9-yrljylKLufaeOrSrLL/view"
         },
         {
-          title: "Re-Authorization Agreement BVI Ijet ltd 2025 v2025.10",
-          description: "Re-authorization agreement establishing renewed operational authority for BVI Ijet ltd.",
+          title: t('legal.sections.bvi.docs.reauth.title'),
+          description: t('legal.sections.bvi.docs.reauth.description'),
           url: "https://drive.google.com/file/d/1mqklbyqi7DVmWR5yfsGNnPGluzQcFEbX/view"
         },
         {
-          title: "Revenue and Distribution Agreement BVI_ijet ltd 2025 v2025.10",
-          description: "Revenue and distribution agreement outlining profit sharing and distribution mechanisms for BVI ijet ltd.",
+          title: t('legal.sections.bvi.docs.revenue.title'),
+          description: t('legal.sections.bvi.docs.revenue.description'),
           url: "https://drive.google.com/file/d/1CdrQf3KMX7dWnOiIdcR5BuBWcv5VzJ_N/view"
         }
       ]
     },
     {
-      title: "Issuer & DAO Governance SPV - New Zealand",
-      description: "Legal documentation for New Zealand-based issuer and DAO governance special purpose vehicle including incorporation certificates and authorization agreements.",
+      title: t('legal.sections.nz.title'),
+      description: t('legal.sections.nz.description'),
       documents: [
         {
-          title: "Certificate of Incorporation (3669875 11November2022) v2025.10",
-          description: "Official certificate of incorporation for New Zealand entity (3669875) dated November 11, 2022.",
+          title: t('legal.sections.nz.docs.coi.title'),
+          description: t('legal.sections.nz.docs.coi.description'),
           url: "https://drive.google.com/file/d/1YjTLsm13Z-4I4pg9SdxQyBsN0TNQY_iH/view?usp=drive_link"
         },
         {
-          title: "Chain of Authorization BVI_ijet 2025 v2025.10",
-          description: "Chain of authorization documentation establishing legal authority flow from BVI to New Zealand entities.",
+          title: t('legal.sections.nz.docs.chain.title'),
+          description: t('legal.sections.nz.docs.chain.description'),
           url: "https://drive.google.com/file/d/1NzKP2HuxwkyaLm05rfZqP44QTX_qcAHq/view"
         },
         {
-          title: "Company Extract (3669875 11November2022) v2025.10",
-          description: "Official company extract from New Zealand Companies Office for entity 3669875 dated November 11, 2022.",
+          title: t('legal.sections.nz.docs.extract.title'),
+          description: t('legal.sections.nz.docs.extract.description'),
           url: "https://drive.google.com/file/d/1QZhelus1-4TrhgnANevsBjEJQYPXFCXs/view"
         },
         {
-          title: "Constitution of New Zealand iJet Limited",
-          description: "Official constitution document for New Zealand iJet Limited establishing corporate governance framework and operational guidelines.",
+          title: t('legal.sections.nz.docs.constitution.title'),
+          description: t('legal.sections.nz.docs.constitution.description'),
           url: "https://drive.google.com/file/d/1Zz8BOD14rNn5YzGVkFBLibDFMRhW6a_c/view"
         },
         {
-          title: "Re-Authorization Agreement BVI Ijet ltd 2025 v2025.10",
-          description: "Re-authorization agreement between BVI and New Zealand entities establishing operational authority.",
+          title: t('legal.sections.nz.docs.reauth.title'),
+          description: t('legal.sections.nz.docs.reauth.description'),
           url: "https://drive.google.com/file/d/1_QpJFdrRySDYSm1b8DB3LPwY57xbV3gt/view"
         }
       ]
     },
     {
-      title: "Legal Structure & Verification Documents",
-      description: "Legal structure summary and verification documents including certified translations and legal summaries.",
+      title: t('legal.sections.structure.title'),
+      description: t('legal.sections.structure.description'),
       documents: [
         {
-          title: "AGV Protocol – Legal Structure Summary",
-          description: "Comprehensive legal structure summary outlining the complete corporate and legal framework of AGV Protocol.",
+          title: t('legal.sections.structure.docs.summary.title'),
+          description: t('legal.sections.structure.docs.summary.description'),
           url: "https://drive.google.com/file/d/1hGtoKW-iZ2cIGSFZAYIFoMbDRLijo7Bb/view"
         },
         {
-          title: "NAATI Certified Translator Chinese into English Certificate",
-          description: "Official NAATI certification for Chinese to English translation services (Certificate 3327_620583_6).",
+          title: t('legal.sections.structure.docs.naati.title'),
+          description: t('legal.sections.structure.docs.naati.description'),
           url: "https://drive.google.com/file/d/1SU-FsT6WAk2IHNtDIHlbwn9N26BiN8VU/view"
         },
         {
-          title: "NZSTII Certified Translator Chinese into English Certificate of Membership",
-          description: "Official NZSTII membership certificate for certified Chinese to English translation services.",
+          title: t('legal.sections.structure.docs.nzstii.title'),
+          description: t('legal.sections.structure.docs.nzstii.description'),
           url: "https://drive.google.com/file/d/117pK6bwoasfOAC_Lc25H0-kLTn-VrpFx/view"
         }
       ]
@@ -185,9 +187,9 @@ export default function LegalPage() {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            title="Legal & Registration Documents"
-            subtitle="Legal Documentation"
-              description="Review AGV Protocol's comprehensive legal structure, compliance status, and regulatory framework through detailed documentation."
+            title={t('legal.header.title')}
+            subtitle={t('legal.header.subtitle')}
+            description={t('legal.header.description')}
             className="mb-16"
           />
 
@@ -221,36 +223,36 @@ export default function LegalPage() {
             className="mb-16"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">Compliance Status</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('legal.compliance.title')}</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Regulatory Compliance</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('legal.compliance.regulatory')}</h3>
                   <div className="space-y-3">
                     <div className="flex items-center">
                       <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                        <span className="text-sm">BVI Corporate Registration</span>
+                        <span className="text-sm">{t('legal.compliance.items.bvi')}</span>
                       </div>
                       <div className="flex items-center">
                         <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                        <span className="text-sm">New Zealand Incorporation</span>
+                        <span className="text-sm">{t('legal.compliance.items.nz')}</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                      <span className="text-sm">KYC/AML Compliance</span>
+                      <span className="text-sm">{t('legal.compliance.items.kyc')}</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                        <span className="text-sm">China Onshore Registration</span>
+                        <span className="text-sm">{t('legal.compliance.items.cn')}</span>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Legal Structure</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('legal.structure.title')}</h3>
                   <div className="space-y-2 text-muted-foreground text-sm">
-                      <div>• BVI Holding Company (JLL Asset Ltd)</div>
-                      <div>• New Zealand SPV (3669875)</div>
-                      <div>• China Onshore Entities</div>
-                      <div>• Multi-jurisdictional Compliance</div>
+                      <div>• {t('legal.structure.items.bvi')}</div>
+                      <div>• {t('legal.structure.items.nz')}</div>
+                      <div>• {t('legal.structure.items.cn')}</div>
+                      <div>• {t('legal.structure.items.multi')}</div>
                   </div>
                 </div>
               </div>
@@ -299,24 +301,24 @@ export default function LegalPage() {
             className="mt-16"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">Legal Framework</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('legal.framework.title')}</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Corporate Governance</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('legal.framework.governance.title')}</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                      <li>• Multi-jurisdictional structure</li>
-                      <li>• BVI holding company framework</li>
-                      <li>• New Zealand DAO governance</li>
-                      <li>• China onshore compliance</li>
+                      <li>• {t('legal.framework.governance.multi')}</li>
+                      <li>• {t('legal.framework.governance.bvi')}</li>
+                      <li>• {t('legal.framework.governance.nz')}</li>
+                      <li>• {t('legal.framework.governance.cn')}</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Risk Management</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('legal.framework.risk.title')}</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                      <li>• Comprehensive legal documentation</li>
-                      <li>• Certified translation services</li>
-                      <li>• Regulatory compliance monitoring</li>
-                      <li>• Multi-jurisdictional legal opinions</li>
+                      <li>• {t('legal.framework.risk.docs')}</li>
+                      <li>• {t('legal.framework.risk.translation')}</li>
+                      <li>• {t('legal.framework.risk.monitoring')}</li>
+                      <li>• {t('legal.framework.risk.opinions')}</li>
                   </ul>
                 </div>
               </div>
@@ -331,19 +333,19 @@ export default function LegalPage() {
               className="mt-8"
             >
               <Card className="p-8 bg-primary/5 border-primary/20">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">Legal Structure Overview</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-primary">{t('legal.overview.title')}</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">BVI</div>
-                    <div className="text-sm text-primary/80">Holding Company</div>
+                    <div className="text-2xl font-bold text-primary mb-2">{t('legal.overview.bvi')}</div>
+                    <div className="text-sm text-primary/80">{t('legal.overview.bviDesc')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">NZ</div>
-                    <div className="text-sm text-primary/80">DAO Governance</div>
+                    <div className="text-2xl font-bold text-primary mb-2">{t('legal.overview.nz')}</div>
+                    <div className="text-sm text-primary/80">{t('legal.overview.nzDesc')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">CN</div>
-                    <div className="text-sm text-primary/80">Onshore Assets</div>
+                    <div className="text-2xl font-bold text-primary mb-2">{t('legal.overview.cn')}</div>
+                    <div className="text-sm text-primary/80">{t('legal.overview.cnDesc')}</div>
                   </div>
                 </div>
               </Card>

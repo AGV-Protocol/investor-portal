@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "translate": "tsx scripts/translate-missing.ts",
+    "translate-sync": "node scripts/sync-translations.js"
   },
   "dependencies": {
     "@getbrevo/brevo": "^3.0.1",

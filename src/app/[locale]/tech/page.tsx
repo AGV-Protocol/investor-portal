@@ -7,6 +7,7 @@ import PDFViewer from '@/components/PDFViewer';
 import DocumentCard from '@/components/DocumentCard';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { motion } from 'framer-motion';
+import { useTranslations } from '@/hooks/useTranslations';
 
 // Document data structure
 interface Document {
@@ -23,75 +24,76 @@ interface DocumentSection {
 }
 
 export default function TechPage() {
+  const { t } = useTranslations();
   // Main document
   const mainDocument = {
-    title: "Technical Audit and Infrastructure Verification Index",
-    description: "Comprehensive technical audit and infrastructure verification documentation covering system architecture, security assessments, and technology stack validation.",
+    title: t('tech.mainDoc.title'),
+    description: t('tech.mainDoc.description'),
     url: "https://drive.google.com/file/d/1mGqwUxxpJkHuaCjzlhQgnf8nUlLWXC0L/view?usp=drive_link"
   };
 
   // Document sections
   const documentSections: DocumentSection[] = [
     {
-      title: "IP Summary",
-      description: "Intellectual property documentation including whitepaper excerpts covering power to mint functionality and RWA mapping protocols.",
+      title: t('tech.sections.ip.title'),
+      description: t('tech.sections.ip.description'),
       documents: [
         {
-          title: "Power to Mint (Whitepaper Excerpt) V2025.10",
-          description: "Technical whitepaper excerpt detailing the power to mint functionality and token generation mechanisms within the AGV Protocol ecosystem.",
+          title: t('tech.sections.ip.docs.powerToMint.title'),
+          description: t('tech.sections.ip.docs.powerToMint.description'),
           url: "https://drive.google.com/file/d/1T-SuRerI2noUMrSeaIy7bL6wUCpYKZpU/view"
         },
         {
-          title: "RWA Mapping (Whitepaper Excerpt) v2025.10",
-          description: "Comprehensive whitepaper excerpt covering Real-World Asset (RWA) mapping protocols and tokenization mechanisms.",
+          title: t('tech.sections.ip.docs.rwaMapping.title'),
+          description: t('tech.sections.ip.docs.rwaMapping.description'),
           url: "https://drive.google.com/file/d/1NlumvYZAisfl9sZDZ9c0qeV5FDXcXTZD/view?usp=drive_link"
         }
       ]
     },
     {
-      title: "Links to GitHub (Smart Contracts)",
-      description: "Access to smart contract repositories and development resources for AGV Protocol's blockchain infrastructure.",
+      title: t('tech.sections.github.title'),
+      description: t('tech.sections.github.description'),
       documents: [
         {
-          title: "GitHub Profile Link",
-          description: "Direct access to AGV Protocol's GitHub profile containing smart contract repositories, development documentation, and source code.",
+          title: t('tech.sections.github.docs.profile.title'),
+          description: t('tech.sections.github.docs.profile.description'),
           url: "https://docs.google.com/document/d/1YjG5OKFfkTjOht3GTaUTMRUiKazyYaMTfjj3NTKhnfM/edit"
         }
       ]
     },
     {
-      title: "Pitch Decks",
-      description: "Comprehensive pitch deck collection covering different versions for business development, institutional investors, and specialized presentations.",
+      title: t('tech.sections.pitchDecks.title'),
+      description: t('tech.sections.pitchDecks.description'),
       documents: [
         {
-          title: "AGV Protocol Pitch Deck (BD-Version) v2025.10",
-          description: "Business development focused pitch deck highlighting AGV Protocol's value proposition and market opportunities.",
+          title: t('tech.sections.pitchDecks.docs.bd.title'),
+          description: t('tech.sections.pitchDecks.docs.bd.description'),
           url: "https://drive.google.com/file/d/1kVwwThMXEOsAsfsH66yGA_7UFEbmvkAf/view"
         },
         {
-          title: "AGV Protocol Pitch Deck (Institutional) v2025.10",
-          description: "Institutional investor focused pitch deck with detailed financial projections and risk assessments.",
+          title: t('tech.sections.pitchDecks.docs.institutional.title'),
+          description: t('tech.sections.pitchDecks.docs.institutional.description'),
           url: "https://drive.google.com/file/d/11rC_K2nBziNDhDtFdIu-LtdhlGJtgsLB/view"
         },
         {
-          title: "AGV Protocol Pitch Deck (Oil to AI Power Edition) v2025.10",
-          description: "Specialized pitch deck focusing on the transition from traditional oil-based power to AI-powered renewable energy solutions.",
+          title: t('tech.sections.pitchDecks.docs.oilToAi.title'),
+          description: t('tech.sections.pitchDecks.docs.oilToAi.description'),
           url: "https://drive.google.com/file/d/1NlWfJ2tjYq8mWH-oXnZAXv4AXXBSUNDN/view"
         },
         {
-          title: "AGV Protocol Pitch Deck v2025.10",
-          description: "Comprehensive pitch deck covering all aspects of AGV Protocol including technology, market opportunity, and business model.",
+          title: t('tech.sections.pitchDecks.docs.general.title'),
+          description: t('tech.sections.pitchDecks.docs.general.description'),
           url: "https://drive.google.com/file/d/11N8RXY9NnAQd9bi-nyvCBco2l6c0vZVo/view?usp=drive_link"
         }
       ]
     },
     {
-      title: "Technology Architecture & Process Flow",
-      description: "Detailed technical documentation covering system architecture, process flows, and ecosystem design.",
+      title: t('tech.sections.architecture.title'),
+      description: t('tech.sections.architecture.description'),
       documents: [
         {
-          title: "AGV Protocol Ecosystem V2025.10",
-          description: "Comprehensive ecosystem documentation covering technology architecture, process flows, and system integration points.",
+          title: t('tech.sections.architecture.docs.ecosystem.title'),
+          description: t('tech.sections.architecture.docs.ecosystem.description'),
           url: "https://drive.google.com/file/d/1u1yQ5ZVKRHoVKupUULg2mcscZVgV7v9E/view"
         }
       ]
@@ -104,9 +106,9 @@ export default function TechPage() {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <SectionHeader
-              title="Technology & Architecture"
-              subtitle="Technical Documentation"
-              description="Explore AGV Protocol's technical infrastructure, system architecture, and security audits through comprehensive documentation."
+              title={t('tech.header.title')}
+              subtitle={t('tech.header.subtitle')}
+              description={t('tech.header.description')}
               className="mb-16"
             />
 
@@ -140,23 +142,23 @@ export default function TechPage() {
               className="mb-16"
             >
               <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-6">Technical Metrics</h2>
+                <h2 className="text-2xl font-semibold mb-6">{t('tech.metrics.title')}</h2>
                 <div className="grid md:grid-cols-4 gap-6">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">99.9%</div>
-                    <div className="text-sm text-muted-foreground">Uptime SLA</div>
+                    <div className="text-sm text-muted-foreground">{t('tech.metrics.uptime')}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">&lt;2s</div>
-                    <div className="text-sm text-muted-foreground">Transaction Speed</div>
+                    <div className="text-sm text-muted-foreground">{t('tech.metrics.speed')}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">256-bit</div>
-                    <div className="text-sm text-muted-foreground">Encryption</div>
+                    <div className="text-sm text-muted-foreground">{t('tech.metrics.encryption')}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                    <div className="text-sm text-muted-foreground">Monitoring</div>
+                    <div className="text-sm text-muted-foreground">{t('tech.metrics.monitoring')}</div>
                   </div>
                 </div>
               </Card>
@@ -204,24 +206,24 @@ export default function TechPage() {
               className="mt-16"
             >
               <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-6">Technical Highlights</h2>
+                <h2 className="text-2xl font-semibold mb-6">{t('tech.highlights.title')}</h2>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-lg font-semibold mb-4">Blockchain Infrastructure</h3>
+                    <h3 className="text-lg font-semibold mb-4">{t('tech.highlights.blockchain.title')}</h3>
                     <ul className="space-y-2 text-muted-foreground">
-                      <li>• Layer 2 scaling solutions</li>
-                      <li>• Smart contract automation</li>
-                      <li>• Cross-chain interoperability</li>
-                      <li>• Decentralized governance</li>
+                      <li>• {t('tech.highlights.blockchain.l2')}</li>
+                      <li>• {t('tech.highlights.blockchain.automation')}</li>
+                      <li>• {t('tech.highlights.blockchain.interop')}</li>
+                      <li>• {t('tech.highlights.blockchain.governance')}</li>
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-4">IoT Integration</h3>
+                    <h3 className="text-lg font-semibold mb-4">{t('tech.highlights.iot.title')}</h3>
                     <ul className="space-y-2 text-muted-foreground">
-                      <li>• Real-time data feeds</li>
-                      <li>• Device authentication</li>
-                      <li>• Carbon tracking sensors</li>
-                      <li>• Automated compliance</li>
+                      <li>• {t('tech.highlights.iot.realtime')}</li>
+                      <li>• {t('tech.highlights.iot.auth')}</li>
+                      <li>• {t('tech.highlights.iot.carbon')}</li>
+                      <li>• {t('tech.highlights.iot.compliance')}</li>
                     </ul>
                   </div>
                 </div>
@@ -236,19 +238,19 @@ export default function TechPage() {
               className="mt-8"
             >
               <Card className="p-8 bg-primary/5 border-primary/20">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">Technology Stack</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-primary">{t('tech.stack.title')}</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">Blockchain</div>
-                    <div className="text-sm text-primary/80">Smart Contracts & DeFi</div>
+                    <div className="text-2xl font-bold text-primary mb-2">{t('tech.stack.blockchain')}</div>
+                    <div className="text-sm text-primary/80">{t('tech.stack.blockchainDesc')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">IoT</div>
-                    <div className="text-sm text-primary/80">Real-time Monitoring</div>
+                    <div className="text-2xl font-bold text-primary mb-2">{t('tech.stack.iot')}</div>
+                    <div className="text-sm text-primary/80">{t('tech.stack.iotDesc')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">AI/ML</div>
-                    <div className="text-sm text-primary/80">Predictive Analytics</div>
+                    <div className="text-2xl font-bold text-primary mb-2">{t('tech.stack.aiml')}</div>
+                    <div className="text-sm text-primary/80">{t('tech.stack.aimlDesc')}</div>
                   </div>
                 </div>
               </Card>

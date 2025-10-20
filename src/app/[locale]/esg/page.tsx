@@ -7,6 +7,7 @@ import PDFViewer from '@/components/PDFViewer';
 import DocumentCard from '@/components/DocumentCard';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { motion } from 'framer-motion';
+import { useTranslations } from '@/hooks/useTranslations';
 
 // Document data structure
 interface Document {
@@ -23,104 +24,105 @@ interface DocumentSection {
 }
 
 export default function ESGPage() {
+  const { t } = useTranslations();
   // Main document
   const mainDocument = {
-    title: "ESG & Sustainability Impact Report",
-    description: "Comprehensive assessment of AGV Protocol's environmental impact, sustainability initiatives, and real-world asset verification.",
+    title: t('esg.main.title'),
+    description: t('esg.main.description'),
     url: "https://drive.google.com/file/d/1ZXuMQ_J1qk2kO0ikhb7v7A9G5JCyJ-SR/view"
   };
 
   // Document sections
   const documentSections: DocumentSection[] = [
     {
-      title: "Administrative and Financial Documents",
-      description: "Essential legal and financial documentation for project establishment and compliance.",
+      title: t('esg.sections.admin.title'),
+      description: t('esg.sections.admin.description'),
       documents: [
         {
-          title: "Registration Confirmation of Enterprise Investment Project in Shaanxi Province",
-          description: "Official registration confirmation for the enterprise investment project in Shaanxi Province.",
+          title: t('esg.sections.admin.docs.registration.title'),
+          description: t('esg.sections.admin.docs.registration.description'),
           url: "https://drive.google.com/file/d/1UpKQf0Is2pK4mMpFRe7n4E5R2Gosuzvs/view?usp=drive_link"
         },
         {
-          title: "Land Lease Contract",
-          description: "Legal documentation for land lease agreements and property rights.",
+          title: t('esg.sections.admin.docs.lease.title'),
+          description: t('esg.sections.admin.docs.lease.description'),
           url: "https://drive.google.com/file/d/1UXijBBnkcNvfgutvGLFW5enBojdg_Uc1/view"
         },
         {
-          title: "Government Agricultural Photovoltaic Joint Venture Agreement",
-          description: "Official joint venture agreement between government and agricultural photovoltaic project partners.",
+          title: t('esg.sections.admin.docs.jv.title'),
+          description: t('esg.sections.admin.docs.jv.description'),
           url: "https://drive.google.com/file/d/1wU09tigbNCNZqlFrvVIWYFhaMly8GXDh/view"
         },
         {
-          title: "Financial Due Diligence Report",
-          description: "Comprehensive financial analysis and due diligence assessment of the project.",
+          title: t('esg.sections.admin.docs.dd.title'),
+          description: t('esg.sections.admin.docs.dd.description'),
           url: "https://drive.google.com/file/d/1HxNe-6IuSeOTEafhwygbuuJtcLS-fR8X/view"
         }
       ]
     },
     {
-      title: "Yichuan County 6.42 MW Orchard + Solar Hybrid Project (Approvals & Reviews)",
-      description: "Complete set of government approvals and regulatory reviews for the Yichuan County solar hybrid project.",
+      title: t('esg.sections.yichuan.title'),
+      description: t('esg.sections.yichuan.description'),
       documents: [
         {
-          title: "Yunyan Town Land Transfer Certificate",
-          description: "Official land transfer certificate from Yunyan Town authorities.",
+          title: t('esg.sections.yichuan.docs.landTransfer.title'),
+          description: t('esg.sections.yichuan.docs.landTransfer.description'),
           url: "https://drive.google.com/file/d/1ntEUKVU2DyQJvf7S6EiQVwBs3Zik8cqq/view"
         },
         {
-          title: "Economic Development Bureau Approval",
-          description: "Approval documentation from the Economic Development Bureau.",
+          title: t('esg.sections.yichuan.docs.edb.title'),
+          description: t('esg.sections.yichuan.docs.edb.description'),
           url: "https://drive.google.com/file/d/1u8h-9m52UNpLTr05EIS1ueNeLwZ5zpzn/view"
         },
         {
-          title: "Natural Resources Bureau Approval",
-          description: "Official approval from the Natural Resources Bureau for land use and environmental compliance.",
+          title: t('esg.sections.yichuan.docs.nrb.title'),
+          description: t('esg.sections.yichuan.docs.nrb.description'),
           url: "https://drive.google.com/file/d/1j5DIpobUMu9830h_oa7YgUi4QN0-dida/view"
         },
         {
-          title: "Yichuan County Coal Reduction Office Land Approval",
-          description: "Land approval documentation from the Yichuan County Coal Reduction Office.",
+          title: t('esg.sections.yichuan.docs.coal.title'),
+          description: t('esg.sections.yichuan.docs.coal.description'),
           url: "https://drive.google.com/file/d/1V1UUn5Qm8YFC8HDkEGN-5IyP439luGts/view"
         },
         {
-          title: "Yichuan County Economic Development Bureau Opinion",
-          description: "Official opinion and recommendation from the Yichuan County Economic Development Bureau.",
+          title: t('esg.sections.yichuan.docs.edbOpinion.title'),
+          description: t('esg.sections.yichuan.docs.edbOpinion.description'),
           url: "https://drive.google.com/file/d/1Jat6StbcuNZg9U2My2ShF0w8VQcaoxOV/view"
         },
         {
-          title: "Yichuan County Development and Reform Bureau Approval",
-          description: "Approval documentation from the Yichuan County Development and Reform Bureau.",
+          title: t('esg.sections.yichuan.docs.drb.title'),
+          description: t('esg.sections.yichuan.docs.drb.description'),
           url: "https://drive.google.com/file/d/19pGP79fUdrdLvoMhbDU5kb4VO2Mpa80J/view"
         },
         {
-          title: "Yichuan County Forestry Bureau Approval",
-          description: "Forestry and environmental approval from the Yichuan County Forestry Bureau.",
+          title: t('esg.sections.yichuan.docs.forestry.title'),
+          description: t('esg.sections.yichuan.docs.forestry.description'),
           url: "https://drive.google.com/file/d/1T9KIotVbS-IK3XGTa_PD4qMtraQyd5P4/view"
         },
         {
-          title: "Yichuan County Environmental Protection Bureau Opinion",
-          description: "Environmental impact assessment and opinion from the Environmental Protection Bureau.",
+          title: t('esg.sections.yichuan.docs.epb.title'),
+          description: t('esg.sections.yichuan.docs.epb.description'),
           url: "https://drive.google.com/file/d/1jwk-fY_bNvxdIn_jW7AjIolnCWqTuVfb/view"
         }
       ]
     },
     {
-      title: "Zhongnan Group Cooperation Agreements",
-      description: "Strategic partnership agreements and cooperation documentation with Zhongnan Group.",
+      title: t('esg.sections.zhongnan.title'),
+      description: t('esg.sections.zhongnan.description'),
       documents: [
         {
-          title: "Zhongnan Group Energy Cooperation Agreement",
-          description: "Strategic energy cooperation agreement between AGV Protocol and Zhongnan Group.",
+          title: t('esg.sections.zhongnan.docs.energy.title'),
+          description: t('esg.sections.zhongnan.docs.energy.description'),
           url: "https://drive.google.com/file/d/14oATLDNL95wintBSZAlwvelOe0i4C4lf/view"
         },
         {
-          title: "Zhongnan Group Yichuan Cooperation Agreement",
-          description: "Specific cooperation agreement for the Yichuan County project with Zhongnan Group.",
+          title: t('esg.sections.zhongnan.docs.yichuan.title'),
+          description: t('esg.sections.zhongnan.docs.yichuan.description'),
           url: "https://drive.google.com/file/d/1lDZ159lXVQuZSPIyfzXF2sYTGdDZhRXB/view"
         },
         {
-          title: "Supplementary Agreement",
-          description: "Additional terms and conditions supplementing the main cooperation agreements.",
+          title: t('esg.sections.zhongnan.docs.supplement.title'),
+          description: t('esg.sections.zhongnan.docs.supplement.description'),
           url: "https://drive.google.com/file/d/1MNuv_XXGVu17eyCYVRMSmhkhZBP7LEyY/view"
         }
       ]
@@ -133,9 +135,9 @@ export default function ESGPage() {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            title="ESG & Real-World Asset Proof"
-            subtitle="Sustainability & Impact"
-              description="Explore AGV Protocol's environmental impact, sustainability initiatives, and real-world asset verification through comprehensive documentation."
+            title={t('esg.header.title')}
+            subtitle={t('esg.header.subtitle')}
+            description={t('esg.header.description')}
             className="mb-16"
           />
 
@@ -169,23 +171,23 @@ export default function ESGPage() {
             className="mb-16"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">ESG Performance Metrics</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('esg.metrics.title')}</h2>
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">-45%</div>
-                  <div className="text-sm text-muted-foreground">Carbon Footprint Reduction</div>
+                  <div className="text-sm text-muted-foreground">{t('esg.metrics.carbon')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-muted-foreground">Renewable Energy Usage</div>
+                  <div className="text-sm text-muted-foreground">{t('esg.metrics.renewable')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">95%</div>
-                  <div className="text-sm text-muted-foreground">Waste Reduction</div>
+                  <div className="text-sm text-muted-foreground">{t('esg.metrics.waste')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                  <div className="text-sm text-muted-foreground">Verified RWA Assets</div>
+                  <div className="text-sm text-muted-foreground">{t('esg.metrics.verifiedRwa')}</div>
                 </div>
               </div>
             </Card>
@@ -233,24 +235,24 @@ export default function ESGPage() {
             className="mt-16"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">Real-World Asset Verification</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('esg.verification.title')}</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">IoT Monitoring</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('esg.verification.iot.title')}</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Real-time asset tracking</li>
-                    <li>• Environmental sensors</li>
-                    <li>• Carbon emission monitoring</li>
-                    <li>• Automated compliance reporting</li>
+                    <li>• {t('esg.verification.iot.items.0')}</li>
+                    <li>• {t('esg.verification.iot.items.1')}</li>
+                    <li>• {t('esg.verification.iot.items.2')}</li>
+                    <li>• {t('esg.verification.iot.items.3')}</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Verification Process</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('esg.verification.process.title')}</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Third-party audits</li>
-                    <li>• Blockchain immutability</li>
-                    <li>• Smart contract automation</li>
-                    <li>• Transparent reporting</li>
+                    <li>• {t('esg.verification.process.items.0')}</li>
+                    <li>• {t('esg.verification.process.items.1')}</li>
+                    <li>• {t('esg.verification.process.items.2')}</li>
+                    <li>• {t('esg.verification.process.items.3')}</li>
                   </ul>
                 </div>
               </div>
@@ -265,19 +267,19 @@ export default function ESGPage() {
             className="mt-8"
           >
             <Card className="p-8 bg-primary/5 border-primary/20">
-              <h2 className="text-2xl font-semibold mb-4 text-primary">Carbon Impact Dashboard</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-primary">{t('esg.dashboard.title')}</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary mb-2">2.3M</div>
-                  <div className="text-sm text-primary/80">Tons CO2 Saved</div>
+                  <div className="text-sm text-primary/80">{t('esg.dashboard.co2')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary mb-2">1,250</div>
-                  <div className="text-sm text-primary/80">IoT Devices Deployed</div>
+                  <div className="text-sm text-primary/80">{t('esg.dashboard.devices')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary mb-2">24/7</div>
-                  <div className="text-sm text-primary/80">Real-time Monitoring</div>
+                  <div className="text-sm text-primary/80">{t('esg.dashboard.monitoring')}</div>
                 </div>
               </div>
             </Card>

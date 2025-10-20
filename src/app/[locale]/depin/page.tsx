@@ -7,6 +7,7 @@ import PDFViewer from '@/components/PDFViewer';
 import MediaCard from '@/components/MediaCard';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { motion } from 'framer-motion';
+import { useTranslations } from '@/hooks/useTranslations';
 
 // Media data structure
 interface MediaItem {
@@ -21,18 +22,19 @@ interface MediaSection {
 }
 
 export default function DePINPage() {
+  const { t } = useTranslations();
   // Main document
   const mainDocument = {
-    title: "DePIN Verification Index - AGV Protocol v2025.10",
-    description: "Comprehensive DePIN (Decentralized Physical Infrastructure Network) verification documentation covering land development, infrastructure implementation, and agricultural-photovoltaic integration processes.",
+    title: t('depin.main.title'),
+    description: t('depin.main.description'),
     url: "https://drive.google.com/file/d/1z4aExNVhK8mMISuO6MPkd-J-ndricRph/view"
   };
 
   // Media sections
   const mediaSections: MediaSection[] = [
     {
-      title: "Land Overview 土地图片",
-      description: "Comprehensive visual documentation of the land area showing initial conditions, terrain, and geographical features before development.",
+      title: t('depin.sections.landOverview.title'),
+      description: t('depin.sections.landOverview.description'),
       media: [
         { url: "https://drive.google.com/file/d/1CXU6V0Rv2FhDvAGdI3aL7XpQl8yyibVC/view", type: "image" },
         { url: "https://drive.google.com/file/d/1lzGjA90Lk342Tz0I5X6kqnj4Buaz_AXs/view", type: "image" },
@@ -43,8 +45,8 @@ export default function DePINPage() {
       ]
     },
     {
-      title: "Land Leveling & Fertilization 平整施肥",
-      description: "Video documentation of land preparation processes including leveling, soil treatment, and fertilization procedures.",
+      title: t('depin.sections.leveling.title'),
+      description: t('depin.sections.leveling.description'),
       media: [
         { url: "https://drive.google.com/file/d/1hOv1vDDADP3FSAg7IKQ7pHzixqgRWRUm/view", type: "video" },
         { url: "https://drive.google.com/file/d/1MjtPFbwmWXnjxC_5Yrv6rovezyKn2EDE/view", type: "video" },
@@ -53,8 +55,8 @@ export default function DePINPage() {
       ]
     },
     {
-      title: "Trellis Infrastructure 格架系统",
-      description: "Video documentation of trellis system installation and infrastructure development for agricultural support structures.",
+      title: t('depin.sections.trellis.title'),
+      description: t('depin.sections.trellis.description'),
       media: [
         { url: "https://drive.google.com/file/d/1E9rEqBGGUo72AKj3IArHQ3S6maizb0QR/view", type: "video" },
         { url: "https://drive.google.com/file/d/1aWTncguE9uHku0IfDERDzNnKoto0J1OO/view?usp=drive_link", type: "video" },
@@ -65,8 +67,8 @@ export default function DePINPage() {
       ]
     },
     {
-      title: "Drip Irrigation System 滴灌系统",
-      description: "Comprehensive documentation of drip irrigation system installation including both images and videos of the implementation process.",
+      title: t('depin.sections.irrigation.title'),
+      description: t('depin.sections.irrigation.description'),
       media: [
         { url: "https://drive.google.com/file/d/1SZD4y4ahUmOD2UaucMaxnmi1gpT96FcN/view", type: "video" },
         { url: "https://drive.google.com/file/d/1NpXGCxx3e5mbEEraDX1a_DQUzkMoPDOf/view", type: "image" },
@@ -79,8 +81,8 @@ export default function DePINPage() {
       ]
     },
     {
-      title: "Dwarf Dense Plantation 矮砧密植",
-      description: "Documentation of dwarf dense plantation techniques including both images and videos of the planting process.",
+      title: t('depin.sections.plantation.title'),
+      description: t('depin.sections.plantation.description'),
       media: [
         { url: "https://drive.google.com/file/d/1wzGNQGRUO4dAixhsUIiHy8jzYiEpvfTB/view", type: "video" },
         { url: "https://drive.google.com/file/d/14CrE38t6mWDBMj2pGKM3dkxbD97RgCro/view", type: "video" },
@@ -89,8 +91,8 @@ export default function DePINPage() {
       ]
     },
     {
-      title: "Plant Protection & Maintenance 植保养护",
-      description: "Comprehensive documentation of plant protection measures and maintenance procedures including both images and videos.",
+      title: t('depin.sections.maintenance.title'),
+      description: t('depin.sections.maintenance.description'),
       media: [
         { url: "https://drive.google.com/file/d/1njMxHt4EoPRaWs4pFY-iv4IQdUD0o2CS/view", type: "image" },
         { url: "https://drive.google.com/file/d/1Pv6D10i3ybu3cJPlc8AOvx8kMJT9FqnT/view", type: "image" },
@@ -102,8 +104,8 @@ export default function DePINPage() {
       ]
     },
     {
-      title: "Agri-PV Integration 园光互补",
-      description: "Comprehensive documentation of agricultural-photovoltaic integration including both images and videos of the solar panel installation and integration process.",
+      title: t('depin.sections.agriPv.title'),
+      description: t('depin.sections.agriPv.description'),
       media: [
         { url: "https://drive.google.com/file/d/1l1d3_rqG9_JNtDl2FeOVrVhhHKnVbXJN/view", type: "video" },
         { url: "https://drive.google.com/file/d/10m17W1rsSWeYH86xbs3vw-_skjp5vcLS/view", type: "image" },
@@ -129,9 +131,9 @@ export default function DePINPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            title="DePIN Verification"
-            subtitle="Decentralized Physical Infrastructure Network"
-            description="Comprehensive verification documentation of AGV Protocol's physical infrastructure development, agricultural implementation, and renewable energy integration through detailed visual and video evidence."
+            title={t('depin.header.title')}
+            subtitle={t('depin.header.subtitle')}
+            description={t('depin.header.description')}
             className="mb-16"
           />
 
@@ -165,23 +167,23 @@ export default function DePINPage() {
             className="mb-16"
           >
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold mb-6">DePIN Infrastructure Metrics</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t('depin.metrics.title')}</h2>
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">6.42 MW</div>
-                  <div className="text-sm text-muted-foreground">Solar Capacity</div>
+                  <div className="text-sm text-muted-foreground">{t('depin.metrics.solar')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">100+</div>
-                  <div className="text-sm text-muted-foreground">IoT Sensors</div>
+                  <div className="text-sm text-muted-foreground">{t('depin.metrics.iot')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                  <div className="text-sm text-muted-foreground">Real-time Monitoring</div>
+                  <div className="text-sm text-muted-foreground">{t('depin.metrics.monitoring')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-muted-foreground">Verification Coverage</div>
+                  <div className="text-sm text-muted-foreground">{t('depin.metrics.coverage')}</div>
                 </div>
               </div>
             </Card>
@@ -227,19 +229,19 @@ export default function DePINPage() {
             className="mt-16"
           >
             <Card className="p-8 bg-primary/5 border-primary/20">
-              <h2 className="text-2xl font-semibold mb-4 text-primary">DePIN Infrastructure Overview</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-primary">{t('depin.overview.title')}</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">Agricultural</div>
-                  <div className="text-sm text-primary/80">Smart Farming & Irrigation</div>
+                  <div className="text-2xl font-bold text-primary mb-2">{t('depin.overview.agricultural.title')}</div>
+                  <div className="text-sm text-primary/80">{t('depin.overview.agricultural.desc')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">Photovoltaic</div>
-                  <div className="text-sm text-primary/80">Solar Energy Generation</div>
+                  <div className="text-2xl font-bold text-primary mb-2">{t('depin.overview.pv.title')}</div>
+                  <div className="text-sm text-primary/80">{t('depin.overview.pv.desc')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">IoT Network</div>
-                  <div className="text-sm text-primary/80">Real-time Monitoring</div>
+                  <div className="text-2xl font-bold text-primary mb-2">{t('depin.overview.iot.title')}</div>
+                  <div className="text-sm text-primary/80">{t('depin.overview.iot.desc')}</div>
                 </div>
               </div>
             </Card>

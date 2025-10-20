@@ -7,6 +7,7 @@ import PDFViewer from '@/components/PDFViewer';
 import DocumentCard from '@/components/DocumentCard';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { motion } from 'framer-motion';
+import { useTranslations } from '@/hooks/useTranslations';
 
 // Document data structure
 interface Document {
@@ -23,37 +24,38 @@ interface DocumentSection {
 }
 
 export default function FinancialsPage() {
+  const { t } = useTranslations();
   // Main document
   const mainDocument = {
-    title: "Financial Audit and Valuation Index",
-    description: "Comprehensive financial audit and valuation analysis for AGV Protocol, including detailed financial models, projections, and investment metrics.",
+    title: t('financials.mainDocument.title'),
+    description: t('financials.mainDocument.description'),
     url: "https://drive.google.com/file/d/1zSuRXGfmgzzgb_yt6pM_rWHab6JX1fmB/view"
   };
 
   // Document sections
   const documentSections: DocumentSection[] = [
     {
-      title: "Financial Documentation & Reports",
-      description: "Essential financial documents including token handbooks, integrated reports, cap tables, and whitepaper excerpts.",
+      title: t('financials.documents.title'),
+      description: t('financials.documents.description'),
       documents: [
         {
-          title: "AGV Protocol Token Handbook v2025",
-          description: "Comprehensive guide to AGV Protocol tokens, including utility, governance, and economic models.",
+          title: t('financials.documents.tokenHandbook'),
+          description: t('financials.documents.tokenHandbookDesc'),
           url: "https://drive.google.com/file/d/1UDTw12_to8yaOdIw6L2JS7qTJPhgWzSC/view?usp=drive_link"
         },
         {
-          title: "AGV Protocol – Integrated Financial & Valuation Report v2025.10",
-          description: "Detailed integrated financial analysis and valuation report covering all aspects of the protocol's financial performance.",
+          title: t('financials.documents.integratedReport'),
+          description: t('financials.documents.integratedReportDesc'),
           url: "https://drive.google.com/file/d/116klZMugB6RTx48Ne0nsM-haU_I9T3Ei/view"
         },
         {
-          title: "Cap Table BVI Shareholder Resolution V2025.10",
-          description: "Official cap table documentation and shareholder resolution from BVI jurisdiction.",
+          title: t('financials.documents.capTable'),
+          description: t('financials.documents.capTableDesc'),
           url: "https://drive.google.com/file/d/1RVcIHLbRXmbj7DWaPufXld-G2k7ElyqE/view?usp=drive_link"
         },
         {
-          title: "Dual Token rGGP + GVT (Whitepaper Excerpts) v2025.10",
-          description: "Technical whitepaper excerpts detailing the dual token system with rGGP and GVT tokens.",
+          title: t('financials.documents.whitepaper'),
+          description: t('financials.documents.whitepaperDesc'),
           url: "https://drive.google.com/file/d/1wVAcZu7wwtNsK8sx4TuJYqKpRbDsYKeH/view"
         }
       ]
@@ -66,9 +68,9 @@ export default function FinancialsPage() {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <SectionHeader
-              title="Financial Models & Projections"
-              subtitle="Financial Documentation"
-              description="Access detailed financial models, valuation analyses, and revenue projections for AGV Protocol through comprehensive documentation."
+              title={t('financials.title')}
+              subtitle={t('financials.subtitle')}
+              description={t('financials.description')}
               className="mb-16"
             />
 
@@ -102,23 +104,23 @@ export default function FinancialsPage() {
               className="mb-16"
             >
               <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-6">Key Financial Metrics</h2>
+                <h2 className="text-2xl font-semibold mb-6">{t('financials.metrics.title')}</h2>
                 <div className="grid md:grid-cols-4 gap-6">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">$2.5T</div>
-                    <div className="text-sm text-muted-foreground">Total Addressable Market</div>
+                    <div className="text-sm text-muted-foreground">{t('financials.metrics.tam')}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">25-40%</div>
-                    <div className="text-sm text-muted-foreground">Expected ROI</div>
+                    <div className="text-sm text-muted-foreground">{t('financials.metrics.roi')}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">$50M</div>
-                    <div className="text-sm text-muted-foreground">Series A Target</div>
+                    <div className="text-sm text-muted-foreground">{t('financials.metrics.seriesA')}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">18-24</div>
-                    <div className="text-sm text-muted-foreground">Months to Profitability</div>
+                    <div className="text-sm text-muted-foreground">{t('financials.metrics.profitability')}</div>
                   </div>
                 </div>
               </Card>
@@ -166,19 +168,19 @@ export default function FinancialsPage() {
               className="mt-16"
             >
               <Card className="p-8">
-                <h2 className="text-2xl font-semibold mb-6">Revenue Streams</h2>
+                <h2 className="text-2xl font-semibold mb-6">{t('financials.revenue.title')}</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Transaction Fees</h3>
-                    <p className="text-muted-foreground text-sm">0.1-0.5% per asset tokenization transaction</p>
+                    <h3 className="text-lg font-semibold mb-2">{t('financials.revenue.transactionFees')}</h3>
+                    <p className="text-muted-foreground text-sm">{t('financials.revenue.transactionFeesDesc')}</p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Subscription Services</h3>
-                    <p className="text-muted-foreground text-sm">Monthly/annual fees for premium features</p>
+                    <h3 className="text-lg font-semibold mb-2">{t('financials.revenue.subscription')}</h3>
+                    <p className="text-muted-foreground text-sm">{t('financials.revenue.subscriptionDesc')}</p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Data Licensing</h3>
-                    <p className="text-muted-foreground text-sm">Licensing of IoT and carbon tracking data</p>
+                    <h3 className="text-lg font-semibold mb-2">{t('financials.revenue.dataLicensing')}</h3>
+                    <p className="text-muted-foreground text-sm">{t('financials.revenue.dataLicensingDesc')}</p>
                   </div>
                 </div>
               </Card>
@@ -192,24 +194,24 @@ export default function FinancialsPage() {
               className="mt-8"
             >
               <Card className="p-8 bg-primary/5 border-primary/20">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">Investment Highlights</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-primary">{t('financials.highlights.title')}</h2>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-lg font-semibold mb-4">Market Opportunity</h3>
+                    <h3 className="text-lg font-semibold mb-4">{t('financials.highlights.market.title')}</h3>
                     <ul className="space-y-2 text-muted-foreground">
-                      <li>• $2.5T total addressable market</li>
-                      <li>• Growing demand for sustainable investments</li>
-                      <li>• Regulatory support for green finance</li>
-                      <li>• First-mover advantage in RWA tokenization</li>
+                      <li>{t('financials.highlights.market.tam')}</li>
+                      <li>{t('financials.highlights.market.demand')}</li>
+                      <li>{t('financials.highlights.market.regulatory')}</li>
+                      <li>{t('financials.highlights.market.advantage')}</li>
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-4">Financial Projections</h3>
+                    <h3 className="text-lg font-semibold mb-4">{t('financials.highlights.projections.title')}</h3>
                     <ul className="space-y-2 text-muted-foreground">
-                      <li>• 25-40% expected ROI</li>
-                      <li>• $50M Series A funding target</li>
-                      <li>• 18-24 months to profitability</li>
-                      <li>• Multiple revenue streams</li>
+                      <li>{t('financials.highlights.projections.roi')}</li>
+                      <li>{t('financials.highlights.projections.seriesA')}</li>
+                      <li>{t('financials.highlights.projections.profitability')}</li>
+                      <li>{t('financials.highlights.projections.revenue')}</li>
                     </ul>
                   </div>
                 </div>
