@@ -41,7 +41,8 @@
     "subtitle": "Protocolo AGV",
     "description": "Acceda a recursos exclusivos para inversores, informes financieros y actualizaciones de la empresa.",
     "loginButton": "Inicio de sesión de inversor",
-    "learnMore": "Saber más"
+    "learnMore": "Saber más",
+    "whitepaperButton": "Leer el documento técnico"
   },
   "auth": {
     "login": "Iniciar sesión",
@@ -57,7 +58,7 @@
   },
   "investor": {
     "welcome": "Bienvenido al Portal del Inversionista",
-    "dashboard": "Panel",
+    "dashboard": "Sala de datos",
     "documents": "Documentos",
     "reports": "Informes",
     "presentations": "Presentaciones",
@@ -220,7 +221,7 @@
       "sky": "Azul cielo",
       "skyDesc": "Color de acento para resaltados y elementos de la interfaz de usuario.",
       "white": "Blanco",
-      "whiteDesc": "Color neutro para claridad y contraste."
+      "whiteDesc": "Color neutro para mayor claridad y contraste."
     },
     "gradient": {
       "title": "Gradiente",
@@ -538,7 +539,7 @@
     "sections": {
       "ip": {
         "title": "Resumen de IP",
-        "description": "Documentación de propiedad intelectual que incluye extractos de documentos técnicos que cubren la funcionalidad de generación de energía y los protocolos de mapeo de RWA.",
+        "description": "Documentación de propiedad intelectual que incluye extractos de documentos técnicos que cubren la funcionalidad de poder acuñar y los protocolos de mapeo de RWA.",
         "docs": {
           "powerToMint": {
             "title": "Poder de acuñar (extracto del libro blanco) V2025.10",

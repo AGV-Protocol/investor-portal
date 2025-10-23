@@ -41,7 +41,8 @@
     "subtitle": "AGV协议",
     "description": "访问专属投资者资源、财务报告和公司更新",
     "loginButton": "投资者登录",
-    "learnMore": "了解更多"
+    "learnMore": "了解更多",
+    "whitepaperButton": "阅读白皮书"
   },
   "auth": {
     "login": "登录",

@@ -41,7 +41,8 @@
     "subtitle": "AGV-Protokoll",
     "description": "Greifen Sie auf exklusive Ressourcen für Investoren, Finanzberichte und Unternehmensaktualisierungen zu",
     "loginButton": "Investoren-Login",
-    "learnMore": "Mehr erfahren"
+    "learnMore": "Mehr erfahren",
+    "whitepaperButton": "Whitepaper lesen"
   },
   "auth": {
     "login": "Login",
@@ -57,7 +58,7 @@
   },
   "investor": {
     "welcome": "Willkommen im Investorenportal",
-    "dashboard": "Armaturenbrett",
+    "dashboard": "Datenraum",
     "documents": "Unterlagen",
     "reports": "Berichte",
     "presentations": "Präsentationen",

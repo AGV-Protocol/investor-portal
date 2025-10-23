@@ -41,7 +41,8 @@
     "subtitle": "Protocole AGV",
     "description": "Accédez aux ressources exclusives pour investisseurs, rapports financiers et mises à jour de l'entreprise",
     "loginButton": "Connexion des investisseurs",
-    "learnMore": "Apprendre encore plus"
+    "learnMore": "Apprendre encore plus",
+    "whitepaperButton": "Lire le livre blanc"
   },
   "auth": {
     "login": "Se connecter",
@@ -57,7 +58,7 @@
   },
   "investor": {
     "welcome": "Bienvenue sur le portail des investisseurs",
-    "dashboard": "Tableau de bord",
+    "dashboard": "salle de données",
     "documents": "Documents",
     "reports": "Rapports",
     "presentations": "Présentations",
@@ -857,7 +858,7 @@
     "verification": {
       "title": "Vérification des actifs dans le monde réel",
       "iot": {
-        "title": "Surveillance de l'IoT",
+        "title": "Surveillance IoT",
         "items": [
           "Suivi des actifs en temps réel",
           "Capteurs environnementaux",
@@ -888,7 +889,7 @@
         "docs": {
           "registration": {
             "title": "Confirmation d'enregistrement d'un projet d'investissement d'entreprise dans la province du Shaanxi",
-            "description": "Confirmation d'enregistrement officielle pour le projet d'investissement d'entreprise dans la province du Shaanxi."
+            "description": "Confirmation officielle d'enregistrement du projet d'investissement d'entreprise dans la province du Shaanxi."
           },
           "lease": {
             "title": "Contrat de bail foncier",

@@ -41,7 +41,8 @@
     "subtitle": "AGV 프로토콜",
     "description": "독점 투자자 리소스, 재무 보고서 및 회사 업데이트에 액세스",
     "loginButton": "투자자 로그인",
-    "learnMore": "더 알아보기"
+    "learnMore": "더 알아보기",
+    "whitepaperButton": "백서 읽기"
   },
   "auth": {
     "login": "로그인",

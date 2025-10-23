@@ -41,7 +41,8 @@
     "subtitle": "AGVプロトコル",
     "description": "投資家専用リソース、財務報告書、企業アップデートにアクセス",
     "loginButton": "投資家ログイン",
-    "learnMore": "詳細を見る"
+    "learnMore": "詳細を見る",
+    "whitepaperButton": "ホワイトペーパーを読む"
   },
   "auth": {
     "login": "ログイン",
