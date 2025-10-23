@@ -146,7 +146,8 @@
     "subtitle": "AGV Protocol",
     "description": "Access exclusive investor resources, financial reports, and company updates",
     "loginButton": "Investor Login",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "whitepaperButton": "Read Whitepaper"
   },
   "actions": {
     "explore": "Explore",

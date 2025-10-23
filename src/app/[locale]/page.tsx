@@ -70,7 +70,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center mb-12"
           >
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Button href={`/${locale}/investor`} variant="primary" size="lg" className="w-full sm:w-auto">
                 {t('hero.loginButton')}
               </Button>
@@ -78,7 +78,16 @@ export default function Home() {
                 {t('hero.learnMore')}
               </Button>
             </div>
+            
+            <Button href="https://drive.google.com/file/d/1cPr01GqmxuDPUcwpxR6LuKWXVtWE6-Fy/view?usp=drive_link" target="_blank" variant="secondary" size="lg" className="w-full sm:w-auto">
+            <div className='flex items-center gap-2'>
+                <FiFile className="mr-2 text-primary" size={24} />
+                <span className='text-primary'>{t('hero.whitepaperButton')}</span>
+            </div>
+            
+            </Button>
           </motion.div>
+
         </div>
       </section>
 

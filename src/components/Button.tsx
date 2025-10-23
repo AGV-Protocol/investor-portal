@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 interface ButtonProps {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   onClick?: () => void;
   href?: string;
+  target?: string;
   className?: string;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
@@ -18,6 +19,7 @@ export default function Button({
   size = 'md',
   onClick,
   href,
+  target,
   className = '',
   disabled = false,
   type = 'button',
@@ -34,6 +36,7 @@ export default function Button({
     sm: 'px-3 py-1.5 text-sm',
     md: 'px-4 py-2 text-base',
     lg: 'px-6 py-3 text-lg',
+    xl: 'px-8 py-4 text-xl',
   };
   
   const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
@@ -50,7 +53,7 @@ export default function Button({
   
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} target={target} className={classes}>
         {buttonContent}
       </a>
     );
