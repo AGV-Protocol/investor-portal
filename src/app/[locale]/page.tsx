@@ -1,10 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import Layout from '@/components/Layout';
 import SectionHeader from '@/components/SectionHeader';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
 import PDFViewer from '@/components/PDFViewer';
+import NDAModal from '@/components/NDAModal';
 import { motion } from 'framer-motion';
 import { FiSettings, FiBarChart, FiShield, FiHeart, FiFile } from 'react-icons/fi';
 import Image from 'next/image';
@@ -12,6 +14,7 @@ import { useTranslations } from '@/hooks/useTranslations';
 
 export default function Home() {
   const { t, locale } = useTranslations();
+  const [isNDAModalOpen, setIsNDAModalOpen] = useState(false);
   const features = [
     {
       title: t('nav.tech'),
@@ -243,6 +246,14 @@ export default function Home() {
               <Button href={`/${locale}/contact`} variant="secondary" size="lg" className="w-full sm:w-auto">
                 {t('actions.scheduleCall')}
               </Button>
+              <Button 
+                onClick={() => setIsNDAModalOpen(true)}
+                variant="outline" 
+                size="lg" 
+                className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-full sm:w-auto"
+              >
+                {t('contact.nda.request')}
+              </Button>
               <Button href={`/${locale}/investor`} variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-full sm:w-auto">
                 {t('home.cta.accessDataRoom')}
               </Button>
@@ -250,6 +261,12 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* NDA Modal */}
+      <NDAModal 
+        isOpen={isNDAModalOpen} 
+        onClose={() => setIsNDAModalOpen(false)} 
+      />
     </Layout>
   );
 }

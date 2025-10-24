@@ -440,7 +440,7 @@
     }
   },
   "financials": {
-    "title": "Finanzmodelle und -prognosen",
+    "title": "Finanzmodelle und Prognosen",
     "subtitle": "Finanzdokumentation",
     "description": "Greifen Sie über die umfassende Dokumentation auf detaillierte Finanzmodelle, Bewertungsanalysen und Umsatzprognosen für das AGV-Protokoll zu.",
     "mainDocument": {
@@ -962,5 +962,29 @@
         }
       }
     }
+  },
+  "nda": {
+    "form": {
+      "title": "Berufsbezeichnung",
+      "subtitle": "Geheimhaltungsvereinbarung anfordern",
+      "description": "Bitte füllen Sie das untenstehende Formular aus, um eine Geheimhaltungsvereinbarung anzufordern. Wir senden Ihnen die Vereinbarung dann an Ihre E-Mail-Adresse.",
+      "name": "Vollständiger Name",
+      "organization": "Organisation/Unternehmen",
+      "email": "E-Mail-Adresse",
+      "submit": "Geheimhaltungsvereinbarung anfordern",
+      "sending": "Anfrage wird gesendet...",
+      "success": "Vielen Dank! Ihre NDA-Anfrage wurde erfolgreich übermittelt. Wir senden Ihnen das NDA-Dokument in Kürze per E-Mail zu.",
+      "error": "Die Übermittlung der NDA-Anfrage ist fehlgeschlagen.",
+      "networkError": "Netzwerkfehler. Bitte versuchen Sie es erneut.",
+      "namePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
+      "titlePlaceholder": "z. B. CEO, Investmentmanager, Analyst",
+      "organizationPlaceholder": "Geben Sie den Namen Ihres Unternehmens oder Ihrer Organisation ein",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+      "emailNote": "Die Geheimhaltungsvereinbarung wird an diese E-Mail-Adresse gesendet",
+      "disclaimer": "Mit dem Absenden dieses Formulars erklären Sie sich mit dem Erhalt des NDA-Dokuments einverstanden und verstehen, dass es an die angegebene E-Mail-Adresse gesendet wird."
+    },
+    "title": "NDA-Anfrage",
+    "subtitle": "Geheimhaltungsvereinbarung anfordern",
+    "description": "Fordern Sie Zugriff auf vertrauliche AGV-Protokollinformationen an, indem Sie ein NDA-Anforderungsformular einreichen."
   }
 }

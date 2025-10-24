@@ -889,7 +889,7 @@
         "docs": {
           "registration": {
             "title": "Confirmation d'enregistrement d'un projet d'investissement d'entreprise dans la province du Shaanxi",
-            "description": "Confirmation officielle d'enregistrement du projet d'investissement d'entreprise dans la province du Shaanxi."
+            "description": "Confirmation d'enregistrement officielle pour le projet d'investissement d'entreprise dans la province du Shaanxi."
           },
           "lease": {
             "title": "Contrat de bail foncier",
@@ -962,5 +962,29 @@
         }
       }
     }
+  },
+  "nda": {
+    "form": {
+      "title": "Titre d'emploi",
+      "subtitle": "Demande d'accord de non-divulgation",
+      "description": "Veuillez remplir le formulaire ci-dessous pour demander un accord de confidentialité. Nous vous l'enverrons par courriel.",
+      "name": "Nom et prénom",
+      "organization": "Organisation/Entreprise",
+      "email": "Adresse email",
+      "submit": "Demande d'accord de confidentialité",
+      "sending": "Soumission de la demande...",
+      "success": "Merci ! Votre demande d'accord de confidentialité a bien été envoyée. Nous vous enverrons prochainement le document à votre adresse e-mail.",
+      "error": "Échec de la soumission de la demande NDA",
+      "networkError": "Erreur réseau. Veuillez réessayer.",
+      "namePlaceholder": "Entrez votre nom complet",
+      "titlePlaceholder": "par exemple, PDG, gestionnaire de placements, analyste",
+      "organizationPlaceholder": "Entrez le nom de votre entreprise ou organisation",
+      "emailPlaceholder": "Entrez votre adresse email",
+      "emailNote": "L'accord de confidentialité sera envoyé à cette adresse e-mail",
+      "disclaimer": "En soumettant ce formulaire, vous acceptez de recevoir le document NDA et comprenez qu'il sera envoyé à l'adresse e-mail fournie."
+    },
+    "title": "Demande de NDA",
+    "subtitle": "Demande d'accord de non-divulgation",
+    "description": "Demandez l'accès aux informations confidentielles du protocole AGV en soumettant un formulaire de demande NDA."
   }
 }

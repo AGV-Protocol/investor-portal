@@ -349,7 +349,7 @@
         "description": "Términos y condiciones para la compra y distribución de tokens."
       },
       "compliance": {
-        "title": "Informe de cumplimiento normativo",
+        "title": "Informe de Cumplimiento Normativo",
         "description": "Análisis del estado de cumplimiento legal y marco regulatorio."
       }
     },
@@ -501,7 +501,7 @@
     "header": {
       "title": "Tecnología y arquitectura",
       "subtitle": "Documentación técnica",
-      "description": "Explore la infraestructura técnica, la arquitectura del sistema y las auditorías de seguridad del Protocolo AGV a través de documentación completa."
+      "description": "Explore la infraestructura técnica, la arquitectura del sistema y las auditorías de seguridad del protocolo AGV a través de documentación completa."
     },
     "metrics": {
       "title": "Métricas técnicas",
@@ -962,5 +962,29 @@
         }
       }
     }
+  },
+  "nda": {
+    "form": {
+      "title": "Título profesional",
+      "subtitle": "Solicitud de acuerdo de confidencialidad",
+      "description": "Complete el formulario a continuación para solicitar un acuerdo de confidencialidad. Le enviaremos el acuerdo a su correo electrónico.",
+      "name": "Nombre completo",
+      "organization": "Organización/Empresa",
+      "email": "Dirección de correo electrónico",
+      "submit": "Solicitud de acuerdo de confidencialidad",
+      "sending": "Enviando solicitud...",
+      "success": "¡Gracias! Su solicitud de NDA se ha enviado correctamente. En breve le enviaremos el documento de NDA a su correo electrónico.",
+      "error": "No se pudo enviar la solicitud de NDA",
+      "networkError": "Error de red. Inténtalo de nuevo.",
+      "namePlaceholder": "Ingrese su nombre completo",
+      "titlePlaceholder": "Por ejemplo, director ejecutivo, gestor de inversiones, analista.",
+      "organizationPlaceholder": "Ingrese el nombre de su empresa u organización",
+      "emailPlaceholder": "Introduzca su dirección de correo electrónico",
+      "emailNote": "El NDA se enviará a esta dirección de correo electrónico.",
+      "disclaimer": "Al enviar este formulario, usted acepta recibir el documento NDA y comprende que se enviará a la dirección de correo electrónico proporcionada."
+    },
+    "title": "Solicitud de NDA",
+    "subtitle": "Solicitud de acuerdo de confidencialidad",
+    "description": "Solicite acceso a información confidencial del Protocolo AGV enviando un formulario de solicitud de NDA."
   }
 }

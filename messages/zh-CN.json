@@ -962,5 +962,29 @@
         }
       }
     }
+  },
+  "nda": {
+    "form": {
+      "title": "职称",
+      "subtitle": "请求保密协议",
+      "description": "请填写下方表格，申请保密协议。我们会将协议发送至您的邮箱。",
+      "name": "姓名",
+      "organization": "组织/公司",
+      "email": "电子邮件",
+      "submit": "请求保密协议",
+      "sending": "正在提交请求...",
+      "success": "谢谢！您的保密协议 (NDA) 申请已成功提交。我们将尽快将保密协议 (NDA) 文件发送至您的邮箱。",
+      "error": "未能提交保密协议请求",
+      "networkError": "网络错误。请重试。",
+      "namePlaceholder": "输入您的全名",
+      "titlePlaceholder": "例如首席执行官、投资经理、分析师",
+      "organizationPlaceholder": "输入您的公司或组织名称",
+      "emailPlaceholder": "输入您的电子邮件地址",
+      "emailNote": "NDA 将发送至此电子邮件地址",
+      "disclaimer": "通过提交此表格，您同意接收 NDA 文件并理解它将被发送到所提供的电子邮件地址。"
+    },
+    "title": "保密协议请求",
+    "subtitle": "请求保密协议",
+    "description": "通过提交 NDA 请求表来请求访问机密的 AGV 协议信息。"
   }
 }

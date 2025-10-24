@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import SectionHeader from '@/components/SectionHeader';
 import Card from '@/components/Card';
 import Button from '@/components/Button';
+import NDARequestForm from '@/components/NDARequestForm';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiCheck, FiX } from 'react-icons/fi';
 import { useState } from 'react';
@@ -321,22 +322,20 @@ export default function ContactPage() {
             </Card>
           </motion.div>
 
-          {/* NDA Request */}
+          {/* NDA Request Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-16"
           >
-            <Card className="p-8 bg-primary/5 border-primary/20">
-              <h2 className="text-2xl font-semibold mb-4">{t('contact.nda.title')}</h2>
-              <p className="text-muted-foreground mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('contact.nda.title')}</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 {t('contact.nda.description')}
               </p>
-              <Button href="mailto:legal@agvprotocol.com?subject=NDA Request" variant="primary" size="lg">
-                {t('contact.nda.request')}
-              </Button>
-            </Card>
+            </div>
+            <NDARequestForm />
           </motion.div>
         </div>
       </section>

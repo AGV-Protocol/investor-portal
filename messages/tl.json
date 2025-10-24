@@ -173,7 +173,7 @@
       "visionLine1": "Noong nakaraang siglo, pinalakas ng langis ang yaman ng industriya.",
       "visionLine2": "Sa siglong ito, ang kuryente + compute ay magpapagatong sa kayamanan ng AI.",
       "missionTitle": "Misyon",
-      "missionText": "Binabago ng AGV Protocol ang kategoryang Real-World Asset (RWA) sa pamamagitan ng pagtulay ng malinis na enerhiya, artificial intelligence, at desentralisadong pananalapi. Higit pa sa isang tokenized asset platform, ipinoposisyon ng AGV ang sarili bilang ang unang desentralisadong AI Power ETF sa mundo — isang ecosystem kung saan ang tunay na kuryente at compute capacity ay nagiging likido, na nagbubunga ng mga digital na asset.",
+      "missionText": "Binabago ng AGV Protocol ang kategoryang Real-World Asset (RWA) sa pamamagitan ng pagtulay ng malinis na enerhiya, artificial intelligence, at desentralisadong pananalapi. Higit pa sa isang tokenized asset platform, ipinoposisyon ng AGV ang sarili bilang ang unang desentralisadong AI Power ETF sa buong mundo — isang ecosystem kung saan ang tunay na kuryente at compute capacity ay nagiging likido, na nagbubunga ng mga digital na asset.",
       "taglineTitle": "Pangako ng Brand",
       "taglineLine1": "Enerhiya x Compute",
       "taglineLine2": "Pinapalakas ang AI Economy"
@@ -350,13 +350,13 @@
       },
       "compliance": {
         "title": "Ulat sa Pagsunod sa Regulasyon",
-        "description": "Status ng legal na pagsunod at pagsusuri sa balangkas ng regulasyon."
+        "description": "Katayuan ng pagsunod sa batas at pagsusuri sa balangkas ng regulasyon."
       }
     },
     "esg": {
       "impact": {
         "title": "Ulat sa Epekto ng Pagpapanatili",
-        "description": "Pagtatasa ng epekto sa kapaligiran at mga sukatan ng pagpapanatili."
+        "description": "Pagsusuri sa epekto sa kapaligiran at mga sukatan ng pagpapanatili."
       },
       "carbon": {
         "title": "Data ng IoT Carbon Footprint",
@@ -414,7 +414,7 @@
       "investmentTypes": {
         "series-a": "Serye A",
         "strategic": "Madiskarteng Pamumuhunan",
-        "partnership": "Pakikipagtulungan",
+        "partnership": "Partnership",
         "advisory": "Tungkulin sa Pagpapayo",
         "other": "Iba pa"
       }
@@ -430,7 +430,7 @@
       "title": "Mabilis na Aksyon",
       "dataRoom": "I-access ang Full Data Room",
       "financials": "Tingnan ang Mga Modelong Pananalapi",
-      "esg": "ESG at Sustainability Report",
+      "esg": "Ulat sa ESG at Sustainability",
       "brandkit": "I-download ang Brand Kit"
     },
     "nda": {
@@ -452,7 +452,7 @@
       "tam": "Kabuuang Addressable Market",
       "roi": "Inaasahang ROI",
       "seriesA": "Serye A Target",
-      "profitability": "Mga Buwan sa Pagkakakitaan"
+      "profitability": "Mga Buwan hanggang Pagkakita"
     },
     "documents": {
       "title": "Pinansyal na Dokumentasyon at Ulat",
@@ -543,7 +543,7 @@
         "docs": {
           "powerToMint": {
             "title": "Power to Mint (Whitpaper Excerpt) V2025.10",
-            "description": "Teknikal na whitepaper na sipi na nagdedetalye ng kapangyarihan sa pag-mint ng functionality at mga mekanismo ng pagbuo ng token sa loob ng AGV Protocol ecosystem."
+            "description": "Teknikal na sipi ng whitepaper na nagdedetalye ng kapangyarihan sa pag-mint ng functionality at mga mekanismo ng pagbuo ng token sa loob ng AGV Protocol ecosystem."
           },
           "rwaMapping": {
             "title": "RWA Mapping (Whitpaper Excerpt) v2025.10",
@@ -579,7 +579,7 @@
           },
           "general": {
             "title": "AGV Protocol Pitch Deck v2025.10",
-            "description": "Comprehensive pitch deck na sumasaklaw sa lahat ng aspeto ng AGV Protocol kabilang ang teknolohiya, pagkakataon sa merkado, at modelo ng negosyo."
+            "description": "Ang komprehensibong pitch deck na sumasaklaw sa lahat ng aspeto ng AGV Protocol kabilang ang teknolohiya, pagkakataon sa merkado, at modelo ng negosyo."
           }
         }
       },
@@ -589,7 +589,7 @@
         "docs": {
           "ecosystem": {
             "title": "AGV Protocol Ecosystem V2025.10",
-            "description": "Komprehensibong dokumentasyon ng ecosystem na sumasaklaw sa arkitektura ng teknolohiya, mga daloy ng proseso, at mga punto ng pagsasama-sama ng system."
+            "description": "Komprehensibong dokumentasyon ng ecosystem na sumasaklaw sa arkitektura ng teknolohiya, mga daloy ng proseso, at mga punto ng pagsasama ng system."
           }
         }
       }
@@ -653,7 +653,7 @@
     "sections": {
       "articles": {
         "title": "Mga Artikulo ng Samahan",
-        "description": "Mga opisyal na artikulo ng asosasyon at mga dokumento sa pamamahala ng korporasyon para sa mga entidad ng BVI.",
+        "description": "Mga opisyal na artikulo ng asosasyon at mga dokumento ng pamamahala ng korporasyon para sa mga entidad ng BVI.",
         "docs": {
           "bviArticles": {
             "title": "BVI JLL Asset Ltd Mga Artikulo ng Asosasyon v2025.10",
@@ -663,7 +663,7 @@
       },
       "china": {
         "title": "China Onshore Asset Entities",
-        "description": "Legal na dokumentasyon para sa China onshore asset entity kabilang ang mga kasunduan sa awtorisasyon, mga resolusyon ng board, at mga pahayag sa pagsunod.",
+        "description": "Legal na dokumentasyon para sa China onshore asset entity kabilang ang mga kasunduan sa pahintulot, mga resolusyon ng board, at mga pahayag sa pagsunod.",
         "docs": {
           "authorization": {
             "title": "Kasunduan sa Pagpapahintulot CHN CO_BVI 2025 v2025.10",
@@ -693,11 +693,11 @@
       },
       "bvi": {
         "title": "Offshore Holding SPV - British Virgin Islands",
-        "description": "Kumpletuhin ang legal na dokumentasyon para sa BVI offshore na may hawak na espesyal na layuning sasakyan kabilang ang mga resolusyon ng board, mga chain ng awtorisasyon, at mga pahayag sa pagsunod.",
+        "description": "Kumpletuhin ang legal na dokumentasyon para sa BVI offshore na may hawak na espesyal na layuning sasakyan kabilang ang mga resolusyon ng board, mga authorization chain, at mga pahayag sa pagsunod.",
         "docs": {
           "boardReauth": {
             "title": "Board Resolution (Re-Authorization) BVI_ijet 2025 v2025.10",
-            "description": "Resolusyon ng board para sa muling pagpapahintulot ng mga pagpapatakbo ng BVI ijet at mga aktibidad sa pamamahala ng asset."
+            "description": "Resolusyon ng lupon para sa muling pagpapahintulot ng mga pagpapatakbo ng BVI ijet at mga aktibidad sa pamamahala ng asset."
           },
           "chain": {
             "title": "Chain of Authorization BVI_ijet 2025 v2025.10",
@@ -705,7 +705,7 @@
           },
           "compliance": {
             "title": "Pahayag ng Pagsunod BVI_ijet ltd 2025 v2025.10",
-            "description": "Komprehensibong pahayag ng pagsunod mula sa BVI ijet ltd tungkol sa pagsunod sa regulasyon at mga pamantayan sa pagpapatakbo."
+            "description": "Comprehensive compliance statement mula sa BVI ijet ltd patungkol sa pagsunod sa regulasyon at mga pamantayan sa pagpapatakbo."
           },
           "irrevocable": {
             "title": "Irrevocable Authorization Statement BVI_ijet ltd 2025 v2025.10",
@@ -751,25 +751,25 @@
           },
           "reauth": {
             "title": "Re-Authorization Agreement BVI Ijet ltd 2025 v2025.10",
-            "description": "Kasunduan sa muling pagpapahintulot sa pagitan ng BVI at mga entidad ng New Zealand na nagtatatag ng awtoridad sa pagpapatakbo."
+            "description": "Kasunduan sa muling pagpapahintulot sa pagitan ng BVI at mga entity ng New Zealand na nagtatatag ng awtoridad sa pagpapatakbo."
           }
         }
       },
       "structure": {
         "title": "Legal na Istraktura at Mga Dokumento sa Pag-verify",
-        "description": "Buod ng legal na istraktura at mga dokumento sa pag-verify kabilang ang mga sertipikadong pagsasalin at mga legal na buod.",
+        "description": "Buod ng legal na istraktura at mga dokumento sa pagpapatunay kabilang ang mga sertipikadong pagsasalin at mga legal na buod.",
         "docs": {
           "summary": {
             "title": "AGV Protocol – Buod ng Legal na Istraktura",
             "description": "Buod ng komprehensibong legal na istruktura na nagbabalangkas sa kumpletong corporate at legal na balangkas ng AGV Protocol."
           },
           "naati": {
-            "title": "NAATI Certified Translator Chinese into English Certificate",
+            "title": "NAATI Certified Translator Chinese to English Certificate",
             "description": "Opisyal na sertipikasyon ng NAATI para sa mga serbisyo ng pagsasalin ng Chinese sa English (Certificate 3327_620583_6)."
           },
           "nzstii": {
             "title": "NZSTII Certified Translator Chinese into English Certificate of Membership",
-            "description": "Opisyal na sertipiko ng pagiging miyembro ng NZSTII para sa mga sertipikadong serbisyo sa pagsasalin ng Chinese hanggang English."
+            "description": "Opisyal na sertipiko ng membership ng NZSTII para sa mga sertipikadong serbisyo sa pagsasalin ng Chinese hanggang English."
           }
         }
       }
@@ -834,7 +834,7 @@
       },
       "agriPv": {
         "title": "Agri-PV Integration 园光互补",
-        "description": "Komprehensibong dokumentasyon ng pagsasanib ng agricultural-photovoltaic kabilang ang parehong mga larawan at video ng proseso ng pag-install at pagsasama ng solar panel."
+        "description": "Komprehensibong dokumentasyon ng pagsasanib ng agrikultura-photovoltaic kabilang ang parehong mga larawan at video ng proseso ng pag-install at pagsasama ng solar panel."
       }
     }
   },
@@ -842,7 +842,7 @@
     "header": {
       "title": "ESG at Real-World Asset Proof",
       "subtitle": "Sustainability at Epekto",
-      "description": "I-explore ang epekto sa kapaligiran ng AGV Protocol, mga hakbangin sa pagpapanatili, at real-world na pag-verify ng asset sa pamamagitan ng komprehensibong dokumentasyon."
+      "description": "Galugarin ang epekto sa kapaligiran ng AGV Protocol, mga hakbangin sa pagpapanatili, at real-world na pag-verify ng asset sa pamamagitan ng komprehensibong dokumentasyon."
     },
     "main": {
       "title": "Ulat ng ESG at Sustainability Epekto",
@@ -957,10 +957,34 @@
           },
           "supplement": {
             "title": "Karagdagang Kasunduan",
-            "description": "Mga karagdagang tuntunin at kundisyon na nagdaragdag sa mga pangunahing kasunduan sa pakikipagtulungan."
+            "description": "Mga karagdagang tuntunin at kundisyon na nagdaragdag sa mga pangunahing kasunduan sa kooperasyon."
           }
         }
       }
     }
+  },
+  "nda": {
+    "form": {
+      "title": "Pamagat ng Trabaho",
+      "subtitle": "Humiling ng Kasunduan sa Hindi Pagbubunyag",
+      "description": "Mangyaring punan ang form sa ibaba upang humiling ng isang NDA. Ipapadala namin ang kasunduan sa iyong email address.",
+      "name": "Buong Pangalan",
+      "organization": "Organisasyon/Kumpanya",
+      "email": "Email Address",
+      "submit": "Humiling ng NDA",
+      "sending": "Nagsusumite ng Kahilingan...",
+      "success": "salamat po! Ang iyong kahilingan sa NDA ay matagumpay na naisumite. Ipapadala namin ang dokumento ng NDA sa iyong email address sa ilang sandali.",
+      "error": "Nabigong isumite ang kahilingan sa NDA",
+      "networkError": "Error sa network. Pakisubukang muli.",
+      "namePlaceholder": "Ilagay ang iyong buong pangalan",
+      "titlePlaceholder": "hal., CEO, Investment Manager, Analyst",
+      "organizationPlaceholder": "Ilagay ang pangalan ng iyong kumpanya o organisasyon",
+      "emailPlaceholder": "Ilagay ang iyong email address",
+      "emailNote": "Ipapadala ang NDA sa email address na ito",
+      "disclaimer": "Sa pamamagitan ng pagsusumite ng form na ito, sumasang-ayon kang tanggapin ang dokumento ng NDA at nauunawaan na ipapadala ito sa ibinigay na email address."
+    },
+    "title": "Kahilingan ng NDA",
+    "subtitle": "Humiling ng Kasunduan sa Hindi Pagbubunyag",
+    "description": "Humiling ng access sa kumpidensyal na impormasyon ng AGV Protocol sa pamamagitan ng pagsusumite ng isang NDA request form."
   }
 }

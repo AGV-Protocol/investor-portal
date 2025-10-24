@@ -962,5 +962,29 @@
         }
       }
     }
+  },
+  "nda": {
+    "form": {
+      "title": "職稱",
+      "subtitle": "請求保密協議",
+      "description": "請填寫下方表格，申請保密協議。我們會將協定寄至您的信箱。",
+      "name": "姓名",
+      "organization": "組織/公司",
+      "email": "電子郵件",
+      "submit": "請求保密協議",
+      "sending": "正在提交請求...",
+      "success": "謝謝！您的保密協議 (NDA) 申請已成功提交。我們將盡快將保密協議 (NDA) 文件發送至您的郵箱。",
+      "error": "未能提交保密協議請求",
+      "networkError": "網路錯誤。請重試。",
+      "namePlaceholder": "輸入您的全名",
+      "titlePlaceholder": "例如執行長、投資經理、分析師",
+      "organizationPlaceholder": "輸入您的公司或組織名稱",
+      "emailPlaceholder": "輸入您的電子郵件地址",
+      "emailNote": "NDA 將發送至此電子郵件地址",
+      "disclaimer": "提交此表格，您同意接收 NDA 文件並瞭解它將發送到所提供的電子郵件地址。"
+    },
+    "title": "保密協議請求",
+    "subtitle": "請求保密協議",
+    "description": "透過提交 NDA 請求表來請求存取機密的 AGV 協定資訊。"
   }
 }

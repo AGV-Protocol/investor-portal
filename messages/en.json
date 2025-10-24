@@ -413,6 +413,31 @@
       "request": "Request NDA"
     }
   },
+  "nda": {
+    "title": "NDA Request",
+    "subtitle": "Request Non-Disclosure Agreement",
+    "description": "Request access to confidential AGV Protocol information by submitting an NDA request form.",
+    "form": {
+      "title": "NDA Request Form",
+      "subtitle": "Request Non-Disclosure Agreement",
+      "description": "Please fill out the form below to request an NDA. We will send the agreement to your email address.",
+      "name": "Full Name",
+      "title": "Job Title",
+      "organization": "Organization/Company",
+      "email": "Email Address",
+      "submit": "Request NDA",
+      "sending": "Submitting Request...",
+      "success": "Thank you! Your NDA request has been submitted successfully. We will send the NDA document to your email address shortly.",
+      "error": "Failed to submit NDA request",
+      "networkError": "Network error. Please try again.",
+      "namePlaceholder": "Enter your full name",
+      "titlePlaceholder": "e.g., CEO, Investment Manager, Analyst",
+      "organizationPlaceholder": "Enter your company or organization name",
+      "emailPlaceholder": "Enter your email address",
+      "emailNote": "The NDA will be sent to this email address",
+      "disclaimer": "By submitting this form, you agree to receive the NDA document and understand that it will be sent to the email address provided."
+    }
+  },
   "financials": {
     "title": "Financial Models & Projections",
     "subtitle": "Financial Documentation",

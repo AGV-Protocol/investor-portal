@@ -962,5 +962,29 @@
         }
       }
     }
+  },
+  "nda": {
+    "form": {
+      "title": "직책",
+      "subtitle": "비밀 유지 계약 요청",
+      "description": "비밀 유지 계약(NDA)을 요청하시려면 아래 양식을 작성해 주세요. 계약서는 귀하의 이메일 주소로 발송해 드리겠습니다.",
+      "name": "성명",
+      "organization": "조직/회사",
+      "email": "이메일 주소",
+      "submit": "비밀 유지 계약(NDA) 요청",
+      "sending": "요청 제출 중...",
+      "success": "감사합니다! NDA 요청이 성공적으로 제출되었습니다. 곧 귀하의 이메일 주소로 NDA 문서를 보내드리겠습니다.",
+      "error": "NDA 요청을 제출하지 못했습니다.",
+      "networkError": "네트워크 오류가 발생했습니다. 다시 시도해 주세요.",
+      "namePlaceholder": "귀하의 성명을 입력하세요",
+      "titlePlaceholder": "예: CEO, 투자 관리자, 분석가",
+      "organizationPlaceholder": "회사 또는 조직 이름을 입력하세요",
+      "emailPlaceholder": "이메일 주소를 입력하세요",
+      "emailNote": "NDA는 이 이메일 주소로 전송됩니다.",
+      "disclaimer": "이 양식을 제출함으로써 귀하는 NDA 문서를 수신하는 데 동의하고 해당 문서가 제공된 이메일 주소로 전송된다는 점을 이해합니다."
+    },
+    "title": "비밀 유지 계약 요청",
+    "subtitle": "비밀 유지 계약 요청",
+    "description": "NDA 요청 양식을 제출하여 기밀 AGV 프로토콜 정보에 대한 액세스를 요청하세요."
   }
 }
