@@ -99,13 +99,9 @@ export async function POST(request: NextRequest) {
       email: "noreply@agvprotocol.org" 
     };
     sendSmtpEmail.to = [
-      // { 
-      //   email: "ir@agvprotocol.org", 
-      //   name: "AGV Protocol IR" 
-      // },
       { 
-        email: "ajibikeabdulqayyum04@gmail.com", 
-        name: "Ajibike Abdulqayyum" 
+        email: "ir@agvprotocol.org", 
+        name: "AGV Protocol IR" 
       },
     ];
     sendSmtpEmail.cc = [
