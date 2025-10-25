@@ -134,7 +134,9 @@
     "brandkit": "Brand Kit",
     "tech": "Technology",
     "esg": "ESG",
-    "depin": "DePIN"
+    "depin": "DePIN",
+    "salesMarketing": "Sales & Marketing",
+    "managementTeam": "Management Team"
   },
   "header": {
     "title": "AGV Protocol",
@@ -222,7 +224,10 @@
       "financials": "Financial models, valuations, and projections",
       "legal": "Legal documents, compliance, and registration",
       "esg": "Environmental impact and sustainability reports",
-      "brandkit": "Brand assets, logos, and marketing materials"
+      "brandkit": "Brand assets, logos, and marketing materials",
+      "depin": "Decentralized physical infrastructure network documentation",
+      "salesMarketing": "Sales strategies, partnerships, and market materials",
+      "managementTeam": "Leadership structure and governance documentation"
     },
     "recent": {
       "title": "Recently Updated Documents"
@@ -422,7 +427,7 @@
       "subtitle": "Request Non-Disclosure Agreement",
       "description": "Please fill out the form below to request an NDA. We will send the agreement to your email address.",
       "name": "Full Name",
-      "title": "Job Title",
+      "jobTitle": "Job Title",
       "organization": "Organization/Company",
       "email": "Email Address",
       "submit": "Request NDA",
@@ -969,6 +974,107 @@
             "description": "Additional terms and conditions supplementing the main cooperation agreements."
           }
         }
+      }
+    }
+  },
+  "salesMarketing": {
+    "header": {
+      "title": "Sales & Marketing",
+      "subtitle": "Sales Strategy & Partnerships",
+      "description": "Explore AGV Protocol's sales strategies, market positioning, and strategic partnerships through comprehensive documentation."
+    },
+    "mainDoc": {
+      "title": "Product Timeline & Whitepaper Excerpts v2025.10",
+      "description": "Comprehensive product timeline and whitepaper excerpts showcasing our roadmap and vision for the AI-powered renewable energy economy."
+    },
+    "metrics": {
+      "title": "Sales Performance Metrics",
+      "pipeline": "Sales Pipeline",
+      "partners": "Strategic Partners",
+      "satisfaction": "Client Satisfaction",
+      "support": "Support Available"
+    },
+    "strategy": {
+      "title": "Sales Strategy Overview",
+      "market": {
+        "title": "Market Penetration",
+        "desc": "Targeting institutional investors and strategic partners in the renewable energy sector"
+      },
+      "growth": {
+        "title": "Growth Strategy",
+        "desc": "Expanding market reach through partnerships and direct sales channels"
+      },
+      "partnerships": {
+        "title": "Strategic Partnerships",
+        "desc": "Building long-term relationships with key industry players and investors"
+      }
+    },
+    "sections": {
+      "mous": {
+        "title": "Memorandums of Understanding (MOUs)",
+        "description": "Strategic partnership agreements and investment letters of intent from key institutional partners.",
+        "docs": {
+          "pusu": {
+            "title": "朴素资本管理有限公司投资意向书",
+            "description": "Investment letter of intent from Pu Su Capital Management Co., Ltd. expressing interest in AGV Protocol investment opportunities."
+          },
+          "guopeng": {
+            "title": "國鵬投資管理有限公司戰略合作意向書",
+            "description": "Strategic cooperation letter of intent from Guo Peng Investment Management Co., Ltd. outlining partnership framework and collaboration terms."
+          }
+        }
+      }
+    }
+  },
+  "managementTeam": {
+    "header": {
+      "title": "Management Team",
+      "subtitle": "Leadership & Governance",
+      "description": "Meet AGV Protocol's leadership team and explore our governance structure through comprehensive documentation."
+    },
+    "mainDoc": {
+      "title": "AGV Protocol Global Management and Governance Overview 2025",
+      "description": "Comprehensive overview of AGV Protocol's global management structure and governance framework, including leadership roles and organizational structure."
+    },
+    "expertise": {
+      "title": "Team Expertise",
+      "years": "Years Experience",
+      "projects": "Projects Completed",
+      "managed": "Assets Managed",
+      "countries": "Countries Served"
+    },
+    "leadership": {
+      "title": "Leadership Structure",
+      "executive": {
+        "title": "Executive Team",
+        "desc": "Senior leadership driving strategic direction and operational excellence"
+      },
+      "board": {
+        "title": "Board of Directors",
+        "desc": "Independent board members providing governance and oversight"
+      },
+      "advisory": {
+        "title": "Advisory Board",
+        "desc": "Industry experts providing strategic guidance and market insights"
+      }
+    },
+    "principles": {
+      "title": "Governance Principles",
+      "transparency": {
+        "title": "Transparency",
+        "desc": "Open communication and clear reporting to all stakeholders"
+      },
+      "accountability": {
+        "title": "Accountability",
+        "desc": "Clear responsibility and performance measurement frameworks"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "desc": "Continuous improvement and technological advancement"
+      },
+      "sustainability": {
+        "title": "Sustainability",
+        "desc": "Long-term value creation and environmental responsibility"
       }
     }
   }

@@ -7,7 +7,7 @@ import Card from '@/components/Card';
 import Button from '@/components/Button';
 import { getAllDocuments, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
-import { FiSettings, FiBarChart, FiShield, FiHeart, FiImage, FiCpu } from 'react-icons/fi';
+import { FiSettings, FiBarChart, FiShield, FiHeart, FiImage, FiCpu, FiTrendingUp, FiUsers } from 'react-icons/fi';
 import { useTranslations } from '@/hooks/useTranslations';
 
 export default function InvestorPage() {
@@ -65,6 +65,20 @@ export default function InvestorPage() {
       icon: <FiCpu size={24} />,
       count: allDocuments.filter(doc => doc.category === 'depin').length,
     },
+    {
+      name: t('nav.salesMarketing'),
+      href: `/${locale}/sales-marketing`,
+      description: t('investor.categories.salesMarketing'),
+      icon: <FiTrendingUp size={24} />,
+      count: allDocuments.filter(doc => doc.category === 'sales-marketing').length,
+    },
+    {
+      name: t('nav.managementTeam'),
+      href: `/${locale}/management-team`,
+      description: t('investor.categories.managementTeam'),
+      icon: <FiUsers size={24} />,
+      count: allDocuments.filter(doc => doc.category === 'management-team').length,
+    },
   ];
 
   return (
@@ -93,7 +107,7 @@ export default function InvestorPage() {
                   <div className="text-sm text-muted-foreground">{t('investor.overview.totalDocs')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">6</div>
+                  <div className="text-3xl font-bold text-primary mb-2">8</div>
                   <div className="text-sm text-muted-foreground">{t('investor.overview.categories')}</div>
                 </div>
                 <div className="text-center">

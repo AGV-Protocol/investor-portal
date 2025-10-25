@@ -3,7 +3,7 @@ export interface Document {
   description: string;
   fileUrl: string;
   driveFileId?: string; // Google Drive file ID for service account access
-  category: "tech" | "financials" | "legal" | "esg" | "brandkit" | "depin";
+  category: "tech" | "financials" | "legal" | "esg" | "brandkit" | "depin" | "sales-marketing" | "management-team";
   // Optional i18n keys to localize title/description via messages JSON
   titleKey?: string;
   descriptionKey?: string;
@@ -230,13 +230,53 @@ export async function getDocumentsByCategory(category: string): Promise<Document
         category: "depin",
       },
     ],
+    "sales-marketing": [
+      {
+        title: "Product_Timeline_(Whitepaper_Excerpts)_v2025.10",
+        description: "Comprehensive product timeline and whitepaper excerpts showcasing our roadmap and vision.",
+        titleKey: "docs.salesMarketing.timeline.title",
+        descriptionKey: "docs.salesMarketing.timeline.description",
+        fileUrl: "https://drive.google.com/file/d/1pB4Pr29IAIEW1xcu3LDxykQJ7ApY9_hb/view",
+        driveFileId: "1pB4Pr29IAIEW1xcu3LDxykQJ7ApY9_hb",
+        category: "sales-marketing",
+      },
+      {
+        title: "朴素资本管理有限公司投资意向书",
+        description: "Investment letter of intent from Pu Su Capital Management Co., Ltd.",
+        titleKey: "docs.salesMarketing.mou1.title",
+        descriptionKey: "docs.salesMarketing.mou1.description",
+        fileUrl: "https://drive.google.com/file/d/1qEDgK2s8Pi93bdjbptna8nClNj4kBZcm/view",
+        driveFileId: "1qEDgK2s8Pi93bdjbptna8nClNj4kBZcm",
+        category: "sales-marketing",
+      },
+      {
+        title: "國鵬投資管理有限公司戰略合作意向書",
+        description: "Strategic cooperation letter of intent from Guo Peng Investment Management Co., Ltd.",
+        titleKey: "docs.salesMarketing.mou2.title",
+        descriptionKey: "docs.salesMarketing.mou2.description",
+        fileUrl: "https://drive.google.com/file/d/1vvWF2U-fwx7ndQnBLZD83xsl23BEFGJX/view",
+        driveFileId: "1vvWF2U-fwx7ndQnBLZD83xsl23BEFGJX",
+        category: "sales-marketing",
+      },
+    ],
+    "management-team": [
+      {
+        title: "AGV_Protocol_Global_Management_and_Governance_Overview_2025_1",
+        description: "Comprehensive overview of AGV Protocol's global management structure and governance framework.",
+        titleKey: "docs.managementTeam.governance.title",
+        descriptionKey: "docs.managementTeam.governance.description",
+        fileUrl: "https://drive.google.com/file/d/1Pt78jE1fzzweAubx_7Q_WR4zQ21v3lv8/view",
+        driveFileId: "1Pt78jE1fzzweAubx_7Q_WR4zQ21v3lv8",
+        category: "management-team",
+      },
+    ],
   };
 
   return dummyData[category] || [];
 }
 
 export async function getAllDocuments(): Promise<Document[]> {
-  const categories = ["tech", "financials", "legal", "esg", "brandkit", "depin"];
+  const categories = ["tech", "financials", "legal", "esg", "brandkit", "depin", "sales-marketing", "management-team"];
   const allDocuments: Document[] = [];
   
   for (const category of categories) {
