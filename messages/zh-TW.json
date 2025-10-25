@@ -29,7 +29,9 @@
     "brandkit": "品牌工具包",
     "tech": "技術",
     "esg": "環境、社會及管治",
-    "depin": "德平"
+    "depin": "德平",
+    "salesMarketing": "銷售與行銷",
+    "managementTeam": "管理團隊"
   },
   "header": {
     "title": "AGV協議",
@@ -83,7 +85,10 @@
       "financials": "財務模型、估值和預測",
       "legal": "法律文件、合規性和註冊",
       "esg": "環境影響和永續性報告",
-      "brandkit": "品牌資產、標誌和行銷材料"
+      "brandkit": "品牌資產、標誌和行銷材料",
+      "depin": "分散式實體基礎設施網路文檔",
+      "salesMarketing": "銷售策略、合作夥伴關係和市場材料",
+      "managementTeam": "領導結構與治理文件"
     },
     "recent": {
       "title": "最近更新的文檔"
@@ -981,10 +986,112 @@
       "organizationPlaceholder": "輸入您的公司或組織名稱",
       "emailPlaceholder": "輸入您的電子郵件地址",
       "emailNote": "NDA 將發送至此電子郵件地址",
-      "disclaimer": "提交此表格，您同意接收 NDA 文件並瞭解它將發送到所提供的電子郵件地址。"
+      "disclaimer": "提交此表格，您同意接收 NDA 文件並瞭解它將發送到所提供的電子郵件地址。",
+      "jobTitle": "職稱"
     },
     "title": "保密協議請求",
     "subtitle": "請求保密協議",
     "description": "透過提交 NDA 請求表來請求存取機密的 AGV 協定資訊。"
+  },
+  "salesMarketing": {
+    "header": {
+      "title": "銷售與行銷",
+      "subtitle": "銷售策略與合作關係",
+      "description": "透過全面的文件探索 AGV Protocol 的銷售策略、市場定位和策略合作夥伴關係。"
+    },
+    "mainDoc": {
+      "title": "產品時間表和白皮書摘錄 v2025.10",
+      "description": "全面的產品時間表和白皮書摘錄展示了我們對人工智慧再生能源經濟的路線圖和願景。"
+    },
+    "metrics": {
+      "title": "銷售績效指標",
+      "pipeline": "銷售通路",
+      "partners": "戰略合作夥伴",
+      "satisfaction": "客戶滿意度",
+      "support": "提供支持"
+    },
+    "strategy": {
+      "market": {
+        "title": "市場滲透",
+        "desc": "瞄準再生能源領域的機構投資者和策略合作夥伴"
+      },
+      "growth": {
+        "title": "成長策略",
+        "desc": "透過合作夥伴關係和直銷管道擴大市場範圍"
+      },
+      "partnerships": {
+        "title": "策略夥伴關係",
+        "desc": "與主要行業參與者和投資者建立長期關係"
+      },
+      "title": "銷售策略概述"
+    },
+    "sections": {
+      "mous": {
+        "docs": {
+          "pusu": {
+            "title": "樸素資本管理有限公司投資意向書",
+            "description": "普速資本管理有限公司的投資意向書表達了對 AGV Protocol 投資機會的興趣。"
+          },
+          "guopeng": {
+            "title": "國鵬投資管理有限公司策略合作意向書",
+            "description": "國鵬投資管理有限公司的策略合作意向書概述了合作框架和合作條款。"
+          }
+        },
+        "title": "諒解備忘錄（MOU）",
+        "description": "來自主要機構合作夥伴的策略合作協議和投資意向書。"
+      }
+    }
+  },
+  "managementTeam": {
+    "header": {
+      "title": "管理團隊",
+      "subtitle": "領導與治理",
+      "description": "與 AGV Protocol 的領導團隊會面，並透過全面的文檔探索我們的治理結構。"
+    },
+    "mainDoc": {
+      "title": "AGV協議全球管理與治理概覽2025",
+      "description": "全面概述 AGV Protocol 的全球管理結構和治理框架，包括領導角色和組織結構。"
+    },
+    "expertise": {
+      "title": "團隊專業知識",
+      "years": "多年經驗",
+      "projects": "已完成項目",
+      "managed": "資產管理",
+      "countries": "服務國家"
+    },
+    "leadership": {
+      "executive": {
+        "title": "執行團隊",
+        "desc": "高階領導推動策略方向和卓越營運"
+      },
+      "board": {
+        "title": "董事會",
+        "desc": "獨立董事會成員提供治理和監督"
+      },
+      "advisory": {
+        "title": "顧問委員會",
+        "desc": "行業專家提供策略指導和市場洞察"
+      },
+      "title": "領導結構"
+    },
+    "principles": {
+      "transparency": {
+        "title": "透明度",
+        "desc": "向所有利害關係人進行開放的溝通和清晰的報告"
+      },
+      "accountability": {
+        "title": "問責制",
+        "desc": "明確的責任與績效衡量框架"
+      },
+      "innovation": {
+        "title": "創新",
+        "desc": "持續改進和技術進步"
+      },
+      "sustainability": {
+        "title": "永續性",
+        "desc": "長期價值創造與環境責任"
+      },
+      "title": "治理原則"
+    }
   }
 }

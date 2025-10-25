@@ -29,7 +29,9 @@
     "brandkit": "Marken-Kit",
     "tech": "Technologie",
     "esg": "ESG",
-    "depin": "DePIN"
+    "depin": "DePIN",
+    "salesMarketing": "Vertrieb & Marketing",
+    "managementTeam": "Management-Team"
   },
   "header": {
     "title": "AGV-Protokoll",
@@ -83,7 +85,10 @@
       "financials": "Finanzmodelle, Bewertungen und Prognosen",
       "legal": "Rechtliche Dokumente, Compliance und Registrierung",
       "esg": "Umweltverträglichkeits- und Nachhaltigkeitsberichte",
-      "brandkit": "Markenwerte, Logos und Marketingmaterialien"
+      "brandkit": "Markenwerte, Logos und Marketingmaterialien",
+      "depin": "Dokumentation des dezentralen physischen Infrastrukturnetzwerks",
+      "salesMarketing": "Verkaufsstrategien, Partnerschaften und Marktmaterialien",
+      "managementTeam": "Führungsstruktur und Governance-Dokumentation"
     },
     "recent": {
       "title": "Kürzlich aktualisierte Dokumente"
@@ -965,7 +970,7 @@
   },
   "nda": {
     "form": {
-      "title": "Berufsbezeichnung",
+      "title": "NDA-Antragsformular",
       "subtitle": "Geheimhaltungsvereinbarung anfordern",
       "description": "Bitte füllen Sie das untenstehende Formular aus, um eine Geheimhaltungsvereinbarung anzufordern. Wir senden Ihnen die Vereinbarung dann an Ihre E-Mail-Adresse.",
       "name": "Vollständiger Name",
@@ -981,10 +986,112 @@
       "organizationPlaceholder": "Geben Sie den Namen Ihres Unternehmens oder Ihrer Organisation ein",
       "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
       "emailNote": "Die Geheimhaltungsvereinbarung wird an diese E-Mail-Adresse gesendet",
-      "disclaimer": "Mit dem Absenden dieses Formulars erklären Sie sich mit dem Erhalt des NDA-Dokuments einverstanden und verstehen, dass es an die angegebene E-Mail-Adresse gesendet wird."
+      "disclaimer": "Mit dem Absenden dieses Formulars erklären Sie sich mit dem Erhalt des NDA-Dokuments einverstanden und verstehen, dass es an die angegebene E-Mail-Adresse gesendet wird.",
+      "jobTitle": "Berufsbezeichnung"
     },
     "title": "NDA-Anfrage",
     "subtitle": "Geheimhaltungsvereinbarung anfordern",
     "description": "Fordern Sie Zugriff auf vertrauliche AGV-Protokollinformationen an, indem Sie ein NDA-Anforderungsformular einreichen."
+  },
+  "salesMarketing": {
+    "header": {
+      "title": "Vertrieb & Marketing",
+      "subtitle": "Vertriebsstrategie & Partnerschaften",
+      "description": "Informieren Sie sich anhand umfassender Dokumentationen über die Verkaufsstrategien, Marktpositionierung und strategischen Partnerschaften von AGV Protocol."
+    },
+    "mainDoc": {
+      "title": "Produktzeitleiste und Whitepaper-Auszüge v2025.10",
+      "description": "Umfassende Produktzeitleiste und Auszüge aus Whitepapers, die unseren Fahrplan und unsere Vision für die KI-gestützte Wirtschaft für erneuerbare Energien präsentieren."
+    },
+    "metrics": {
+      "title": "Kennzahlen zur Vertriebsleistung",
+      "pipeline": "Vertriebspipeline",
+      "partners": "Strategische Partner",
+      "satisfaction": "Kundenzufriedenheit",
+      "support": "Support verfügbar"
+    },
+    "strategy": {
+      "market": {
+        "title": "Marktdurchdringung",
+        "desc": "Ansprache institutioneller Investoren und strategischer Partner im Bereich erneuerbare Energien"
+      },
+      "growth": {
+        "title": "Wachstumsstrategie",
+        "desc": "Erweiterung der Marktreichweite durch Partnerschaften und direkte Vertriebskanäle"
+      },
+      "partnerships": {
+        "title": "Strategische Partnerschaften",
+        "desc": "Aufbau langfristiger Beziehungen zu wichtigen Akteuren der Branche und Investoren"
+      },
+      "title": "Übersicht über die Vertriebsstrategie"
+    },
+    "sections": {
+      "mous": {
+        "docs": {
+          "pusu": {
+            "title": "朴素资本管理有限公司投资意向书",
+            "description": "Investitionsabsichtserklärung von Pu Su Capital Management Co., Ltd., in der das Interesse an Investitionsmöglichkeiten im AGV-Protokoll bekundet wird."
+          },
+          "guopeng": {
+            "title": "國鵬投資管理有限公司戰略合作意向書",
+            "description": "Absichtserklärung zur strategischen Zusammenarbeit von Guo Peng Investment Management Co., Ltd. mit Erläuterung des Partnerschaftsrahmens und der Bedingungen der Zusammenarbeit."
+          }
+        },
+        "title": "Absichtserklärungen (MOUs)",
+        "description": "Strategische Partnerschaftsvereinbarungen und Investitionsabsichtserklärungen wichtiger institutioneller Partner."
+      }
+    }
+  },
+  "managementTeam": {
+    "header": {
+      "title": "Management-Team",
+      "subtitle": "Führung und Governance",
+      "description": "Lernen Sie das Führungsteam von AGV Protocol kennen und erkunden Sie unsere Governance-Struktur anhand der umfassenden Dokumentation."
+    },
+    "mainDoc": {
+      "title": "AGV-Protokoll – Globaler Management- und Governance-Überblick 2025",
+      "description": "Umfassender Überblick über die globale Managementstruktur und das Governance-Framework des AGV-Protokolls, einschließlich Führungsrollen und Organisationsstruktur."
+    },
+    "expertise": {
+      "title": "Teamkompetenz",
+      "years": "Jahre Erfahrung",
+      "projects": "Abgeschlossene Projekte",
+      "managed": "Verwaltetes Vermögen",
+      "countries": "Bediente Länder"
+    },
+    "leadership": {
+      "executive": {
+        "title": "Führungsteam",
+        "desc": "Die Führungsspitze treibt die strategische Ausrichtung und operative Exzellenz voran"
+      },
+      "board": {
+        "title": "Vorstand",
+        "desc": "Unabhängige Vorstandsmitglieder sorgen für Governance und Aufsicht"
+      },
+      "advisory": {
+        "title": "Beirat",
+        "desc": "Branchenexperten bieten strategische Beratung und Markteinblicke"
+      },
+      "title": "Führungsstruktur"
+    },
+    "principles": {
+      "transparency": {
+        "title": "Transparenz",
+        "desc": "Offene Kommunikation und klare Berichterstattung an alle Beteiligten"
+      },
+      "accountability": {
+        "title": "Rechenschaftspflicht",
+        "desc": "Klare Rahmen für Verantwortung und Leistungsmessung"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "desc": "Kontinuierliche Verbesserung und technologischer Fortschritt"
+      },
+      "sustainability": {
+        "title": "Nachhaltigkeit",
+        "desc": "Langfristige Wertschöpfung und ökologische Verantwortung"
+      },
+      "title": "Governance-Grundsätze"
+    }
   }
 }

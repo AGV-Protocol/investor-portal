@@ -29,7 +29,9 @@
     "brandkit": "브랜드 키트",
     "tech": "기술",
     "esg": "ESG",
-    "depin": "데핀"
+    "depin": "데핀",
+    "salesMarketing": "영업 및 마케팅",
+    "managementTeam": "경영팀"
   },
   "header": {
     "title": "AGV 프로토콜",
@@ -83,7 +85,10 @@
       "financials": "재무 모델, 평가 및 예측",
       "legal": "법률 문서, 규정 준수 및 등록",
       "esg": "환경 영향 및 지속 가능성 보고서",
-      "brandkit": "브랜드 자산, 로고 및 마케팅 자료"
+      "brandkit": "브랜드 자산, 로고 및 마케팅 자료",
+      "depin": "분산형 물리적 인프라 네트워크 문서",
+      "salesMarketing": "판매 전략, 파트너십 및 마케팅 자료",
+      "managementTeam": "리더십 구조 및 거버넌스 문서"
     },
     "recent": {
       "title": "최근 업데이트된 문서"
@@ -981,10 +986,112 @@
       "organizationPlaceholder": "회사 또는 조직 이름을 입력하세요",
       "emailPlaceholder": "이메일 주소를 입력하세요",
       "emailNote": "NDA는 이 이메일 주소로 전송됩니다.",
-      "disclaimer": "이 양식을 제출함으로써 귀하는 NDA 문서를 수신하는 데 동의하고 해당 문서가 제공된 이메일 주소로 전송된다는 점을 이해합니다."
+      "disclaimer": "이 양식을 제출함으로써 귀하는 NDA 문서를 수신하는 데 동의하고 해당 문서가 제공된 이메일 주소로 전송된다는 점을 이해합니다.",
+      "jobTitle": "직책"
     },
     "title": "비밀 유지 계약 요청",
     "subtitle": "비밀 유지 계약 요청",
     "description": "NDA 요청 양식을 제출하여 기밀 AGV 프로토콜 정보에 대한 액세스를 요청하세요."
+  },
+  "salesMarketing": {
+    "header": {
+      "title": "영업 및 마케팅",
+      "subtitle": "영업 전략 및 파트너십",
+      "description": "포괄적인 문서를 통해 AGV Protocol의 판매 전략, 시장 위치 및 전략적 파트너십을 살펴보세요."
+    },
+    "mainDoc": {
+      "title": "제품 타임라인 및 백서 발췌문 v2025.10",
+      "description": "AI 기반 재생 에너지 경제에 대한 로드맵과 비전을 보여주는 포괄적인 제품 타임라인과 백서 발췌본입니다."
+    },
+    "metrics": {
+      "title": "판매 성과 지표",
+      "pipeline": "판매 파이프라인",
+      "partners": "전략적 파트너",
+      "satisfaction": "고객 만족",
+      "support": "지원 가능"
+    },
+    "strategy": {
+      "market": {
+        "title": "시장 침투",
+        "desc": "재생에너지 분야의 기관 투자자 및 전략적 파트너를 타겟으로 합니다."
+      },
+      "growth": {
+        "title": "성장 전략",
+        "desc": "파트너십 및 직접 판매 채널을 통한 시장 도달 범위 확대"
+      },
+      "partnerships": {
+        "title": "전략적 파트너십",
+        "desc": "주요 산업 참여자 및 투자자와 장기적인 관계 구축"
+      },
+      "title": "판매 전략 개요"
+    },
+    "sections": {
+      "mous": {
+        "docs": {
+          "pusu": {
+            "title": "朴素资本管리유유공주投资意向书",
+            "description": "Pu Su Capital Management Co., Ltd.가 AGV Protocol 투자 기회에 관심을 표명한 투자 의향서입니다."
+          },
+          "guopeng": {
+            "title": "國鵬投資管理유유공주전略합작의서",
+            "description": "Guo Peng Investment Management Co., Ltd.의 전략적 협력 의향서에는 파트너십 프레임워크와 협력 조건이 설명되어 있습니다."
+          }
+        },
+        "title": "양해각서(MOU)",
+        "description": "주요 기관 파트너와의 전략적 파트너십 계약 및 투자 의향서."
+      }
+    }
+  },
+  "managementTeam": {
+    "header": {
+      "title": "경영팀",
+      "subtitle": "리더십 및 거버넌스",
+      "description": "AGV Protocol의 리더십 팀을 만나고 포괄적인 문서를 통해 당사의 거버넌스 구조를 알아보세요."
+    },
+    "mainDoc": {
+      "title": "AGV 프로토콜 글로벌 관리 및 거버넌스 개요 2025",
+      "description": "리더십 역할과 조직 구조를 포함하여 AGV 프로토콜의 글로벌 관리 구조와 거버넌스 프레임워크에 대한 포괄적인 개요입니다."
+    },
+    "expertise": {
+      "title": "팀 전문성",
+      "years": "년 경험",
+      "projects": "완료된 프로젝트",
+      "managed": "관리 자산",
+      "countries": "서비스 제공 국가"
+    },
+    "leadership": {
+      "executive": {
+        "title": "임원진",
+        "desc": "전략적 방향과 운영적 우수성을 주도하는 고위 리더십"
+      },
+      "board": {
+        "title": "이사회",
+        "desc": "거버넌스와 감독을 제공하는 독립 이사회 구성원"
+      },
+      "advisory": {
+        "title": "자문위원회",
+        "desc": "전략적 지침과 시장 통찰력을 제공하는 업계 전문가"
+      },
+      "title": "리더십 구조"
+    },
+    "principles": {
+      "transparency": {
+        "title": "투명도",
+        "desc": "모든 이해관계자에게 공개적인 의사소통과 명확한 보고"
+      },
+      "accountability": {
+        "title": "책임",
+        "desc": "명확한 책임 및 성과 측정 프레임워크"
+      },
+      "innovation": {
+        "title": "혁신",
+        "desc": "지속적인 개선과 기술 발전"
+      },
+      "sustainability": {
+        "title": "지속 가능성",
+        "desc": "장기적 가치 창출과 환경적 책임"
+      },
+      "title": "거버넌스 원칙"
+    }
   }
 }

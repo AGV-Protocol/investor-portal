@@ -29,7 +29,9 @@
     "brandkit": "Kit de marca",
     "tech": "Tecnología",
     "esg": "ESG",
-    "depin": "DePIN"
+    "depin": "DePIN",
+    "salesMarketing": "Ventas y marketing",
+    "managementTeam": "Equipo directivo"
   },
   "header": {
     "title": "Protocolo AGV",
@@ -83,7 +85,10 @@
       "financials": "Modelos financieros, valoraciones y proyecciones",
       "legal": "Documentos legales, cumplimiento y registro",
       "esg": "Informes de impacto ambiental y sostenibilidad",
-      "brandkit": "Activos de marca, logotipos y materiales de marketing"
+      "brandkit": "Activos de marca, logotipos y materiales de marketing",
+      "depin": "Documentación de la red de infraestructura física descentralizada",
+      "salesMarketing": "Estrategias de ventas, asociaciones y materiales de mercado",
+      "managementTeam": "Documentación sobre la estructura de liderazgo y gobernanza"
     },
     "recent": {
       "title": "Documentos actualizados recientemente"
@@ -221,7 +226,7 @@
       "sky": "Azul cielo",
       "skyDesc": "Color de acento para resaltados y elementos de la interfaz de usuario.",
       "white": "Blanco",
-      "whiteDesc": "Color neutro para mayor claridad y contraste."
+      "whiteDesc": "Color neutro para claridad y contraste."
     },
     "gradient": {
       "title": "Gradiente",
@@ -349,7 +354,7 @@
         "description": "Términos y condiciones para la compra y distribución de tokens."
       },
       "compliance": {
-        "title": "Informe de Cumplimiento Normativo",
+        "title": "Informe de cumplimiento normativo",
         "description": "Análisis del estado de cumplimiento legal y marco regulatorio."
       }
     },
@@ -501,7 +506,7 @@
     "header": {
       "title": "Tecnología y arquitectura",
       "subtitle": "Documentación técnica",
-      "description": "Explore la infraestructura técnica, la arquitectura del sistema y las auditorías de seguridad del protocolo AGV a través de documentación completa."
+      "description": "Explore la infraestructura técnica, la arquitectura del sistema y las auditorías de seguridad del Protocolo AGV a través de documentación completa."
     },
     "metrics": {
       "title": "Métricas técnicas",
@@ -981,10 +986,112 @@
       "organizationPlaceholder": "Ingrese el nombre de su empresa u organización",
       "emailPlaceholder": "Introduzca su dirección de correo electrónico",
       "emailNote": "El NDA se enviará a esta dirección de correo electrónico.",
-      "disclaimer": "Al enviar este formulario, usted acepta recibir el documento NDA y comprende que se enviará a la dirección de correo electrónico proporcionada."
+      "disclaimer": "Al enviar este formulario, usted acepta recibir el documento NDA y comprende que se enviará a la dirección de correo electrónico proporcionada.",
+      "jobTitle": "Título profesional"
     },
     "title": "Solicitud de NDA",
     "subtitle": "Solicitud de acuerdo de confidencialidad",
     "description": "Solicite acceso a información confidencial del Protocolo AGV enviando un formulario de solicitud de NDA."
+  },
+  "salesMarketing": {
+    "header": {
+      "title": "Ventas y marketing",
+      "subtitle": "Estrategia de ventas y asociaciones",
+      "description": "Explore las estrategias de ventas, el posicionamiento de mercado y las asociaciones estratégicas de AGV Protocol a través de una documentación completa."
+    },
+    "mainDoc": {
+      "title": "Cronología del producto y extractos del informe técnico v2025.10",
+      "description": "Cronología completa del producto y extractos de documentos técnicos que muestran nuestra hoja de ruta y visión para la economía de energía renovable impulsada por IA."
+    },
+    "metrics": {
+      "title": "Métricas de rendimiento de ventas",
+      "pipeline": "Canal de ventas",
+      "partners": "Socios estratégicos",
+      "satisfaction": "Satisfacción del cliente",
+      "support": "Soporte disponible"
+    },
+    "strategy": {
+      "market": {
+        "title": "Penetración del mercado",
+        "desc": "Dirigido a inversores institucionales y socios estratégicos en el sector de las energías renovables"
+      },
+      "growth": {
+        "title": "Estrategia de crecimiento",
+        "desc": "Ampliar el alcance del mercado a través de asociaciones y canales de venta directa"
+      },
+      "partnerships": {
+        "title": "Asociaciones estratégicas",
+        "desc": "Construir relaciones a largo plazo con actores clave de la industria e inversores"
+      },
+      "title": "Descripción general de la estrategia de ventas"
+    },
+    "sections": {
+      "mous": {
+        "docs": {
+          "pusu": {
+            "title": "朴素资本管理有限公司投资意向书",
+            "description": "Carta de intención de inversión de Pu Su Capital Management Co., Ltd. expresando interés en oportunidades de inversión en el Protocolo AGV."
+          },
+          "guopeng": {
+            "title": "國鵬投資管理有限公司戰略合作意向書",
+            "description": "Carta de intención de cooperación estratégica de Guo Peng Investment Management Co., Ltd. que describe el marco de asociación y los términos de colaboración."
+          }
+        },
+        "title": "Memorandos de Entendimiento (MOU)",
+        "description": "Acuerdos de asociación estratégica y cartas de intención de inversión de socios institucionales clave."
+      }
+    }
+  },
+  "managementTeam": {
+    "header": {
+      "title": "Equipo directivo",
+      "subtitle": "Liderazgo y gobernanza",
+      "description": "Conozca al equipo de liderazgo de AGV Protocol y explore nuestra estructura de gobernanza a través de documentación completa."
+    },
+    "mainDoc": {
+      "title": "Visión general de la gestión y gobernanza global del protocolo AGV 2025",
+      "description": "Descripción general completa de la estructura de gestión global y el marco de gobernanza del Protocolo AGV, incluidos los roles de liderazgo y la estructura organizacional."
+    },
+    "expertise": {
+      "title": "Experiencia del equipo",
+      "years": "Años de experiencia",
+      "projects": "Proyectos completados",
+      "managed": "Activos gestionados",
+      "countries": "Países atendidos"
+    },
+    "leadership": {
+      "executive": {
+        "title": "Equipo ejecutivo",
+        "desc": "El liderazgo superior impulsa la dirección estratégica y la excelencia operativa"
+      },
+      "board": {
+        "title": "Junta Directiva",
+        "desc": "Miembros independientes de la junta directiva que brindan gobernanza y supervisión"
+      },
+      "advisory": {
+        "title": "Consejo Asesor",
+        "desc": "Expertos de la industria que brindan orientación estratégica y conocimientos del mercado"
+      },
+      "title": "Estructura de liderazgo"
+    },
+    "principles": {
+      "transparency": {
+        "title": "Transparencia",
+        "desc": "Comunicación abierta e informes claros a todas las partes interesadas"
+      },
+      "accountability": {
+        "title": "Responsabilidad",
+        "desc": "Marcos claros de responsabilidad y medición del desempeño"
+      },
+      "innovation": {
+        "title": "Innovación",
+        "desc": "Mejora continua y avance tecnológico"
+      },
+      "sustainability": {
+        "title": "Sostenibilidad",
+        "desc": "Creación de valor a largo plazo y responsabilidad ambiental"
+      },
+      "title": "Principios de gobernanza"
+    }
   }
 }

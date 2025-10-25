@@ -29,7 +29,9 @@
     "brandkit": "Kit de marque",
     "tech": "Technologie",
     "esg": "ESG",
-    "depin": "DePIN"
+    "depin": "DePIN",
+    "salesMarketing": "Ventes et marketing",
+    "managementTeam": "Équipe de direction"
   },
   "header": {
     "title": "Protocole AGV",
@@ -83,7 +85,10 @@
       "financials": "Modèles financiers, évaluations et projections",
       "legal": "Documents juridiques, conformité et enregistrement",
       "esg": "Rapports d'impact environnemental et de durabilité",
-      "brandkit": "Actifs de marque, logos et supports marketing"
+      "brandkit": "Actifs de marque, logos et supports marketing",
+      "depin": "Documentation du réseau d'infrastructure physique décentralisé",
+      "salesMarketing": "Stratégies de vente, partenariats et supports marketing",
+      "managementTeam": "Documentation sur la structure de direction et la gouvernance"
     },
     "recent": {
       "title": "Documents récemment mis à jour"
@@ -858,7 +863,7 @@
     "verification": {
       "title": "Vérification des actifs dans le monde réel",
       "iot": {
-        "title": "Surveillance IoT",
+        "title": "Surveillance de l'IoT",
         "items": [
           "Suivi des actifs en temps réel",
           "Capteurs environnementaux",
@@ -965,7 +970,7 @@
   },
   "nda": {
     "form": {
-      "title": "Titre d'emploi",
+      "title": "Formulaire de demande d'accord de confidentialité",
       "subtitle": "Demande d'accord de non-divulgation",
       "description": "Veuillez remplir le formulaire ci-dessous pour demander un accord de confidentialité. Nous vous l'enverrons par courriel.",
       "name": "Nom et prénom",
@@ -981,10 +986,112 @@
       "organizationPlaceholder": "Entrez le nom de votre entreprise ou organisation",
       "emailPlaceholder": "Entrez votre adresse email",
       "emailNote": "L'accord de confidentialité sera envoyé à cette adresse e-mail",
-      "disclaimer": "En soumettant ce formulaire, vous acceptez de recevoir le document NDA et comprenez qu'il sera envoyé à l'adresse e-mail fournie."
+      "disclaimer": "En soumettant ce formulaire, vous acceptez de recevoir le document NDA et comprenez qu'il sera envoyé à l'adresse e-mail fournie.",
+      "jobTitle": "Titre d'emploi"
     },
     "title": "Demande de NDA",
     "subtitle": "Demande d'accord de non-divulgation",
     "description": "Demandez l'accès aux informations confidentielles du protocole AGV en soumettant un formulaire de demande NDA."
+  },
+  "salesMarketing": {
+    "header": {
+      "title": "Ventes et marketing",
+      "subtitle": "Stratégie de vente et partenariats",
+      "description": "Découvrez les stratégies de vente, le positionnement sur le marché et les partenariats stratégiques d'AGV Protocol grâce à une documentation complète."
+    },
+    "mainDoc": {
+      "title": "Chronologie du produit et extraits du livre blanc v2025.10",
+      "description": "Chronologie complète des produits et extraits du livre blanc présentant notre feuille de route et notre vision de l'économie des énergies renouvelables alimentée par l'IA."
+    },
+    "metrics": {
+      "title": "Indicateurs de performance des ventes",
+      "pipeline": "Pipeline de vente",
+      "partners": "Partenaires stratégiques",
+      "satisfaction": "Satisfaction des clients",
+      "support": "Assistance disponible"
+    },
+    "strategy": {
+      "market": {
+        "title": "Pénétration du marché",
+        "desc": "Cibler les investisseurs institutionnels et les partenaires stratégiques du secteur des énergies renouvelables"
+      },
+      "growth": {
+        "title": "Stratégie de croissance",
+        "desc": "Élargir la portée du marché grâce à des partenariats et des canaux de vente directe"
+      },
+      "partnerships": {
+        "title": "Partenariats stratégiques",
+        "desc": "Établir des relations à long terme avec les principaux acteurs et investisseurs de l'industrie"
+      },
+      "title": "Aperçu de la stratégie de vente"
+    },
+    "sections": {
+      "mous": {
+        "docs": {
+          "pusu": {
+            "title": "朴素资本管理有限公司投资意向书",
+            "description": "Lettre d'intention d'investissement de Pu Su Capital Management Co., Ltd. exprimant son intérêt pour les opportunités d'investissement du protocole AGV."
+          },
+          "guopeng": {
+            "title": "國鵬投資管理有限公司戰略合作意向書",
+            "description": "Lettre d'intention de coopération stratégique de Guo Peng Investment Management Co., Ltd. décrivant le cadre de partenariat et les conditions de collaboration."
+          }
+        },
+        "title": "Protocoles d'accord (MOU)",
+        "description": "Accords de partenariat stratégique et lettres d’intention d’investissement de partenaires institutionnels clés."
+      }
+    }
+  },
+  "managementTeam": {
+    "header": {
+      "title": "Équipe de direction",
+      "subtitle": "Leadership et gouvernance",
+      "description": "Rencontrez l'équipe de direction d'AGV Protocol et explorez notre structure de gouvernance grâce à une documentation complète."
+    },
+    "mainDoc": {
+      "title": "Aperçu de la gestion et de la gouvernance mondiales du protocole AGV 2025",
+      "description": "Aperçu complet de la structure de gestion mondiale et du cadre de gouvernance du protocole AGV, y compris les rôles de direction et la structure organisationnelle."
+    },
+    "expertise": {
+      "title": "Expertise de l'équipe",
+      "years": "Années d'expérience",
+      "projects": "Projets terminés",
+      "managed": "actifs gérés",
+      "countries": "Pays desservis"
+    },
+    "leadership": {
+      "executive": {
+        "title": "Équipe de direction",
+        "desc": "La haute direction pilote l'orientation stratégique et l'excellence opérationnelle"
+      },
+      "board": {
+        "title": "Conseil d'administration",
+        "desc": "Membres du conseil d'administration indépendants assurant la gouvernance et la surveillance"
+      },
+      "advisory": {
+        "title": "Conseil consultatif",
+        "desc": "Des experts du secteur fournissant des conseils stratégiques et des informations sur le marché"
+      },
+      "title": "Structure de direction"
+    },
+    "principles": {
+      "transparency": {
+        "title": "Transparence",
+        "desc": "Communication ouverte et rapports clairs à toutes les parties prenantes"
+      },
+      "accountability": {
+        "title": "Responsabilité",
+        "desc": "Cadres clairs de responsabilité et de mesure des performances"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "desc": "Amélioration continue et progrès technologique"
+      },
+      "sustainability": {
+        "title": "Durabilité",
+        "desc": "Création de valeur à long terme et responsabilité environnementale"
+      },
+      "title": "Principes de gouvernance"
+    }
   }
 }
