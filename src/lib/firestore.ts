@@ -3,7 +3,7 @@ export interface Document {
   description: string;
   fileUrl: string;
   driveFileId?: string; // Google Drive file ID for service account access
-  category: "tech" | "financials" | "legal" | "esg" | "brandkit";
+  category: "tech" | "financials" | "legal" | "esg" | "brandkit" | "depin";
   // Optional i18n keys to localize title/description via messages JSON
   titleKey?: string;
   descriptionKey?: string;
@@ -201,13 +201,42 @@ export async function getDocumentsByCategory(category: string): Promise<Document
         category: "brandkit",
       },
     ],
+    depin: [
+      {
+        title: "DePin Network Architecture",
+        description: "Technical documentation of our decentralized physical infrastructure network.",
+        titleKey: "docs.depin.architecture.title",
+        descriptionKey: "docs.depin.architecture.description",
+        fileUrl: "https://drive.google.com/file/d/1DEPIN123ARCH456TECTURE/view",
+        driveFileId: "1DEPIN123ARCH456TECTURE",
+        category: "depin",
+      },
+      {
+        title: "Node Deployment Guide",
+        description: "Step-by-step guide for deploying and maintaining network nodes.",
+        titleKey: "docs.depin.deployment.title",
+        descriptionKey: "docs.depin.deployment.description",
+        fileUrl: "https://drive.google.com/file/d/1NODE123DEPLOY456MENT/view",
+        driveFileId: "1NODE123DEPLOY456MENT",
+        category: "depin",
+      },
+      {
+        title: "Network Performance Metrics",
+        description: "Real-time network performance data and analytics dashboard.",
+        titleKey: "docs.depin.metrics.title",
+        descriptionKey: "docs.depin.metrics.description",
+        fileUrl: "https://drive.google.com/file/d/1METRICS123PERF456ORMANCE/view",
+        driveFileId: "1METRICS123PERF456ORMANCE",
+        category: "depin",
+      },
+    ],
   };
 
   return dummyData[category] || [];
 }
 
 export async function getAllDocuments(): Promise<Document[]> {
-  const categories = ["tech", "financials", "legal", "esg", "brandkit"];
+  const categories = ["tech", "financials", "legal", "esg", "brandkit", "depin"];
   const allDocuments: Document[] = [];
   
   for (const category of categories) {

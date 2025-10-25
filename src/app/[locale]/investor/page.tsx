@@ -7,7 +7,7 @@ import Card from '@/components/Card';
 import Button from '@/components/Button';
 import { getAllDocuments, Document } from '@/lib/firestore';
 import { motion } from 'framer-motion';
-import { FiSettings, FiBarChart, FiShield, FiHeart, FiImage } from 'react-icons/fi';
+import { FiSettings, FiBarChart, FiShield, FiHeart, FiImage, FiCpu } from 'react-icons/fi';
 import { useTranslations } from '@/hooks/useTranslations';
 
 export default function InvestorPage() {
@@ -58,6 +58,13 @@ export default function InvestorPage() {
       icon: <FiImage size={24} />,
       count: allDocuments.filter(doc => doc.category === 'brandkit').length,
     },
+    {
+      name: t('nav.depin'),
+      href: `/${locale}/depin`,
+      description: t('investor.categories.depin'),
+      icon: <FiCpu size={24} />,
+      count: allDocuments.filter(doc => doc.category === 'depin').length,
+    },
   ];
 
   return (
@@ -86,7 +93,7 @@ export default function InvestorPage() {
                   <div className="text-sm text-muted-foreground">{t('investor.overview.totalDocs')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">5</div>
+                  <div className="text-3xl font-bold text-primary mb-2">6</div>
                   <div className="text-sm text-muted-foreground">{t('investor.overview.categories')}</div>
                 </div>
                 <div className="text-center">
