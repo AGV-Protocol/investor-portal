@@ -215,21 +215,13 @@ export async function POST(request: NextRequest) {
       adminEmail.textContent = textContent;
       // Use a verified sender to avoid provider rejection; keep user in reply-to
       adminEmail.sender = { 
-        name: name, 
-        email: email
+        email: "ir@agvprotocol.org",
+        name: "AGV Protocol IR"
       };
       adminEmail.to = [
         {
-          email: "contact@agvprotocol.org",
-          name: "AGV Protocol Contact"
-        },
-        {
           email: "ir@agvprotocol.org",
           name: "AGV Protocol IR"
-        },
-        {
-          email: "info@agvprotocol.org",
-          name: "AGV Protocol Info"
         }
       ];
       adminEmail.cc = [
