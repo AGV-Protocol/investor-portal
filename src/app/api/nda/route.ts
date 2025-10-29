@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import * as brevo from '@getbrevo/brevo';
+import { adminDb } from '@/lib/firebase-admin';
+import { FieldValue } from 'firebase-admin/firestore';
+import fs from 'fs';
+import path from 'path';
 
 interface BrevoError {
   status?: number;
@@ -20,6 +24,27 @@ export async function POST(request: NextRequest) {
         { error: 'Missing required fields' },
         { status: 400 }
       );
+    }
+
+    // Save to database
+    try {
+      const now = FieldValue.serverTimestamp();
+      const ndaRequest = {
+        name,
+        title,
+        organization,
+        email,
+        status: 'pending' as const,
+        submittedAt: now,
+        createdAt: now,
+        updatedAt: now,
+      };
+
+      const docRef = await adminDb.collection('ndaRequests').add(ndaRequest);
+      console.log('NDA request saved to database with ID:', docRef.id);
+    } catch (dbError) {
+      console.error('Database error:', dbError);
+      // Continue with email sending even if database save fails
     }
 
     // Check if Brevo API key is configured
@@ -89,42 +114,143 @@ export async function POST(request: NextRequest) {
       Please review this NDA request and send the appropriate NDA document to the requestor at ${email}.
     `;
 
-    // Create email data
-    const sendSmtpEmail = new brevo.SendSmtpEmail();
-    sendSmtpEmail.subject = `NDA Request from ${name} (${organization})`;
-    sendSmtpEmail.htmlContent = emailContent;
-    sendSmtpEmail.textContent = textContent;
-    sendSmtpEmail.sender = { 
-      name: "AGV Protocol", 
-      email: "noreply@agvprotocol.org" 
-    };
-    sendSmtpEmail.to = [
-      { 
-        email: "ir@agvprotocol.org", 
-        name: "AGV Protocol IR" 
-      },
-    ];
-    sendSmtpEmail.cc = [
-      { 
-        email: "contact@agvprotocol.org", 
-        name: "AGV Protocol Contact" 
-      }
-    ];
-    sendSmtpEmail.replyTo = { 
-      email: email, 
-      name: `${name}` 
-    };
-
-    // Send email using Brevo
+    // Read NDA file for attachment
+    let ndaFileContent = null;
+    const ndaFileName = 'NON-DISCLOSURE AGREEMENT.docx';
     try {
-      await apiInstance.sendTransacEmail(sendSmtpEmail);
-      console.log('NDA request email sent successfully');
-    } catch (brevoError: unknown) {
-      console.error('Brevo API error:', brevoError);
+      const ndaFilePath = path.join(process.cwd(), 'NON-DISCLOSURE AGREEMENT.docx');
+      ndaFileContent = fs.readFileSync(ndaFilePath);
+    } catch (fileError) {
+      console.error('Error reading NDA file:', fileError);
+      // Continue without attachment if file not found
+    }
+
+    // Email content for the requester (with NDA document)
+    const requesterEmailContent = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #333; border-bottom: 2px solid #3399FF; padding-bottom: 10px;">
+          NDA Document - AGV Protocol
+        </h2>
+        
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="color: #3399FF; margin-top: 0;">Dear ${name},</h3>
+          <p>Thank you for your interest in AGV Protocol. Please find attached the Non-Disclosure Agreement document for your review and signature.</p>
+          <p>If you have any questions about the agreement or need further information, please don't hesitate to contact us.</p>
+        </div>
+        
+        <div style="background-color: #e8f4fd; padding: 15px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="color: #3399FF; margin-top: 0;">Next Steps</h3>
+          <p style="margin: 0; color: #666; font-size: 14px;">
+            1. Review the attached NDA document<br>
+            2. Sign and return the document to us<br>
+            3. We will process your request and provide access to confidential materials
+          </p>
+        </div>
+
+        <div style="background-color: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107;">
+          <h4 style="color: #856404; margin-top: 0;">Contact Information</h4>
+          <p style="margin: 0; color: #856404; font-size: 14px;">
+            For any questions, please contact us at <strong>ir@agvprotocol.org</strong>
+          </p>
+        </div>
+      </div>
+    `;
+
+    const requesterTextContent = `
+      NDA Document - AGV Protocol
+      
+      Dear ${name},
+      
+      Thank you for your interest in AGV Protocol. Please find attached the Non-Disclosure Agreement document for your review and signature.
+      
+      If you have any questions about the agreement or need further information, please don't hesitate to contact us.
+      
+      Next Steps:
+      1. Review the attached NDA document
+      2. Sign and return the document to us
+      3. We will process your request and provide access to confidential materials
+      
+      For any questions, please contact us at ir@agvprotocol.org
+    `;
+
+    // Send email to requester with NDA document when available. If the
+    // attachment is missing, still send the email without it so the
+    // requester receives confirmation and next steps.
+    try {
+      const requesterEmail = new brevo.SendSmtpEmail();
+      requesterEmail.subject = `NDA Document - AGV Protocol`;
+      requesterEmail.htmlContent = requesterEmailContent;
+      requesterEmail.textContent = requesterTextContent;
+      requesterEmail.sender = { 
+        name: "AGV Protocol", 
+        email: "ir@agvprotocol.org" 
+      };
+      requesterEmail.to = [
+        { 
+          email: email, 
+          name: name 
+        }
+      ];
+      if (ndaFileContent) {
+        requesterEmail.attachment = [
+          {
+            content: ndaFileContent.toString('base64'),
+            name: ndaFileName
+          }
+        ];
+      }
+
+      await apiInstance.sendTransacEmail(requesterEmail);
+      console.log('Requester email sent successfully');
+    } catch (requesterError) {
+      console.error('Error sending email to requester:', requesterError);
+      // Continue with admin notification even if requester email fails
+    }
+
+    // Send email to admins with request details (no attachment)
+    try {
+      const adminEmail = new brevo.SendSmtpEmail();
+      adminEmail.subject = `NDA Request from ${name} (${organization})`;
+      adminEmail.htmlContent = emailContent;
+      adminEmail.textContent = textContent;
+      // Use a verified sender to avoid provider rejection; keep user in reply-to
+      adminEmail.sender = { 
+        name: name, 
+        email: email
+      };
+      adminEmail.to = [
+        {
+          email: "contact@agvprotocol.org",
+          name: "AGV Protocol Contact"
+        },
+        {
+          email: "ir@agvprotocol.org",
+          name: "AGV Protocol IR"
+        },
+        {
+          email: "info@agvprotocol.org",
+          name: "AGV Protocol Info"
+        }
+      ];
+      adminEmail.cc = [
+        { 
+          email: "contact@agvprotocol.org", 
+          name: "AGV Protocol Contact" 
+        }
+      ];
+      adminEmail.replyTo = { 
+        email: email, 
+        name: `${name}` 
+      };
+
+      await apiInstance.sendTransacEmail(adminEmail);
+      console.log('Admin notification sent successfully');
+    } catch (adminError: unknown) {
+      console.error('Brevo API error for admin notification:', adminError);
       
       // Type-safe error handling
-      if (brevoError && typeof brevoError === 'object' && 'status' in brevoError) {
-        const error = brevoError as BrevoError;
+      if (adminError && typeof adminError === 'object' && 'status' in adminError) {
+        const error = adminError as BrevoError;
         console.error('Brevo error details:', {
           status: error.status,
           message: error.message,
@@ -132,9 +258,9 @@ export async function POST(request: NextRequest) {
         });
       }
       
-      // Return error if email sending fails
+      // Return error if admin email sending fails
       return NextResponse.json(
-        { error: 'Failed to send email. Please try again later.' },
+        { error: 'Failed to send admin notification. Please try again later.' },
         { status: 500 }
       );
     }

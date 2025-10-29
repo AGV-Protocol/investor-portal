@@ -7,7 +7,7 @@ import PDFViewer from '@/components/PDFViewer';
 import DocumentCard from '@/components/DocumentCard';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { motion } from 'framer-motion';
-import { FiUsers, FiAward, FiShield, FiTrendingUp } from 'react-icons/fi';
+import { FiAward, FiShield, FiTrendingUp } from 'react-icons/fi';
 import { useTranslations } from '@/hooks/useTranslations';
 
 // Document data structure

@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from './Button';
 import NDAModal from './NDAModal';
-import { FiUser, FiBriefcase, FiHome, FiMail, FiCheck, FiX } from 'react-icons/fi';
 import { useTranslations } from '@/hooks/useTranslations';
 
 export default function NDARequestForm() {
