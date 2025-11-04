@@ -49,6 +49,11 @@ export default function SalesMarketingPage() {
           title: t('salesMarketing.sections.mous.docs.guopeng.title'),
           description: t('salesMarketing.sections.mous.docs.guopeng.description'),
           url: "https://drive.google.com/file/d/1vvWF2U-fwx7ndQnBLZD83xsl23BEFGJX/view"
+        },
+        {
+          title: "国光互补绿电直连合作谅解备忘录（MOU)",
+          description: "Memorandum of understanding for green power direct connection, between agrivoltaic generation and AI data center.",
+          url: "https://drive.google.com/file/d/1oxcwubBDRW1r-KRPJ89blQ9FUMeP6yBL/view"
         }
       ]
     }
