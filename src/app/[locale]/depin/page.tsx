@@ -122,6 +122,32 @@ export default function DePINPage() {
         { url: "https://drive.google.com/file/d/1vIF0KX9N2TwVQYuhYltogPgoEBhxiUlW.view", type: "image" },
         { url: "https://drive.google.com/file/d/1iTHd3iTkCtO3Z5fOJrnQs-GYRfyofrWR.view", type: "video" }
       ]
+    },
+    {
+      title: t('depin.sections.onSite.title'),
+      description: t('depin.sections.onSite.description'),
+      media: [
+        { url: "https://drive.google.com/file/d/1-5C_cx24y54xOwkl5HUes7aJqOHUSo78/view", type: "video" },
+        { url: "https://drive.google.com/file/d/1aeXreFwoW6ikUvm5YJiwgExUj56TV0XG/view", type: "image" },
+        { url: "https://drive.google.com/file/d/1PiOqr5xbeTCGrH6-H5bZ99Ec7kk-zdeH/view", type: "image" },
+        { url: "https://drive.google.com/file/d/1i7RiDM8bJQAclg-Oc51Nz_PEwdhWYD9n/view", type: "image" }
+      ]
+    },
+    {
+      title: t('depin.sections.device.title'),
+      description: t('depin.sections.device.description'),
+      media: [
+        { url: "https://drive.google.com/file/d/16-l5y84wkiN5_fHm4_nvGXXospLfXYhq/view", type: "video" },
+        { url: "https://drive.google.com/file/d/1F6k1tCMzYYkFBNj_wvJ_hoxrj9ccg0RK/view", type: "video" }
+      ]
+    },
+    {
+      title: t('depin.sections.data.title'),
+      description: t('depin.sections.data.description'),
+      media: [
+        { url: "https://drive.google.com/file/d/1d9jM2nmxF_QIAVI4LN6df-VXJ4_Lrubg/view", type: "video" },
+        { url: "https://drive.google.com/file/d/1XzCGTj1587YUo3lFN0YRffyLQN_0_QhD/view", type: "video" }
+      ]
     }
   ];
 

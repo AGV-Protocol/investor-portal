@@ -849,6 +849,18 @@
       "agriPv": {
         "title": "Agri-PV Integration 园光互补",
         "description": "Comprehensive documentation of agricultural-photovoltaic integration including both images and videos of the solar panel installation and integration process."
+      },
+      "onSite": {
+        "title": "On Site 现场",
+        "description": "Comprehensive on-site documentation including aerial views, horizontal views, and upward views of the project site."
+      },
+      "device": {
+        "title": "Device 设备",
+        "description": "Video documentation of equipment and devices used in the project."
+      },
+      "data": {
+        "title": "Data 数据",
+        "description": "Video documentation of data collection and monitoring systems."
       }
     }
   },
