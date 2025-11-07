@@ -8,6 +8,7 @@ import DocumentCard from '@/components/DocumentCard';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { motion } from 'framer-motion';
 import { useTranslations } from '@/hooks/useTranslations';
+import { ReactNode } from 'react';
 
 // Document data structure
 interface Document {
@@ -17,9 +18,10 @@ interface Document {
   type?: string;
 }
 
+// Document section structure - description can be string or ReactNode for JSX content
 interface DocumentSection {
   title: string;
-  description: string;
+  description: string | ReactNode;
   documents: Document[];
 }
 
@@ -77,8 +79,8 @@ export default function FinancialsPage() {
 
   const { documents: onChainVisible, moreDocuments: onChainMore } = splitDocs(onChainDocs);
 
-  // use `any` here so we can put JSX (details) into the description for the expandable UI
-  const documentSections: any[] = [
+  // description can be string or ReactNode to allow JSX (details) for expandable UI
+  const documentSections: DocumentSection[] = [
     {
       title: "Consolidated Audit Report",
       description: "China Commerce Holdings / Zhongshang Puhui Group audit documentation",
@@ -245,7 +247,11 @@ export default function FinancialsPage() {
               >
                 <div className="mb-8">
                   <h2 className="text-2xl font-semibold mb-2">{section.title}</h2>
-                  <p className="text-muted-foreground">{section.description}</p>
+                  {typeof section.description === 'string' ? (
+                    <p className="text-muted-foreground">{section.description}</p>
+                  ) : (
+                    <div className="text-muted-foreground">{section.description}</div>
+                  )}
                 </div>
 
                 <div className={`grid gap-6 ${
