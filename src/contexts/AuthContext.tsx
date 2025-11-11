@@ -32,9 +32,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setLoading(false);
   }, []);
 
-  const login = async (key: string): Promise<boolean> => {
-    // Simple key-based authentication - key must be 'agv2025vc'
-    if (key === 'agv2025vc') {
+  const login = async (key: string): Promise<boolean> => {    if (key === 'agambaaqv2025vc') {
       setIsAuthenticated(true);
       
       // Save to localStorage
