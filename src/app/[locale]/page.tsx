@@ -82,7 +82,7 @@ export default function Home() {
               </Button>
             </div>
             
-            <Button href="https://docs.google.com/document/d/1_ehe4C2Na0vi55as1Dya3u_N6s1_aDjG/edit?usp=drive_link&ouid=100757184650974093036&rtpof=true&sd=true" target="_blank" variant="secondary" size="lg" className="w-full sm:w-auto">
+            <Button href="https://drive.google.com/file/d/1C6Awj0-rDYUE3xzbEW_umCRWod-HUhwB/view" target="_blank" variant="secondary" size="lg" className="w-full sm:w-auto">
             <div className='flex items-center gap-2'>
                 <FiFile className="mr-2 text-primary" size={24} />
                 <span className='text-primary'>{t('hero.whitepaperButton')}</span>
