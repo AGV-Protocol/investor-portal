@@ -28,6 +28,7 @@ interface DashboardLayoutProps {
 const getNavigation = (locale?: string) => [
   { name: 'Dashboard', href: `/${locale || 'en'}/admin`, icon: FiShield },
   { name: 'NDA Requests', href: `/${locale || 'en'}/admin/nda-requests`, icon: FiFileText },
+  { name: 'Organizations', href: `/${locale || 'en'}/admin/organizations`, icon: FiUser },
 ];
 
 export function DashboardLayout({ children, user, onSignOut, locale }: DashboardLayoutProps) {

@@ -13,7 +13,6 @@ export default function Navbar() {
   const { t, locale } = useTranslations();
 
   const navigation = [
-    { name: t('nav.home'), href: `/${locale}` },
     { name: t('nav.tech'), href: `/${locale}/tech` },
     { name: t('nav.financials'), href: `/${locale}/financials` },
     { name: t('nav.legal'), href: `/${locale}/legal` },
@@ -55,6 +54,12 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+            <Link
+              href={`/${locale}/login`}
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
+            >
+              Sign In
+            </Link>
             <Button href={`/${locale}/investor`} variant="primary" size="sm">
               {t('investor.dashboard')}
             </Button>
@@ -99,6 +104,9 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <div className="px-3 pt-2 space-y-2">
+                  <Button href={`/${locale}/register`} variant="outline" size="sm" className="w-full">
+                    Request Access
+                  </Button>
                   <Button href={`/${locale}/investor`} variant="primary" size="sm" className="w-full">
                     {t('investor.dashboard')}
                   </Button>

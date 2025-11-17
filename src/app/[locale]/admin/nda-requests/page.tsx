@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiFileText, FiRefreshCw, FiSearch } from 'react-icons/fi';
+import { authedFetch } from '@/lib/admin-client';
 
 interface NDARequest {
   id: string;
@@ -28,7 +29,7 @@ export default function NDARequestsPage() {
   const fetchNDARequests = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/admin/nda-requests');
+      const response = await authedFetch('/api/admin/nda-requests');
       const requests: NDARequest[] = await response.json();
       setNdaRequests(requests);
     } catch (error) {

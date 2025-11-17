@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiFileText, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
+import { authedFetch } from '@/lib/admin-client';
 
 interface NDARequest {
   id: string;
@@ -32,7 +33,7 @@ export default function AdminDashboard() {
 
   const fetchNDARequests = async () => {
     try {
-      const response = await fetch('/api/admin/nda-requests');
+      const response = await authedFetch('/api/admin/nda-requests');
       const requests: NDARequest[] = await response.json();
       
       setNdaRequests(requests.slice(0, 10)); // Limit to 10 for dashboard
