@@ -54,12 +54,6 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <Link
-              href={`/${locale}/login`}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-            >
-              Sign In
-            </Link>
             <Button href={`/${locale}/investor`} variant="primary" size="sm">
               {t('investor.dashboard')}
             </Button>

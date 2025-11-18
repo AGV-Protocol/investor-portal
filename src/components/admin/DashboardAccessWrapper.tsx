@@ -33,6 +33,7 @@ export function DashboardAccessWrapper({ children }: { children: React.ReactNode
   const [isClient, setIsClient] = useState(false);
   const [, setWho] = useState<WhoAmI>({ authed: false, email: null, isAdmin: false, isSuperAdmin: false });
   const [accessGranted, setAccessGranted] = useState(false);
+  const [checkingAccess, setCheckingAccess] = useState(true);
 
   // Email-link auth UI state
   const [emailForLink] = useState("");
@@ -93,8 +94,10 @@ export function DashboardAccessWrapper({ children }: { children: React.ReactNode
       if (!auth.currentUser) {
         setWho({ authed: false, email: null, isAdmin: false, isSuperAdmin: false });
         setAccessGranted(false);
+        setCheckingAccess(false);
         return;
       }
+      setCheckingAccess(true);
       try {
         const idToken = await auth.currentUser.getIdToken(true);
         const res = await fetch("/api/admin/whoami", {
@@ -107,11 +110,17 @@ export function DashboardAccessWrapper({ children }: { children: React.ReactNode
           // If user is authorized admin, grant access
           if (data.isAdmin || data.isSuperAdmin) {
             setAccessGranted(true);
+          } else {
+            setAccessGranted(false);
           }
+        } else {
+          setAccessGranted(false);
         }
       } catch {
         setWho((s) => ({ ...s, isAdmin: false, isSuperAdmin: false }));
         setAccessGranted(false);
+      } finally {
+        setCheckingAccess(false);
       }
     })();
   }, [user?.uid]);
@@ -150,7 +159,7 @@ export function DashboardAccessWrapper({ children }: { children: React.ReactNode
     router.push('/');
   };
 
-  if (authLoading || !isClient) return <LoadingSpinner />;
+  if (authLoading || !isClient || checkingAccess) return <LoadingSpinner />;
   if (!user) return (
     <AuthCard 
       onSignIn={signInGoogle} 
