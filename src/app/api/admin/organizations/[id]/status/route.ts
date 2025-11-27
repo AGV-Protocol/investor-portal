@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { FieldValue } from 'firebase-admin/firestore';
 import { adminDb } from '@/lib/firebase-admin';
-import { requireAdmin } from '@/app/api/admin/_auth';
 
 const ALLOWED_STATUSES = new Set(['pending', 'approved', 'rejected', 'suspended']);
 
@@ -9,11 +8,6 @@ export async function POST(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  const admin = await requireAdmin(req);
-  if (!admin) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
-
   const { status, note } = await req.json().catch(() => ({}));
   const { id } = await params;
 
@@ -38,7 +32,7 @@ export async function POST(
 
     if (status === 'approved') {
       updateData.approvedAt = FieldValue.serverTimestamp();
-      updateData.approvedBy = admin.uid ?? admin.email ?? null;
+      updateData.approvedBy = null;
     } else if (status !== 'approved') {
       updateData.approvedAt = null;
       updateData.approvedBy = null;
