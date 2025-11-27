@@ -219,7 +219,13 @@ function LoginForm() {
             </Button>
           </form>
 
-          <div className="mt-6 text-center">
+          <div className="mt-4 text-center">
+            <Link href={`/${locale}/forgot-password`} className="text-sm text-gray-600 hover:text-primary">
+              Forgot your password?
+            </Link>
+          </div>
+
+          <div className="mt-4 text-center">
             <p className="text-sm text-gray-600">
               Don&apos;t have an account?{' '}
               <Link href={`/${locale}/register`} className="text-primary hover:underline font-medium">
