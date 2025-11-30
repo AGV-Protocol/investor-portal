@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import BackToWebsiteButton from './BackToWebsiteButton';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -22,6 +23,7 @@ export default function Layout({ children, className = '' }: LayoutProps) {
         {children}
       </motion.main>
       <Footer />
+      <BackToWebsiteButton />
     </div>
   );
 }
