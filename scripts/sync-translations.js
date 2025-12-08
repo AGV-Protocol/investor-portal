@@ -142,4 +142,4 @@ function mergeKeys(baseObj, targetObj) {
 
   console.log(updatedCount ? `Done. Updated ${updatedCount} file(s).` : 'All locale files already up to date.');
 })();
-
+;
